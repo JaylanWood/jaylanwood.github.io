@@ -1,0 +1,1233 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>
+        前端生存指南 - Jaylan的博客能吃吗
+      </title>
+    <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  
+  <meta name="theme-color" content="#000000" />
+  
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <meta name="description" content="文章简介 这是一份个人总结的前端生存指南。 包括前端发展史、人物、书籍、编程相关知识。 针对人群主要是前端信任，部分内容为了保持简单易懂（对我来说" />
+  <meta name="generator" content="Hugo 0.65.3 with theme pure" />
+  <title>前端生存指南 - Jaylan的博客能吃吗</title>
+  
+  
+  <link rel="stylesheet" href="https://jaylanwood.github.io/css/style.min.74c0595da1a4d9c68db698100b0660f846b95ddc1f9ec899e6e62641e0527235.css">
+  
+  <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
+  <meta property="og:title" content="前端生存指南" />
+<meta property="og:description" content="文章简介 这是一份个人总结的前端生存指南。 包括前端发展史、人物、书籍、编程相关知识。 针对人群主要是前端信任，部分内容为了保持简单易懂（对我来说" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jaylanwood.github.io/2020/04/%E5%89%8D%E7%AB%AF%E5%8F%91%E5%B1%95%E5%8F%B2/" />
+<meta property="article:published_time" content="2020-04-10T07:17:06+08:00" />
+<meta property="article:modified_time" content="2020-04-10T07:17:06+08:00" />
+<meta itemprop="name" content="前端生存指南">
+<meta itemprop="description" content="文章简介 这是一份个人总结的前端生存指南。 包括前端发展史、人物、书籍、编程相关知识。 针对人群主要是前端信任，部分内容为了保持简单易懂（对我来说">
+<meta itemprop="datePublished" content="2020-04-10T07:17:06&#43;08:00" />
+<meta itemprop="dateModified" content="2020-04-10T07:17:06&#43;08:00" />
+<meta itemprop="wordCount" content="7172">
+
+
+
+<meta itemprop="keywords" content="发展史," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="前端生存指南"/>
+<meta name="twitter:description" content="文章简介 这是一份个人总结的前端生存指南。 包括前端发展史、人物、书籍、编程相关知识。 针对人群主要是前端信任，部分内容为了保持简单易懂（对我来说"/>
+
+  <!--[if lte IE 9]>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+    <![endif]-->
+
+  <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+  </head>
+
+  
+  
+
+  <body class="main-center theme-black" itemscope itemtype="http://schema.org/WebPage"><header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/JaylanWood" target="_self">
+          <img class="img-circle img-rotate" src="https://jaylanwood.github.io/avatar.png" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">Jaylan</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">博客不能吃</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i>Guangdong, China</small>
+      </div><div class="search" id="search-form-wrap">
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i
+                        class="icon icon-search"></i></button>
+            </span>
+        </div>
+        <div class="ins-search">
+            <div class="ins-search-mask"></div>
+            <div class="ins-search-container">
+                <div class="ins-input-wrapper">
+                    <input type="text" class="ins-search-input" placeholder="想要查找什么..."
+                        x-webkit-speech />
+                    <button type="button" class="close ins-close ins-selectable" data-dismiss="modal"
+                        aria-label="Close"><span aria-hidden="true">×</span></button>
+                </div>
+                <div class="ins-section-wrapper">
+                    <div class="ins-section-container"></div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar"
+        aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement"
+      role="navigation">
+      <ul class="nav navbar-nav main-nav">
+        <li class="menu-item menu-item-home">
+          <a href="/">
+            <i class="icon icon-home-fill"></i>
+            <span class="menu-title">主页</span>
+          </a>
+        </li>
+        <li class="menu-item menu-item-archives">
+          <a href="/posts/">
+            <i class="icon icon-archives-fill"></i>
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/">
+            <i class="icon icon-folder"></i>
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/">
+            <i class="icon icon-tags"></i>
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        <li class="menu-item menu-item-about">
+          <a href="/about/">
+            <i class="icon icon-cup-fill"></i>
+            <span class="menu-title">关于</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header><aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content"><p>一口一篇文章</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+      <div class="widget">
+    <h3 class="widget-title"> 分类</h3>
+    <div class="widget-body">
+        <ul class="category-list">
+            <li class="category-list-item"><a href="https://jaylanwood.github.io/categories/%E5%89%8D%E7%AB%AF/" class="category-list-link">前端</a><span class="category-list-count">10</span></li>
+            <li class="category-list-item"><a href="https://jaylanwood.github.io/categories/%E6%90%AD%E5%8D%9A%E5%AE%A2/" class="category-list-link">搭博客</a><span class="category-list-count">2</span></li>
+        </ul>
+    </div>
+</div>
+      <div class="widget">
+    <h3 class="widget-title"> 标签</h3>
+    <div class="widget-body">
+        <ul class="tag-list">
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/ajax/" class="tag-list-link">ajax</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/cache-control/" class="tag-list-link">cache-control</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/cookie/" class="tag-list-link">cookie</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/dom/" class="tag-list-link">dom</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/etag/" class="tag-list-link">etag</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/expires/" class="tag-list-link">expires</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/hugo/" class="tag-list-link">hugo</a><span
+                    class="tag-list-count">2</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/jsonp/" class="tag-list-link">jsonp</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/last-modified/" class="tag-list-link">last-modified</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/localstorage/" class="tag-list-link">localstorage</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/mvc/" class="tag-list-link">mvc</a><span
+                    class="tag-list-count">2</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/promise/" class="tag-list-link">promise</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/session/" class="tag-list-link">session</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/sessionstorage/" class="tag-list-link">sessionstorage</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/tween.js/" class="tag-list-link">tween.js</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E4%BA%8B%E4%BB%B6/" class="tag-list-link">事件</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E5%8A%A8%E7%94%BB/" class="tag-list-link">动画</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E5%8F%91%E5%B1%95%E5%8F%B2/" class="tag-list-link">发展史</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E5%9B%9E%E8%B0%83/" class="tag-list-link">回调</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E5%AD%98%E5%82%A8/" class="tag-list-link">存储</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E5%AF%B9%E8%B1%A1/" class="tag-list-link">对象</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E5%BC%82%E6%AD%A5/" class="tag-list-link">异步</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="tag-list-link">数据库</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E6%A8%A1%E5%9D%97/" class="tag-list-link">模块</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E7%AB%8B%E5%8D%B3%E6%89%A7%E8%A1%8C%E5%87%BD%E6%95%B0/" class="tag-list-link">立即执行函数</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E7%B1%BB/" class="tag-list-link">类</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E7%BC%93%E5%8A%A8/" class="tag-list-link">缓动</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E8%A7%A3%E6%9E%84%E8%B5%8B%E5%80%BC/" class="tag-list-link">解构赋值</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E8%AF%B7%E6%B1%82/" class="tag-list-link">请求</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E8%BD%AE%E6%92%AD/" class="tag-list-link">轮播</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E9%97%AD%E5%8C%85/" class="tag-list-link">闭包</a><span
+                    class="tag-list-count">1</span></li>
+            
+        </ul>
+
+    </div>
+</div>
+      
+<div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+        <ul class="recent-post-list list-unstyled no-thumbnail">
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://jaylanwood.github.io/2020/04/%E5%89%8D%E7%AB%AF%E5%8F%91%E5%B1%95%E5%8F%B2/" class="title">前端生存指南</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-04-10 07:17:06 &#43;0800 CST" itemprop="datePublished">2020-04-10</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://jaylanwood.github.io/2020/02/%E6%A8%A1%E5%9D%97%E5%8C%96mvc%E5%8C%96%E5%AF%B9%E8%B1%A1%E5%8C%96%E7%B1%BB%E5%8C%96/" class="title">模块化、MVC化、对象化、类化</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-02-26 01:49:33 &#43;0800 CST" itemprop="datePublished">2020-02-26</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://jaylanwood.github.io/2020/02/%E6%B3%A8%E5%86%8C%E7%99%BB%E9%99%86/" class="title">注册登陆</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-02-26 01:33:12 &#43;0800 CST" itemprop="datePublished">2020-02-26</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://jaylanwood.github.io/2020/02/%E5%8A%A8%E7%94%BB%E4%B8%8E%E7%BC%93%E5%8A%A8/" class="title">动画与缓动</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-02-09 23:36:57 &#43;0800 CST" itemprop="datePublished">2020-02-09</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://jaylanwood.github.io/2020/02/leancloud/" class="title">LeanCloud</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-02-07 14:00:21 &#43;0800 CST" itemprop="datePublished">2020-02-07</time>
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+  </div>
+</aside>
+
+    
+    
+<aside class="sidebar sidebar-toc collapse" id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <h4 class="toc-title">文章目录</h4>
+    <nav id="toc" class="js-toc toc">
+
+    </nav>
+  </div>
+</aside>
+<main class="main" role="main"><div class="content">
+  <article id="-" class="article article-type-" itemscope
+    itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      <h1 itemprop="name">
+  <a
+    class="article-title"
+    href="/2020/04/%E5%89%8D%E7%AB%AF%E5%8F%91%E5%B1%95%E5%8F%B2/"
+    >前端生存指南</a
+  >
+</h1>
+
+      <div class="article-meta">
+        
+<span class="article-date">
+  <i class="icon icon-calendar-check"></i>&nbsp;
+<a href="https://jaylanwood.github.io/2020/04/%E5%89%8D%E7%AB%AF%E5%8F%91%E5%B1%95%E5%8F%B2/" class="article-date">
+  <time datetime="2020-04-10 07:17:06 &#43;0800 CST" itemprop="datePublished">2020-04-10</time>
+</a>
+</span>
+<span class="article-category">
+  <i class="icon icon-folder"></i>&nbsp;
+  <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF/"> 前端 </a>
+</span>  
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>&nbsp;
+    <a class="article-tag-link" href="/tags/%E5%8F%91%E5%B1%95%E5%8F%B2/"> 发展史 </a>
+  </span>
+
+        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2020/04/%E5%89%8D%E7%AB%AF%E5%8F%91%E5%B1%95%E5%8F%B2/#comments"
+            class="article-comment-link">评论</a></span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 7172字</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 15分 </span>
+      </div>
+    </div>
+    <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
+      <h2 id="文章简介">文章简介</h2>
+<p>这是一份个人总结的前端生存指南。</p>
+<p>包括前端发展史、人物、书籍、编程相关知识。</p>
+<p>针对人群主要是前端信任，部分内容为了保持简单易懂（对我来说），会写得很简单或者说是片面甚至部分有误，若觉得不对的，请自行点开链接查看来源原文。</p>
+<h2 id="前端发展史简述">前端发展史简述</h2>
+<p>静态页面阶段，主要使用 HTML\CSS\JavaScript，纯内容展示，页面主要靠跳转。例如<a href="https://www.sina.com.cn/">新浪</a>、<a href="https://www.163.com/">网易</a>这样的门户网站。</p>
+<p>动态页面阶段，主要使用 AJAX，交互丰富，页面布局刷新，例如 <a href="https://mail.google.com/mail/">Gmail</a>、<a href="https://www.google.com/maps/">Google Maps</a>。</p>
+<p>框架阶段，主要使用 Angular、React、Vue 之类的 MVVM 框架，可以比较容易地构建单页应用。模块化、组件化、自动化，webpack，TypeScript，花样真多。</p>
+<h2 id="前端各项技术的重要性">前端各项技术的重要性</h2>
+<p>HTML、CSS、JavaScript - 必学，重点学好HTML5、CSS3、ES3、ES5、ES6。</p>
+<p>jQuery - 多用就会，可以不深入，但是 jQuery 有很多精妙的设计可以参考。</p>
+<p>Angular、React、Vue - 精通一个</p>
+<p>Webpack - 学会常用配置</p>
+<p>HTTP - 必学</p>
+<p>浏览器渲染原理 - 必学</p>
+<p>git - 必修</p>
+<p>Node - 选修</p>
+<p>TypeScript - 选修</p>
+<h2 id="前端以外">前端以外</h2>
+<p>数据结构与算法 - 懂算法的人善于计算时空复杂度，相当于在你做事情前，懂得怎么去衡量效率和开销。</p>
+<p>计算机操作系统</p>
+<p>计算机网络</p>
+<p>数据库系统</p>
+<p>计算机组成原理</p>
+<p>编译原理 - 将源语言转化为目标语言,也就是将一门语言转化为另一门语言。</p>
+<p>设计模式 - 编程套路。</p>
+<h2 id="现在的前端能做什么">现在的前端能做什么</h2>
+<ul>
+<li>游戏开发(Egret Layabox coco2d-js)</li>
+<li>web开发(pc 移动端设备)</li>
+<li>webApp开发(Dcloud RN weex ionic)</li>
+<li>图形开发WebGl(three.js)</li>
+<li>小程序/快应用</li>
+<li>后端(nodejs)</li>
+<li>桌面应用(electron)</li>
+<li>嵌入式开发(Ruff)</li>
+</ul>
+<h2 id="前端可以关注的人">前端可以关注的人</h2>
+<p>阮一峰</p>
+<p>方应杭</p>
+<p>司徒正美</p>
+<p>张鑫旭</p>
+<p>尤雨溪</p>
+<p>廖雪峰</p>
+<h2 id="前端可以关注的网站">前端可以关注的网站</h2>
+<p>MDN</p>
+<p>CSS-Trick</p>
+<h2 id="前端可以看的书">前端可以看的书</h2>
+<h3 id="代码大全">《代码大全》</h3>
+<img src="https://images-na.ssl-images-amazon.com/images/I/51MEZDyKvZL._SX409_BO1,204,203,200_.jpg" alt="Book" width="200">
+<p>名称：Code Complete</p>
+<p>作者：Steve McConnell</p>
+<p>出版时间：</p>
+<p>第1版：1993</p>
+<p>第2版：2004</p>
+<p>评价：据说可以看十年，遇到什么问题想不通，可以看。</p>
+<h3 id="ecmascript-6入门">《ECMAScript 6入门》</h3>
+<img src="https://img9.doubanio.com/view/subject/l/public/s28315395.jpg" alt="Book" width="200">
+<p>名称：ECMAScript 6入门</p>
+<p>作者：阮一峰</p>
+<p>出版时间：</p>
+<p>第3版：2017</p>
+<p>评价：阮一峰的书，而且网络开源更新，看。</p>
+<h3 id="你不知道的javascript">《你不知道的JavaScript》</h3>
+<img src="https://img3.doubanio.com/view/subject/l/public/s28033372.jpg" alt="Book" width="200">
+<p>名称：You Don&rsquo;t Know JS Yet</p>
+<p>作者：Kyle Simpson</p>
+<p>出版时间：</p>
+<p>上：2015</p>
+<p>中：2016</p>
+<p>下：2018</p>
+<p>评价：还算比较新，可以看。</p>
+<h3 id="javascript忍者秘籍">《JavaScript忍者秘籍》</h3>
+<p>名称：Secrets of the JavaScript Ninja</p>
+<p>作者：John Resig / Bear Bibeault</p>
+<p>出版时间：</p>
+<p>第1版：2013</p>
+<p>第2版：2018</p>
+<p>评价：jQuery 作者的书，看就完事。</p>
+<h3 id="javascript高级程序设计">《JavaScript高级程序设计》</h3>
+<img src="https://img3.doubanio.com/view/subject/l/public/s8958650.jpg" alt="Book" width="200">
+<p>名称：Professional JavaScript for Web Developers</p>
+<p>作者：Nicholas C.Zakas</p>
+<p>出版时间：</p>
+<p>第3版：2012</p>
+<p>评价：经典书，但年代久远，ES6都出来了，大人时代变了！有空再看，或者抽重点部分看。</p>
+<h3 id="javascript权威指南">《JavaScript权威指南》</h3>
+<img src="https://img9.doubanio.com/view/subject/l/public/s9056065.jpg" alt="Book" width="200">
+<p>名称：JavaScript: The Definitive Guide</p>
+<p>作者：David Flanagan</p>
+<p>出版时间：</p>
+<p>第1版：2006</p>
+<p>第6版：2012</p>
+<p>评价：经典书，但年代久远，ES6都出来了，大人时代变了！有空再看，或者抽重点部分看。</p>
+<h3 id="javascript语言精粹">《JavaScript语言精粹》</h3>
+<img src="https://img1.doubanio.com/view/subject/l/public/s22708088.jpg" alt="Book" width="200">
+<p>名称：JavaScript: The Good Parts</p>
+<p>作者：Douglas Crockford</p>
+<p>出版时间：</p>
+<p>第1版：2008</p>
+<p>评价：经典书，但年代久远，ES6都出来了，大人时代变了！有空再看，或者抽重点部分看。</p>
+<h3 id="图解http">《图解HTTP》</h3>
+<img src="https://img3.doubanio.com/view/subject/l/public/s27283822.jpg" alt="Book" width="200">
+<p>名称：图解HTTP</p>
+<p>作者：上野宣</p>
+<p>出版时间：</p>
+<p>第1版：2014</p>
+<p>评价：很多图解，看。</p>
+<h3 id="javascript-dom编程艺术">《JavaScript DOM编程艺术》</h3>
+<img src="https://img3.doubanio.com/view/subject/l/public/s4677623.jpg" alt="Book" width="200">
+<p>名称：DOM Scripting: Web Design with JavaScript and the Document Object Model</p>
+<p>作者：Jeremy Keith</p>
+<p>出版时间：</p>
+<p>第2版：2011年</p>
+<p>评价：JavaScript入门很适合看。</p>
+<h3 id="javascript设计模式">《JavaScript设计模式》</h3>
+<img src="https://img9.doubanio.com/view/subject/l/public/s26722906.jpg" alt="Book" width="200">
+<p>名称：Learning JavaScript Design Patterns</p>
+<p>作者：Addy Osmani</p>
+<p>出版时间：</p>
+<p>第1版：2013年</p>
+<p>评价：JavaScript设计模式的书不多，但是书太旧，有空再看。</p>
+<h3 id="编写可维护的javascript">《编写可维护的JavaScript》</h3>
+<img src="https://img9.doubanio.com/view/subject/l/public/s25808235.jpg" alt="Book" width="200">
+<p>名称：Maintainable JavaScript</p>
+<p>作者：Nicholas C. Zakas</p>
+<p>出版时间：</p>
+<p>第1版：2012</p>
+<p>评价：经典书，但年代久远，ES6都出来了，大人时代变了！有空再看，或者抽重点部分看。</p>
+<h3 id="http权威指南">《HTTP权威指南》</h3>
+<img src="https://img1.doubanio.com/view/subject/l/public/s11329547.jpg" alt="Book" width="200">
+<p>名称：HTTP: The Definitive Guide</p>
+<p>作者：David Gourley</p>
+<p>出版时间：</p>
+<p>第1版：2012</p>
+<p>评价：经典书，但年代久远，ES6都出来了，大人时代变了！有空再看，或者抽重点部分看。</p>
+<h3 id="写给大家看的设计书">《写给大家看的设计书》</h3>
+<img src="https://img1.doubanio.com/view/subject/l/public/s28340357.jpg" alt="Book" width="200">
+<p>名称：The Non-Designer&rsquo;s Design Book</p>
+<p>作者：Robin Williams</p>
+<p>出版时间：</p>
+<p>第4版：2016</p>
+<p>评价：设计方面的书，万一想不开，自己去设计网页呢。</p>
+<h2 id="1989---world-wide-web万维网">1989 - World Wide Web（万维网）</h2>
+<img src="https://upload.wikimedia.org/wikipedia/commons/4/47/World_Wide_Web_logo.png" alt="WWW" width="100">
+<p>名称：<a href="https://en.wikipedia.org/wiki/World_Wide_Web">World Wide Web（万维网）</a></p>
+<p>创建者：<a href="https://en.wikipedia.org/wiki/Tim_Berners-Lee">Tim Berners-Lee</a></p>
+<p>目的：</p>
+<p>Tim Berners-Lee 在欧洲核子研究组织 (CERN) 工作时，那里有来自世界各地的人，他们带着差异性很大的电脑，电脑里面有不同格式的文档、文件系统。而他需要文档里的数据。他想把文档都放在一起，点一下，就跳转到某一个文档。于是他发明了万维网（World Wide Web）。</p>
+<p><a href="https://www.ted.com/talks/tim_berners_lee_the_next_web">TED-The next web</a>：</p>
+<div style="max-width:854px"><div style="position:relative;height:0;padding-bottom:56.25%"><iframe src="https://embed.ted.com/talks/tim_berners_lee_the_next_web" width="854" height="480" style="position:absolute;left:0;top:0;width:100%;height:100%" frameborder="0" scrolling="no" allowfullscreen></iframe></div></div>
+<p>主要相关技术：</p>
+<p>URI、HTML、HTTP</p>
+<p>相关网站：<a href="https://www.w3.org/">W3C官方</a></p>
+<h2 id="1989---uriuniform-resource-identifier">1989 - URI（Uniform Resource Identifier）</h2>
+<p>名称：<a href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">URI 统一资源标识符</a></p>
+<p>创建者：<a href="https://en.wikipedia.org/wiki/Tim_Berners-Lee">Tim Berners-Lee</a></p>
+<p>目的：保证资源统一、明确。</p>
+<p>主要相关技术：</p>
+<p>URI 分为 URN 和 URL</p>
+<p>URN（Uniform Resource Name）是名称统一，例如通过 <code>ISBN 0-486-27557-4</code> 可以在图书管里找到一本书。</p>
+<p>URL（Uniform Resource Locator）是位置统一，例如通过 <code>http://example.org/wiki/Main_Page</code> 找到 <code>wiki/Main_Page</code> 这个位置，但是这个位置的内容是可变的。</p>
+<p>示例：</p>
+<pre><code>          userinfo       host      port
+          ┌──┴───┐ ┌──────┴──────┐ ┌┴┐
+  https://john.doe@www.example.com:123/forum/questions/?tag=networking&amp;order=newest#top
+  └─┬─┘   └───────────┬──────────────┘└───────┬───────┘ └───────────┬─────────────┘ └┬┘
+  scheme          authority                  path                 query           fragment
+</code></pre>
+<h2 id="1989---htmlhypertext-markup-language">1989 - HTML（Hypertext Markup Language）</h2>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/120px-HTML5_logo_and_wordmark.svg.png" alt="HTML" width="100">
+<p>名称：<a href="https://en.wikipedia.org/wiki/HTML">HTML 超文本标记语言</a></p>
+<p>创建者：<a href="https://en.wikipedia.org/wiki/Tim_Berners-Lee">Tim Berners-Lee</a></p>
+<p>目的：展示文档，让文档结构化、语义化，点击可跳转其他文档。</p>
+<p>发展史：</p>
+<ul>
+<li>1989 - HTML</li>
+<li>1995 - HTML 2</li>
+<li>1997 - HTML 3</li>
+<li>1997 - HTML 4</li>
+<li>2014 - HTML 5</li>
+</ul>
+<p>示例：</p>
+<pre><code class="language-html">&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt; www.Example.org &lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;p&gt;万维网 &lt;/p&gt;
+        &lt;a href=&quot;https://www.w3.org/&quot;&gt;W3C&lt;/a&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>相关网站：<a href="https://developer.mozilla.org/en-US/docs/Web/HTML">HTML-MDN</a></p>
+<h2 id="1989---httphypertext-transfer-protocol">1989 - HTTP（Hypertext Transfer Protocol）</h2>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/HTTP_logo.svg/1200px-HTTP_logo.svg.png" alt="HTTP" width="150">
+<p>名称：<a href="https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol">HTTP 超文本传输协议</a></p>
+<p>创建者：<a href="https://en.wikipedia.org/wiki/Tim_Berners-Lee">Tim Berners-Lee</a></p>
+<p>目的：浏览器和服务器之间传输内容做好沟通协调，不要乱来。</p>
+<p>示例：</p>
+<p>HTTP请求示例</p>
+<pre><code>curl -s -v -H &quot;Jack: xxx&quot; -- &quot;https://www.baidu.com&quot;
+</code></pre>
+<pre><code>&gt; GET / HTTP/1.1
+&gt; Host: www.baidu.com
+&gt; User-Agent: curl/7.64.1
+&gt; Accept: */*
+&gt; Jack: xxx
+</code></pre>
+<p>HTTP响应示例</p>
+<pre><code>&lt; HTTP/1.1 200 OK
+&lt; Content-Type: text/html
+&lt; Date: Wed, 08 Apr 2020 03:18:29 GMT
+&lt; 
+&lt;html&gt;&lt;/html&gt;
+</code></pre>
+<p>相关网站：<a href="https://developer.mozilla.org/en-US/docs/Web/HTTP">HTTP-MDN</a></p>
+<h2 id="1990---web-browser网络浏览器">1990 - Web browser（网络浏览器）</h2>
+<p>名称：<a href="https://en.wikipedia.org/wiki/Web_browser">Web browser 网络浏览器</a></p>
+<p>创建者：<a href="https://en.wikipedia.org/wiki/Tim_Berners-Lee">Tim Berners-Lee</a></p>
+<p>目的：最初访问万维网是用命令行的（例如你可以curl），而图形化的网络浏览器可以更直观地访问。</p>
+<p>发展史：</p>
+<ul>
+<li>1990 - WorldWideWeb，由 Tim Berners-Lee 发布，后更名为Nexus，1994年停产。</li>
+<li>1993 - Mosaic，由美国国家超级计算应用中心（NCSA）发布，世界上第一个流行的浏览器。</li>
+<li>1994 - Navigator，由 Mosaic 团队负责人成立的公司 Netscape 发布，最受欢迎的浏览器。</li>
+<li>1995 - Internet Explorer，捆绑在 Windows 系统的浏览器，后打败 NetscapeNavigator 成为霸主。</li>
+<li>1998 - Firefox，Netscape 打不过微软 IE，推出了 Mozilla 基金会，开源了 Navigator，并改名为 Firefox 于 2004 年发布。</li>
+<li>2003 - Safari 由苹果发布。</li>
+<li>2008 - Chrome 由 Google 发布。于 2012 年成为最受欢迎的浏览器，此后占据主导地位。</li>
+</ul>
+<p>示例：</p>
+<p>在 IE 浏览器上地址栏输入 <code>https://www.google.com/chrome</code>，下载 Chrome 浏览器并安装。</p>
+<h2 id="1996---csscascading-style-sheets">1996 - CSS（Cascading Style Sheets）</h2>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/150px-CSS3_logo_and_wordmark.svg.png" alt="CSS" width="80">
+<p>名称：<a href="https://en.wikipedia.org/wiki/Cascading_Style_Sheets">CSS 层叠样式表</a></p>
+<p>创建者：<a href="https://en.wikipedia.org/wiki/H%C3%A5kon_Wium_Lie">Håkon Wium Lie</a></p>
+<p>目的：HTML 发展到一定程度，甚至用 html 标签（例如<code>&lt;center&gt;</code>)来实现外观样式，CSS 旨在使 html 内容和外观样式分离。</p>
+<p>发展史：</p>
+<p>1996 - CSS 1</p>
+<p>1998 - CSS 2 和 CSS 2.1，CSS 2.1 修改了 CSS 2 中的错误，增加了已有的浏览器的扩展内容。</p>
+<p>2011 - CSS 3，CSS 被拆分为多个模块单独升级，统称为 CSS 3，<a href="https://www.w3.org/Style/CSS/specs.en.html">CSS Specification</a></p>
+<p>示例：</p>
+<pre><code class="language-css">body{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+}
+</code></pre>
+<p>相关技术：</p>
+<p>Less、Sass、PostCSS</p>
+<p>相关网站：</p>
+<p><a href="https://www.w3.org/Style/CSS/Overview.en.html">CSS-W3C</a></p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS-MDN</a></p>
+<p><a href="https://css-tricks.com/">CSS-Tricks</a></p>
+<p><a href="https://www.zhangxinxu.com/wordpress/">CSS-张鑫旭</a></p>
+<h2 id="1997---javascript-和-ecmascript">1997 - JavaScript 和 ECMAScript</h2>
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="JavaScript" width="100">
+<p>名称：</p>
+<p><a href="https://en.wikipedia.org/wiki/JavaScript">JavaScript</a></p>
+<p><a href="https://en.wikipedia.org/wiki/ECMAScript">ECMAScript</a></p>
+<p>创始人：<a href="https://en.wikipedia.org/wiki/Brendan_Eich">Brendan Eich</a></p>
+<p>目的：刚开始网页只能是静态的，需要一门语言来实现动态交互。例如在登陆时提示用户输入用户名。</p>
+<p>发展史：</p>
+<ul>
+<li>1995 - Netscape 决定向 Navigator 添加脚本语言，于是雇佣 Brendan Eich 设计了一门新的语言，刚开始名字叫做Mocha，后改为LiveScript，最后又改名为 JavaScript。</li>
+<li>1996 - 微软模仿 JavaScript 开发了 JScript，并内置在 IE3.0 中。</li>
+<li>1996 - Netscape 衰落后，为了抵抗让微软，把 JavaScript 提交给 ECMA 组织。</li>
+<li>1997 - ECMAScript 1.0，ECMA 发布 ECMA-262 文件，规定了浏览器脚本语言的标准并称为ECMAScript 1.0，其实就是 JavaScript。</li>
+<li>1998 - ECMAScript 2.0 发布</li>
+<li>1999 - ECMAScript 3.0 发布</li>
+<li>2007 - ECMAScript 4.0 分歧太大，胎死腹中，最后把涉及现有功能改善的一小部分，发布为 ECMAScript 3.1。</li>
+<li>2009 - ECMAScript 5.0 发布，新增部分特性，其实就是 ECMAScript 3.1。</li>
+<li>2011 - ECMAScript 5.1 发布</li>
+<li>2015 - ECMAScript 6.0 发布，又称 ECMAScript 2015，新增大量特性，终于达到成熟阶段。此后，每年都发布ECMAScript 并以年份为名，但更改范围比较小。</li>
+<li>2016 - ECMAScript 7.0 发布</li>
+<li>2017 - ECMAScript 8.0 发布，正式引入了 async 函数，使得异步操作的写法出现了根本的变化。</li>
+<li>2018 - ECMAScript 9.0 发布</li>
+<li>2019 - ECMAScript 10.0 发布</li>
+</ul>
+<p>示例：</p>
+<pre><code class="language-javascript">var person = {
+    name: 'Jack',
+    age: 18,
+    wife: undefined,
+    job: null,
+    skills: ['read', 'swim', 'run'],
+    sayName: function () {
+        console.log(this.name)
+    }
+}
+</code></pre>
+<p>相关网站：</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">JavaScript-MDN</a></p>
+<p><a href="https://javascript.ruanyifeng.com/">JavaScript 教程-阮一峰</a></p>
+<p><a href="https://es6.ruanyifeng.com/">ECMAScript 6 入门-阮一峰</a></p>
+<h2 id="1998---domdocument-object-model">1998 - DOM（Document Object Model）</h2>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/DOM-model.svg/1200px-DOM-model.svg.png" width="400" alt="DOM-model.svg">
+<p>目的：把 XML 和 HTML 文档作为树结构，每个节点是一个对象，让 JavaScript 可以操作这些对象。</p>
+<p>发展史：</p>
+<ul>
+<li>1998 - DOM Level 1</li>
+<li>2000 - DOM Level 2</li>
+<li>2004 - DOM Level 3</li>
+<li>2015 - DOM Level 4</li>
+</ul>
+<p>示例：</p>
+<pre><code class="language-javascript">var body = document.querySelector('body')
+</code></pre>
+<p>相关网站：</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model">DOM-MDN</a></p>
+<h2 id="2000---json">2000 - JSON</h2>
+<img src="https://www.json.org/img/json160.gif" alt="JSONLogo" width="100">
+<p>名称：<a href="https://en.wikipedia.org/wiki/JSON">JSON</a></p>
+<p>创建者：<a href="https://en.wikipedia.org/wiki/Douglas_Crockford">Douglas Crockford</a></p>
+<p>目的：数据交换格式，和 XML 五五开，成为 AJAX 主流的数据交换格式。</p>
+<p>相关网站：</p>
+<p><a href="https://www.json.org/json-en.html">JSON官方</a></p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON">JSON-MDN</a></p>
+<h2 id="2004---corscross-origin-resource-sharing">2004 - CORS（Cross-origin resource sharing）</h2>
+<p>名称：<a href="https://en.wikipedia.org/wiki/Cross-origin_resource_sharing">CORS</a></p>
+<p>创建者：Matt Oshry，Brad Porter和Michael Bodell</p>
+<p>目的：允许跨域资源共享，AJAX 需要 CORS，其他 a\img\script 之类都不需要。</p>
+<p>相关网站：<a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">CORS-MDN</a></p>
+<p>示例：</p>
+<p>后端设置相应头允许 CORS</p>
+<pre><code class="language-javascript">response.setHeader(&quot;Access-Control-Allow-Origin&quot;, &quot;*&quot;)
+</code></pre>
+<h2 id="2005---jsonpjson-with-padding">2005 - JSONP（JSON with Padding）</h2>
+<img src="https://upload.wikimedia.org/wikipedia/commons/c/c9/JSONP_logo.png" alt="JSONPLogo" width="100">
+<p>名称：<a href="https://en.wikipedia.org/wiki/JSONP">JSONP</a></p>
+<p>创建者：Bob Ippolito</p>
+<p>目的：通过<code>&lt;script&gt;</code>标签来请求数据，可绕过同源策略。</p>
+<p>示例：</p>
+<p>前端</p>
+<pre><code class="language-javascript">var callbackName = 'jaylan' + parseInt(Math.random() * 10000000, 10)
+window[callbackName] = function (result) {
+    console.log(result)
+}
+var script = document.createElement('script')
+script.src = '/weather?callback=' + callbackName
+document.body.appendChild(script)
+
+script.onload = function (eee) {
+    eee.currentTarget.remove()
+    delete window[callbackName]
+}
+script.onerror = function (eee) {
+    eee.currentTarget.remove()
+    delete window[callbackName]
+}
+</code></pre>
+<p>后端</p>
+<pre><code class="language-javascript">var server = http.createServer(function (request, response) {
+  var parsedUrl = url.parse(request.url, true)
+  var query = parsedUrl.query
+  if (path === '/weather') {
+    let callback = query.callback
+    response.statusCode = 200
+    response.setHeader('Content-Type', 'application/json')
+    response.write(`
+      ${callback}.call(undefined,{
+        &quot;beijing&quot;:&quot;rain&quot;,
+        &quot;guangzhou&quot;:&quot;cloud&quot;
+      })
+    `)
+    response.end()
+  } 
+})
+</code></pre>
+<p>jQuery 发 JSONP</p>
+<pre><code class="language-javascript">// jQuery把JSONP归类在ajax，不用在意。
+$.ajax({
+    url: &quot;/weather&quot;,
+    jsonp: &quot;callback&quot;,
+    dataType: &quot;jsonp&quot;,
+    success: function (response) {
+        console.log(response)
+    }
+})
+</code></pre>
+<h2 id="2005---webkit">2005 - WebKit</h2>
+<img src="https://upload.wikimedia.org/wikipedia/en/thumb/b/be/WebKit_logo_%282015%29.svg/220px-WebKit_logo_%282015%29.svg.png" alt="WebKitLogo" width="100">
+<p>名称：<a href="https://en.wikipedia.org/wiki/WebKit">WebKit</a></p>
+<p>创建者：苹果</p>
+<p>目的：苹果公司在 KHTML 引擎基础上，建立了 WebKit 浏览器引擎。</p>
+<p>相关网站：<a href="https://webkit.org/">Webkit官方</a></p>
+<h2 id="2005---couchdb">2005 - CouchDB</h2>
+<img src="https://couchdb.apache.org/image/couch@2x.png" alt="CouchDBLogo" width="100">
+<p>名称：<a href="https://en.wikipedia.org/wiki/Apache_CouchDB">CouchDB</a></p>
+<p>创建者：<a href="https://en.wikipedia.org/wiki/Apache_Software_Foundation">Apache软件基金会</a></p>
+<p>目的：基于 JSON 格式的数据库，可以用 JavaScript 函数定义视图和索引。它在本质上有别于传统的关系型数据库，标识着 NoSQL 类型的数据库诞生。</p>
+<p>相关网站：<a href="https://couchdb.apache.org/">CouchDB官方</a></p>
+<h2 id="2005---xmlhttprequest-和-ajaxasynchronous-javascript-and-xml">2005 - XMLHttpRequest 和 AJAX（Asynchronous JavaScript and XML）</h2>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/AJAX_logo_by_gengns.svg/1200px-AJAX_logo_by_gengns.svg.png" alt="AJAX" width="200">
+<p>名称：<a href="https://en.wikipedia.org/wiki/Ajax_(programming)">AJAX - 异步的 JavaScript 和 XML</a></p>
+<p>最初实现：微软 IE5 的 XMLHTTP ActiveX 的私有借口</p>
+<p>命名者：<a href="https://en.wikipedia.org/wiki/Jesse_James_Garrett">Jesse James Garrett</a></p>
+<p>目的：AJAX 是一组技术组合。它可以向服务器发送任意类型的请求，异步地接收响应，使得不会阻塞页面，并且可以局部刷新页面。</p>
+<p>历史：</p>
+<ul>
+<li>1996 - IE 引入 iframe，可以异步加载和获取内容。</li>
+<li>1998 - Microsoft Outlook Web Access 团队开发了 XMLHttpRequest 脚本对象背后的概念。</li>
+<li>1999 - 微软在 IE5 中实现了 XMLHTTP ActiveX 的私有借口，可以用 JS 直接发起 HTTP 请求。后来各家浏览器纷纷跟进，取名 XMLHttpRequest，并纳入 W3C 规范。</li>
+<li>2004 - Gmail 和 Google Maps 把 AJAX 玩得出神入化，局部刷新、异步，像一个桌面应用那样，展现了 Web application 的强大。</li>
+<li>2005 - Jesse James Garrett 发文章把这种技术组合成为 Ajax。</li>
+<li>2006 - W3C 把 XMLHttpRequest 对象纳入标准规范。</li>
+</ul>
+<p>示例：</p>
+<p>原生 JS 写法</p>
+<pre><code class="language-javascript">let request = new XMLHttpRequest()
+request.open('GET', '/getWeather')
+request.onreadystatechange = () =&gt; {
+    if (request.readyState === XMLHttpRequest.DONE) {
+        if (request.status &gt;= 200 &amp;&amp; request.status) {
+            console.log(request.responseText)
+        }
+    }
+}
+request.send()
+</code></pre>
+<p>jQuery 的 AJAX 写法</p>
+<pre><code class="language-javascript">$.ajax({
+    url: &quot;/getWeather&quot;,
+    data: {
+        local: 'beijing'
+    },
+    success: function (result) {
+        $(&quot;#weather&quot;).html(result);
+    }
+})
+</code></pre>
+<p>后端服务器写法参考</p>
+<pre><code class="language-javascript">if (path === '/getWeather') {
+  response.statusCode = 200
+  response.setHeader('Content-Type', 'text/html;charset=utf-8')
+  response.write('Rain')
+  response.end()
+}
+</code></pre>
+<p>相关网站：</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest">XMLHttpRequest-MDN</a></p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/AJAX">AJAX-MDN</a></p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON</a>)</p>
+<p>相关库：</p>
+<p><a href="https://github.com/axios/axios">axios</a></p>
+<h2 id="2006---jquery">2006 - jQuery</h2>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/JQuery-Logo.svg/1280px-JQuery-Logo.svg.png" alt="jQueryLogo" width="200">
+<p>名称：<a href="https://en.wikipedia.org/wiki/JQuery">jQuery</a></p>
+<p>创建者：<a href="https://en.wikipedia.org/wiki/John_Resig">John Resig</a></p>
+<p>目的：jQuery 是 JavaScript 超级经典的库，旨在简化 HTML DOM 树的遍历和操作以及事件处理，CSS 动画和 Ajax。</p>
+<p>示例：</p>
+<pre><code class="language-html">&lt;div class=&quot;box&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;weather&quot;&gt;&lt;/div&gt;
+
+&lt;script&gt;
+    $('.box').css({
+        'width': '100px',
+        'height': '100px',
+        'background-color': 'green'
+    }).on('click', function () {
+        $.ajax({
+            url: &quot;/getWeather&quot;,
+            data: {local: 'beijing'},
+            success: function (result) {
+                $(&quot;#weather&quot;).html(result);
+            }
+        });
+    })
+&lt;/script&gt;
+</code></pre>
+<p>相关网站：</p>
+<p><a href="https://jquery.com/">jQuery官方</a></p>
+<p><a href="https://www.jquery123.com/">jQuery非官方中文网</a></p>
+<h2 id="2006---sass-和-scsssyntactically-awesome-style-sheets">2006 - Sass 和 Scss（Syntactically Awesome Style Sheets）</h2>
+<img src="https://sass-lang.com/assets/img/logos/logo-b6e1ef6e.svg" alt="SassLogo" width="100">
+<p>名称：<a href="https://en.wikipedia.org/wiki/Sass_(stylesheet_language)">Sass 语法很棒的 CSS</a></p>
+<p>创建者：Natalie Weizenbaum</p>
+<p>目的：</p>
+<p>Ruby的人觉得CSS很烂，于是做一个语法更好版本的Sass。Sass语法让习惯用CSS的人用不习惯，于是做得更像CSS的Scss。</p>
+<p>Sass 是一种预处理器脚本语言，需要编译为CSS才能被浏览器识别。</p>
+<p>示例：</p>
+<p>CSS</p>
+<pre><code class="language-css">body {
+  font: 100% Helvetica, sans-serif;
+  color: #333;
+}
+</code></pre>
+<p>Sass</p>
+<pre><code class="language-scss">$font-stack:    Helvetica, sans-serif
+$primary-color: #333
+
+body
+  font: 100% $font-stack
+  color: $primary-color
+
+</code></pre>
+<p>Scss</p>
+<pre><code class="language-scss">$font-stack:    Helvetica, sans-serif;
+$primary-color: #333;
+
+body {
+  font: 100% $font-stack;
+  color: $primary-color;
+}
+</code></pre>
+<p>相关网站：<a href="https://sass-lang.com/">Sass官方</a></p>
+<h2 id="2008---websocket">2008 - WebSocket</h2>
+<p>名称：<a href="https://en.wikipedia.org/wiki/WebSocket">WebSocket</a></p>
+<p>创建者：<a href="https://en.wikipedia.org/wiki/Michael_Carter_(entrepreneur)">Michael Carter</a></p>
+<p>目的：HTTP是单向通信的，WebSocket提供全双工通信。</p>
+<p>相关网站：<a href="https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API">WebSockets-MDN</a></p>
+<h2 id="2008---v8javascript-engine">2008 - V8（JavaScript engine）</h2>
+<img src="https://v8.dev/_img/v8.svg" alt="V8Logo" width="100">
+<p>名称：<a href="https://en.wikipedia.org/wiki/V8_(JavaScript_engine)">V8</a></p>
+<p>创建者：Google</p>
+<p>目的：为 Chrome 浏览器而开发的，让 JavaScript 的运行变得非常快。</p>
+<p>相关网站：<a href="https://v8.dev/">V8官方</a></p>
+<h2 id="2009---nodejs">2009 - Node.js</h2>
+<img src="https://nodejs.org/static/images/logo.svg" alt="NodeLogo" width="150" style="background-color: #333333;padding: 10px;border-radius: 5px;">
+<p>名称：<a href="https://en.wikipedia.org/wiki/Node.js">Node.js</a></p>
+<p>创建者：<a href="https://en.wikipedia.org/wiki/Ryan_Dahl">Ryan Dahl</a></p>
+<p>目的：基于 Chrome V8 引擎的 JavaScript 运行时，使得 JavaScript 可以用于服务器端编程。</p>
+<p>相关网站：<a href="https://nodejs.org/en/">Node官方</a></p>
+<h2 id="2009---commonjs">2009 - CommonJS</h2>
+<img src="http://wiki.commonjs.org/images/3/3a/Website-Logo.png" alt="CommonJSLogo" width="200">
+<p>名称：<a href="https://en.wikipedia.org/wiki/CommonJS">CommonJS</a></p>
+<p>创建者：</p>
+<p>目的：JavaScript 诞生之初是没有模块的，CommonJS 旨在在 Web 浏览器之外为 JavaScript 建立模块生态系统。</p>
+<p>相关网站：<a href="http://www.commonjs.org/">CommonJS官方</a></p>
+<p>相关技术：</p>
+<p><a href="https://requirejs.org/">RequireJS</a> - 创建 <a href="http://wiki.commonjs.org/wiki/Modules/AsynchronousDefinition">AMD(Async Module Definition)</a> 模块规范</p>
+<p><a href="https://seajs.github.io/seajs/">Sea.js</a> - 创建 <a href="https://github.com/cmdjs/specification/blob/master/draft/module.md">CMD(Common Module Definition)</a> 模块规范</p>
+<h2 id="2009---coffeescript">2009 - CoffeeScript</h2>
+<svg width="250" xmlns="http://www.w3.org/2000/svg" viewBox="-22 347 566 100">
+  <path d="M21.7 351.1c.1.6-.2 1.1-1.2 1.6-1.3-.7-4.1-1.1-6.4-.9-2.5.2-4.6 1-4.3 2.7.4 1.7 2.8 2.7 7.1 2.3 10.5-.9 10.4-8 25.8-9.4 12-1.1 18.7 2.6 19.6 7.1.7 3.5-2.2 6.9-10.9 7.6-7.7.7-12.2-1.4-12.6-3.5-.2-1.1.4-2.7 4.1-3.1.4 1.7 2.5 3.5 7.5 3 3.6-.3 6.6-1.6 6.2-3.6-.4-2.1-4.2-3.3-10.2-2.8-12.2 1.1-15.2 7.8-25.6 8.7-7.4.7-13.4-2-14.2-6-.3-1.5-.3-5 7.5-5.7 4-.3 7.2.4 7.6 2zm-39 41.8c-3.4 4.3-4.9 9.3-4.6 14.2.3 4.9 2.7 8.9 6.5 12 4 3.1 8.3 4 13.2 3.1 1.9-.3 4-1.3 5.9-1.9-4 0-7.4-1.3-10.8-4-3.7-2.7-6.2-6.5-6.8-11.1-.9-4.3 0-8.3 2.4-11.8 2.7-3.4 6.2-5.3 10.8-5.9 4.6-.3 8.6.9 12.6 3.7-.9-1.3-2.2-2.2-3.4-3.4-4-2.7-8.3-4-13.6-2.7-4.8 1-8.8 3.5-12.2 7.8zm53.6-23.1c-12.9 0-24.4-1.3-32.7-3.1-8.9-2.2-13.6-4.6-13.6-7.7 0-1.3.6-2.4 2.4-3.7-5.6 2.2-8.6 4-8.6 6.8.3 3.1 5.3 6.2 15.5 8.6 9.6 2.4 21.9 3.7 36.7 3.7 15.1 0 27.1-1.3 36.7-3.7 10.2-2.4 15.1-5.6 15.1-8.6 0-2.2-2.2-4.3-6.2-5.9.9.6 1.6 1.6 1.6 2.7 0 3.1-4.6 5.6-13.9 7.7-8.6 1.9-19.6 3.2-33 3.2zm36.8 8.6c-9.6 2.2-21.9 3.7-36.7 3.7-15.1 0-27.4-1.6-37-3.7-8.6-2.2-13.2-4.6-14.8-7.1 1.6 10.8 5.3 21 10.2 30 3.7 5.6 7.4 10.5 11.1 15.8 1.6 3.1 2.7 6.2 3.4 9.3 2.4 3.4 5.9 5.6 10.2 6.8 5.3 1.9 10.8 2.7 16.4 2.4h.6c5.6.3 11.5-.6 16.9-2.4 4-1.3 7.4-3.4 9.9-6.8h.3c.6-3.1 1.6-6.2 3.1-9.3 3.7-5.3 7.4-10.2 11.1-15.8 4.9-8.9 8.3-19.1 10.2-30-2 2.8-6.6 5.2-14.9 7.1zm106.2 30.1c-4.8 12.1-17.6 16.9-25.9 16.9-13.4 0-19.9-6-19.9-22.3 0-16.5 7.9-47.3 31.7-47.3 8.5 0 15.2 3.3 15.2 12.1 0 4.8-1.8 8.3-6.4 8.3-1.5 0-3.4-.4-5.2-2.4 2.2-1.1 4.2-4.9 4.2-8.3 0-2.9-1.5-5.6-5.6-5.6-10 0-18.9 23.9-18.9 42.4 0 8.3 2.2 14.2 10.9 14.2 7.1 0 13.5-3.4 17.7-9.1l2.2 1.1zm32.9-16.3c.4.2.7.2 1 .2 4.2 0 10.1-2.7 14-5.5l.8 2.4c-3.4 3.7-9.5 6.5-16.1 7.5-1.5 16.8-10.6 27.3-21.7 27.3-8.4 0-14.5-4-14.5-14.4 0-10.5 6.2-32.2 24.9-32.2 7.8.3 11.6 5.3 11.6 14.7zm-7.7 5c-1.9-.5-2.4-2-2.4-3.8 0-2.5 1.2-4.2 2.8-4.9-.2-3.8-1.1-5.3-3.4-5.3-6.5 0-12 16.6-12 25.6 0 6 1.2 7.3 4.6 7.3 4.2.1 8.9-8 10.4-18.9zm-6.6 39.7c0-8.3 7.1-11 15.8-13.6l10.9-51.9c2.7-13 10.6-15.5 16.5-15.5 4.1 0 8 2.2 9.7 5.7 3.6-4.6 8.4-5.7 12.4-5.7 5.6 0 10.8 3.9 10.8 9.8 0 1.5-.1 2.6-.3 3.7h-4.3c.1-.9.2-1.7.2-2.4 0-2.1-1.7-3.1-3.4-3.1-2 0-4.8 1.1-6.2 7.1l-1.7 7.4h9.1l-.8 3.6h-9l-10.3 49.1c-2.7 13-10.6 15.5-16.5 15.5-5.2 0-8.3-2.3-9.8-5.7-3.5 4.6-8.3 5.7-12.3 5.7-5.6.1-10.8-3.8-10.8-9.7zm9.1 1.8c1.9 0 4.2-1.8 5.4-7.1l1.1-5.3c-5.7 2-10.1 4.4-10.1 9.4 0 1.2 1.7 3 3.6 3zm21.7 0c1.9 0 4.2-1.8 5.4-7.1l2.2-10.4-9.4 1.8-1.8 8.3c-.5 2.1-1.1 4-1.8 5.6.9 1.3 3 1.8 5.4 1.8zm-1.4-18l9.4-1.7 7.7-36.8h-9l-8.1 38.5zm16.6-56.7c-2 0-4.8 1.1-6.2 7.1l-1.7 7.4h9l2.1-9.5c.2-.7.2-1.3.2-2 .1-2-1.5-3-3.4-3zm37.9 53c7.1 0 11.6-4 16.1-9.2h3.1c-5.2 8.3-12.9 16.8-25 16.8-8.5 0-14.2-4.2-14.2-14.5 0-10.5 5.9-32.3 24.6-32.3 8.1 0 10 4.2 10 8.7 0 10.5-10 18.5-20.9 19.2-.1 1.3-.2 2.5-.2 3.6 0 6.2 2.2 7.7 6.5 7.7zm5.3-34.4c-4.6 0-9.1 9.7-10.9 18.7 7-.5 13.2-7.4 13.2-15 0-2.2-.5-3.7-2.3-3.7zm28.6 33.4c3.4 0 7.8-2.3 10.8-4.8-2 10.4-8.4 13.4-15.8 13.4-8.4 0-14.1-4.2-14.1-14.5 0-10.5 5.9-32.3 24.6-32.3 8.1 0 10 4.2 10 8.7 0 10.6-10 18.5-20.9 19.2-.1.9-.2 2-.2 2.7 0 5.7 2.5 7.6 5.6 7.6zm6.2-33.4c-4.5 0-9.1 10.1-11 18.7 7.1-.4 13.3-7.3 13.3-15 0-2.2-.6-3.7-2.3-3.7zm51.3-6.7c-1.7 0-3-.6-4.2-1.9 2.4-1.5 4.1-4.8 4.1-7.8 0-3.1-1.8-6.1-6.8-6.1s-8.3 2.8-8.3 8.2c0 13.3 20.5 15.2 20.5 34.8 0 15.3-12.3 22.7-25.6 22.7-10.4 0-19.3-4.5-19.3-15.7 0-9.8 7-14.9 13.3-14.9 3.1 0 7.7 1.3 8 6-4.9 0-10.7 2.3-10.7 8.5 0 4.5 2.9 8.7 8.7 8.7 6.1 0 10.6-4.4 10.6-12 0-15.6-18.6-21.1-18.6-34.5 0-9.5 9.3-16.3 21-16.3 4.3 0 14.6.9 14.6 10.9.1 5.5-2.8 9.4-7.3 9.4zm36.2 10.3c0-2.3-.8-3.7-2.5-3.7-5.7 0-11.7 16.6-11.7 26.7 0 6.2 2.2 7.6 6.6 7.6 7.1 0 11.6-4 16.1-9.2h3.1c-5.2 8.3-12.9 16.8-25 16.8-8.5 0-14.2-4.2-14.2-14.5 0-10.6 6-32.3 24.5-32.3 8.1 0 10.1 4.2 10.1 8.3 0 4.4-2.2 6.7-4.8 6.7-1 0-2.1-.4-3.1-1.1.5-1.9.9-3.6.9-5.3zm27.7-7.6l-1.2 5.7c3.1-2.7 6.7-5.7 11-5.7 4.1 0 6.3 3.3 6.3 6.9 0 3.1-2.1 6.7-6.6 6.7-5.1 0-2.5-6-5.3-6-2.7 0-4.4 1.4-6.7 3.4l-7.2 34.6h-13.1l9.6-45.4 13.2-.2zm34.2 0l-6.6 30.9c-.3 1.2-.4 2.1-.4 2.9 0 2.5 1.2 3.3 3.7 3.3 3.5 0 6.9-3.4 8.1-8h3.8c-5.2 14.8-14.2 16.8-19.1 16.8-5.5 0-9.7-3.2-9.7-10.9 0-1.8.3-3.7.7-5.9l6.2-29.2 13.3.1zm-4.1-19.4c4 0 7.2 3.2 7.2 7.2s-3.2 7.1-7.2 7.1-7.1-3.1-7.1-7.1c-.1-4 3.2-7.2 7.1-7.2zm29.1 16l-1.5 6.9c2.6-2.3 6.1-3.9 10.7-3.9 6.2 0 11.1 3.5 11.1 14.4 0 12.2-4.7 32.1-22.3 32.1-4.5 0-6.8-1.6-7.7-3.2l-4.7 22.1-13.7 3.2 15.2-71.5 12.9-.1zm7.8 17c0-7-2.9-7.5-4.5-7.5-2 0-4.5 1.6-6.3 4.4l-5.4 25.5c.4 1 1.4 2.1 3.4 2.1 9.7 0 12.8-15.9 12.8-24.5zm27.8 17.3c-.3 1.1-.5 2.2-.5 3.1 0 1.9.7 3.2 3.1 3.2.7 0 1.7 0 2.4-.3-2.5 7.8-6.6 8.9-9.6 8.9-6.4 0-9.1-4.4-9.1-10.3 0-1.6.2-3.1.6-4.8l5.8-27.2h-3l.7-3.6h3L528 366l13.4-1.9s-1.4 6.2-3.1 14.4h5.5l-.7 3.6h-5.5l-5.7 27.4z"></path>
+</svg>
+<p>名称：<a href="https://en.wikipedia.org/wiki/CoffeeScript">CoffeeScript</a></p>
+<p>创建者：<a href="https://en.wikipedia.org/wiki/Jeremy_Ashkenas">Jeremy Ashkenas</a></p>
+<p>目的：CoffeeScript 可转换为 JavaScript 运行，语法更简洁，对 JavaScript 后来的版本有着很大影响。</p>
+<p>相关网站：<a href="https://coffeescript.org/">CoffeeScript官方</a></p>
+<h2 id="2009---phonegap">2009 - PhoneGap</h2>
+<p><svg width="100" height="100" style="background-color:#27A1C5;padding:5px;border-radius:5px" xmlns="http://www.w3.org/2000/svg" width="40" height="44" viewBox="0 0 40 44"><path d="M11.8 28.4l-1.6.1v.7c0 1.9 1.1 2.3 2 2.3h.2l2.6-.2c.1-.3.1-.5.1-.5s-.3-16.3-.4-18.3c0-.5-.1-.8-.3-1.1-.9-.1-1.8-.1-2.4-.2h-.3c-.6 0-1.1.2-1.4.5-.5.5-.4 1.2-.4 1.2v1.2c1.3.1 2.2.1 2.2.1s1.4.3 1.5 1.8c.1 1.6.1 10.6.1 10.6s.1 1.5-1.9 1.8zm-5 .4l-2.5.2s-2.1.3-2.2-2c0-1.7-.2-11.5-.2-11.5s-.1-1.8 2.1-1.7c.7 0 1.6.1 2.7.2 0-1.6-.1-3-.1-4.1-1.5-.2-2.8-.3-3.7-.4-2.9-.3-2.8 2.1-2.8 2.1s.3 17.9.4 20.1c.1 2.6 2.9 2.2 2.9 2.2l3.5-.4c0-1.2 0-2.9-.1-4.7zm31.1-22.3c-.1-3.4-3.1-4.1-3.1-4.1s-10.2-1.5-14.7-2.1c-4.5-.6-4.2 3.8-4.2 3.8s1 31.7 1.1 35.6c.1 4.7 4.5 3.9 4.5 3.9l15.4-2.6c2.8-.6 2.9-4.1 2.9-4.1s-1.8-26.7-1.9-30.4zm-3.4 26.9l-11.5 1.2s-3.3.5-3.4-3.6c-.1-3-.7-20.1-.7-20.1s-.2-3.1 3.2-2.9c3.5.3 11.9 1 11.9 1s2.2.5 2.3 3.1c.1 2.8 1.1 18.3 1.1 18.3s.2 2.5-2.9 3zm-11.6.6l4.4-.5c-.2-4.5-1-22-1.1-24.5-1.6-.1-3.1-.2-4.2-.3h-.3c-.7 0-1.3.2-1.7.6-.6.6-.6 1.7-.6 1.7v.3c1.8.2 3.2.3 3.2.3s1.9.4 2 2.5c.1 2.3.6 14.7.6 14.7s.2 2.1-2.5 2.5l-2.6.2c.2 2.1 1.4 2.6 2.4 2.6.3-.1.4-.1.4-.1zm-6.7-2.2l-3.6.3s-2.9.4-2.9-2.9c0-2.4-.3-16.3-.3-16.3s-.2-2.6 2.8-2.4c.9.1 2.1.2 3.4.3-.1-2.6-.2-4.7-.2-5.8-1.7-.2-3.4-.3-4.6-.5-3.9-.4-3.7 3-3.7 3s.4 25.5.5 28.6c.1 3.7 3.9 3.1 3.9 3.1l4.9-.6c-.1-1.4-.1-3.8-.2-6.8z" fill="#fff"></path></svg></p>
+<p>名称：<a href="https://en.wikipedia.org/wiki/Apache_Cordova">PhoneGap</a></p>
+<p>创建者：<a href="https://en.wikipedia.org/wiki/Nitobi">Nitobi</a></p>
+<p>目的：移动应用程序开发框架，主要针对 iOS 和 Android，使得 JavaScript 可以用于跨平台的应用程序开发。</p>
+<p>相关网站：<a href="https://phonegap.com/">PhoneGap官方</a></p>
+<h2 id="2009---lessleaner-style-sheets">2009 - Less（Leaner Style Sheets）</h2>
+<img src="http://lesscss.org/public/img/less_logo.png" alt="LessLogo" width="150">
+<p>名称：<a href="https://en.wikipedia.org/wiki/Less_(stylesheet_language)">Less 初学者的 CSS</a></p>
+<p>创建者：Alexis Sellier</p>
+<p>目的：做初学者快速易学版本的 CSS。Less 是一种预处理器脚本语言，需要编译为CSS才能被浏览器识别。</p>
+<p>示例：</p>
+<p>CSS</p>
+<pre><code class="language-css">#header {
+  width: 10px;
+  height: 20px;
+}
+</code></pre>
+<p>Less</p>
+<pre><code class="language-less">@width: 10px;
+@height: @width + 10px;
+
+#header {
+  width: @width;
+  height: @height;
+}
+</code></pre>
+<p>相关网站：<a href="http://lesscss.org/">Less官方</a></p>
+<h2 id="2010---npmnode-package-manager">2010 - NPM（Node Package Manager）</h2>
+<p><svg width="100" viewBox="0 0 780 250"><path fill="#231F20" d="M240,250h100v-50h100V0H240V250z M340,50h50v100h-50V50z M480,0v200h100V50h50v150h50V50h50v150h50V0H480z M0,200h100V50h50v150h50V0H0V200z"></path></svg></p>
+<p>名称：<a href="https://en.wikipedia.org/wiki/Npm_(software)">NPM</a></p>
+<p>创建者：Isaac Z. Schlueter</p>
+<p>目的：Node.js 的默认包管理器，标志着 JavaScript 进入模块化开发的时代。</p>
+<p>相关网站：<a href="https://www.npmjs.com/">npm官方</a></p>
+<p>示例：</p>
+<pre><code class="language-bash">npm install jquery
+</code></pre>
+<h2 id="2010---backbonejs">2010 - BackboneJS</h2>
+<img src="https://backbonejs.org/docs/images/backbone.png" alt="BackboneLogo" width="250">
+<p>名称：<a href="https://en.wikipedia.org/wiki/Backbone.js">BackboneJS</a></p>
+<p>创建者：<a href="https://en.wikipedia.org/wiki/Jeremy_Ashkenas">Jeremy Ashkenas</a></p>
+<p>目的：MVP 框架，被设计用于开发单页的 Web 应用程序（SPA）。</p>
+<p>相关网站：<a href="https://backbonejs.org/">BackboneJS官方</a></p>
+<h2 id="2011---browserify">2011 - Browserify</h2>
+<img src="http://browserify.org/images/browserify.png" alt="BrowserifyLogo" width="200">
+<p>名称：<a href="https://en.wikipedia.org/wiki/Browserify">Browserify</a></p>
+<p>创建者：Browserling team</p>
+<p>目的：浏览器本身不支持模块，Browserify 让您在浏览器中使用模块，就像在 Node 中使用模块一样。</p>
+<p>相关网站：<a href="http://browserify.org/">Browserify官方</a></p>
+<h2 id="2011---d3js">2011 - D3.js</h2>
+<img src="https://upload.wikimedia.org/wikipedia/en/thumb/1/15/Logo_D3.svg/200px-Logo_D3.svg.png" alt="D3JS" width="80">
+<p>名称：<a href="https://en.wikipedia.org/wiki/D3.js">D3.js</a></p>
+<p>创建者：<a href="https://en.wikipedia.org/wiki/Mike_Bostock">Mike Bostock</a>, Jason Davies, <a href="https://en.wikipedia.org/wiki/Jeffrey_Heer">Jeffrey Heer</a>, Vadim Ogievetsky</p>
+<p>目的：数据可视化。</p>
+<p>相关网站：</p>
+<p><a href="https://d3js.org/">D3.js官方</a></p>
+<p><a href="http://echarts.apache.org/">ECharts官方</a> - 类似项目，偏重于展示。</p>
+<h2 id="2011---dart">2011 - Dart</h2>
+<img src="https://dart.dev/assets/shared/dart/logo+text/horizontal/white-e71fb382ad5229792cc704b3ee7a88f8013e986d6e34f0956d89c453b454d0a5.svg" alt="Dart" width="200">
+<p>名称：<a href="https://en.wikipedia.org/wiki/Dart_(programming_language)">Dart</a></p>
+<p>创建者：Google</p>
+<p>目的：结束JavaScript语言在浏览器中的垄断，Chromium浏览器有内置的Dart虚拟机，可以运行Dart程序，但Dart程序也可以被编译成JavaScript程序运行。</p>
+<p>相关网站：<a href="https://dart.dev/">Dart官方</a></p>
+<h2 id="2012---angularjs">2012 - AngularJS</h2>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/AngularJS_logo.svg/440px-AngularJS_logo.svg.png" alt="AngularJS" width="200">
+<p>名称：<a href="https://en.wikipedia.org/wiki/AngularJS">AngularJS</a></p>
+<p>创建者：Google</p>
+<p>目的：框架，解决开发单页应用程序时遇到的许多挑战。</p>
+<p>相关网站：<a href="https://angularjs.org/">AngularJS官方</a></p>
+<h2 id="2012---emberjs">2012 - Ember.js</h2>
+<img src="https://emberjs.com/images/ember-logo.svg" alt="EmberLogo" width="150">
+<p>名称：<a href="https://en.wikipedia.org/wiki/Ember.js">Ember.js</a></p>
+<p>创建者：Yehuda Katz</p>
+<p>目的：MVVM框架，解决开发单页应用程序时遇到的许多挑战。</p>
+<p>相关网站：<a href="https://emberjs.com/">Ember官方</a></p>
+<h2 id="2012---typescript">2012 - TypeScript</h2>
+<img src="https://www.typescriptlang.org/assets/images/logo_nocircle.svg" alt="TypeScriptLogo" width="200" style="background-color:#294E80;padding:10px;border-radius:5px">
+<p>名称：<a href="https://en.wikipedia.org/wiki/TypeScript">TypeScript</a></p>
+<p>创建者：<a href="https://en.wikipedia.org/wiki/Microsoft">Microsoft</a></p>
+<p>目的：严格的语法 JavaScript 超集，并增加了可选的静态类型，为开发大型应用程序而设计的，并可以编译为JavaScript。可以避免很多 JavaScript 由于数据类型引起的 bug。</p>
+<p>相关网站：<a href="https://www.typescriptlang.org/">TypeScript官方</a></p>
+<h2 id="2012---webpack">2012 - Webpack</h2>
+<img src="https://webpack.js.org/e0b5805d423a4ec9473ee315250968b2.svg" width="300" style="background-color: #2B3A42;padding:10px;border-radius:5px">
+<p>名称：<a href="https://en.wikipedia.org/wiki/Webpack">Webpack</a></p>
+<p>创建者：Tobias Koppers, Sean Larkin, Johannes Ewald, Juho Vepsäläinen, Kees Kluskens</p>
+<p>目的：JavaScript 的模块捆绑器（bundle），转换.js .jpg .sass之类的各种前端资产。把具有依赖性的模块，生成静态资产。</p>
+<p>相关网站：<a href="https://webpack.js.org/">Webpack官方</a></p>
+<p>相关技术：</p>
+<p><a href="https://parceljs.org/">parce</a> - 极速零配置Web应用打包工具。</p>
+<p><a href="https://gruntjs.com/">Grunt</a> - 命令行工具（CLI），用于自动执行需要常规执行的任务。</p>
+<p><a href="https://gulpjs.com/">Gulp</a> - 命令行工具（CLI），用于自动执行需要常规执行的任务。</p>
+<h2 id="2013---react">2013 - React</h2>
+<img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0xMS41IC0xMC4yMzE3NCAyMyAyMC40NjM0OCI+CiAgPHRpdGxlPlJlYWN0IExvZ288L3RpdGxlPgogIDxjaXJjbGUgY3g9IjAiIGN5PSIwIiByPSIyLjA1IiBmaWxsPSIjNjFkYWZiIi8+CiAgPGcgc3Ryb2tlPSIjNjFkYWZiIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIi8+CiAgICA8ZWxsaXBzZSByeD0iMTEiIHJ5PSI0LjIiIHRyYW5zZm9ybT0icm90YXRlKDYwKSIvPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIiB0cmFuc2Zvcm09InJvdGF0ZSgxMjApIi8+CiAgPC9nPgo8L3N2Zz4K" alt="PostCSSLogo" width="100">
+<p>名称：<a href="https://en.wikipedia.org/wiki/React_(web_framework)">React</a></p>
+<p>创建者：Jordan Walke 和 Facebook</p>
+<p>目的：UI 框架库，引入了新的 JSX 语法，使得 UI 层可以用组件开发，同时引入了网页应用是状态机的概念。</p>
+<p>相关网站：<a href="https://reactjs.org/">React官方</a></p>
+<h2 id="2013---postcss-和-autoprefixer">2013 - PostCSS 和 Autoprefixer</h2>
+<img src="https://postcss.org/_/web_modules/Hero/postcss.svg" alt="PostCSSLogo" width="100">
+<p>名称：<a href="https://en.wikipedia.org/wiki/PostCSS">PostCSS</a></p>
+<p>创建者：Andrey Sitnik, Ben Briggs, Bogdan Chadkin</p>
+<p>目的：</p>
+<p>PostCSS 是用于开发 CSS 工具的框架，例如可以开发 Sass 和 Less。</p>
+<p>Autoprefixer 是 PostCSS 的插件，可以解析 CSS 并添加浏览器前缀。</p>
+<p>Webpack、Grunt 和 Gulp 调用 PostCSS 的Autoprefixer插件，可以把Less、Sass等处理成CSS。</p>
+<p>示例</p>
+<p>Autoprefixer</p>
+<pre><code class="language-css">.example {
+    transition: all .5s;
+}
+</code></pre>
+<p>CSS</p>
+<pre><code class="language-css">.example {
+    -webkit-transition: all .5s;
+    -o-transition: all .5s;
+    transition: all .5s;
+}
+</code></pre>
+<p>相关网站：</p>
+<p><a href="https://postcss.org/">PostCSS官方</a></p>
+<p><a href="https://autoprefixer.github.io/">Autoprefixer</a></p>
+<h2 id="2014---vuejs">2014 - Vue.js</h2>
+<img src="https://vuejs.org/images/logo.png" alt="VueLogo" width="100">
+<p>名称：<a href="https://en.wikipedia.org/wiki/Vue.js">Vue.js</a></p>
+<p>创建者：<a href="https://en.wikipedia.org/wiki/Evan_You">尤雨溪 - Evan You</a></p>
+<p>目的：MVVM框架，构建用户界面和单页应用。</p>
+<p>相关网站：<a href="https://vuejs.org/">Vue.js官方</a></p>
+<h2 id="2015---react-native">2015 - React Native</h2>
+<img src="https://reactnative.dev/img/header_logo.svg" alt="ReactNativeLogo" width="100">
+<p>名称：<a href="https://en.wikipedia.org/wiki/React_Native">React Native</a></p>
+<p>创建者：Facbook</p>
+<p>目的：将 React 框架移植到了手机端，可以将 JavaScript 代码转换成 ios 和 android 的原生代码，创建原生APP。</p>
+<p>相关网站：<a href="https://reactnative.dev/">React Native官方</a></p>
+<h2 id="2015---babel-transcompiler">2015 - Babel (transcompiler)</h2>
+<img src="https://d33wubrfki0l68.cloudfront.net/7a197cfe44548cc1a3f581152af70a3051e11671/78df8/img/babel.svg" alt="BabelLogo" width="150">
+<p>名称：<a href="https://en.wikipedia.org/wiki/Babel_(transcompiler)">Babel</a></p>
+<p>创建者：Sebastian McKenzie</p>
+<p>目的：JavaScript 编译器，可以把最新的 JavaScript 语法转换成旧语法，以兼容浏览器。最初出名是因为把 ES6 转成 ES5，使得开发者开心用 ES6 而不用担心浏览器兼容性问题。</p>
+<p>相关网站：<a href="https://babeljs.io/">Babel官方</a></p>
+<h2 id="2017---flutter">2017 - Flutter</h2>
+<img src="https://flutter.dev/assets/flutter-lockup-c13da9c9303e26b8d5fc208d2a1fa20c1ef47eb021ecadf27046dea04c0cebf6.png" alt="Flutter" width="200">
+<p>名称：<a href="https://en.wikipedia.org/wiki/Flutter_(software)">Flutter</a></p>
+<p>创建者：Google</p>
+<p>目的：用 Dart 语言开发多端应用程序。</p>
+<p>相关网站：<a href="https://flutter.dev/">Flutter官方</a></p>
+
+    </div>
+    <div class="article-footer">
+<blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接: </strong>
+      <a href="https://jaylanwood.github.io/2020/04/%E5%89%8D%E7%AB%AF%E5%8F%91%E5%B1%95%E5%8F%B2/" title="前端生存指南" target="_blank" rel="external">https://jaylanwood.github.io/2020/04/%E5%89%8D%E7%AB%AF%E5%8F%91%E5%B1%95%E5%8F%B2/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>License：</strong><a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN</a>
+    </li>
+  </ul>
+</blockquote>
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/JaylanWood" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="https://jaylanwood.github.io/avatar.png" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/JaylanWood" target="_blank"><span class="text-dark">Jaylan</span><small class="ml-1x">博客不能吃</small></a></h3>
+        <div>能吃多少是多少~</div>
+      </div>
+    </figure>
+  </div>
+</div>
+    </div>
+  </article>
+<section id="comments">
+</section>
+
+</div><nav class="bar bar-footer clearfix" data-stick-bottom>
+    <div class="bar-inner">
+        <ul class="pager pull-left">
+            <li class="prev">
+                <a href="https://jaylanwood.github.io/2020/02/%E6%A8%A1%E5%9D%97%E5%8C%96mvc%E5%8C%96%E5%AF%B9%E8%B1%A1%E5%8C%96%E7%B1%BB%E5%8C%96/" title="模块化、MVC化、对象化、类化"><i
+                        class="icon icon-angle-left"
+                        aria-hidden="true"></i><span>&nbsp;&nbsp;下一篇</span></a>
+            </li>
+            
+            <li class="toggle-toc">
+                <a class="toggle-btn collapsed" data-toggle="collapse" href="#collapseToc" aria-expanded="false"
+                    title="文章目录" role="button">
+                    <span>[&nbsp;</span><span>文章目录</span>
+                    <i class="text-collapsed icon icon-anchor"></i>
+                    <i class="text-in icon icon-close"></i>
+                    <span>]</span>
+                </a>
+            </li>
+        </ul>
+        <div class="bar-right">
+            <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter"
+                data-mobile-sites="weibo,qq,qzone"></div>
+        </div>
+    </div>
+</nav>
+
+</main><footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+<ul class="social-links">
+    <li><a href="https://github.com/JaylanWood" target="_blank" title="github" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-github"></i></a></li>
+    <li><a href="https://jaylanwood.github.io/index.xml" target="_blank" title="rss" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-rss"></i></a></li>
+</ul>
+  <div class="copyright">
+    &copy;2019 -
+    2020
+    <div class="publishby">
+      
+    </div>
+  </div>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+            showMathMenu: false, //disables context menu
+            tex2jax: {
+            inlineMath: [ ['$','$'], ['\\(','\\)'] ]
+           }
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/highlight.min.js"></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/python.min.js" defer></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/javascript.min.js" defer></script><script>
+    hljs.configure({
+        tabReplace: '    ', 
+        classPrefix: ''     
+        
+    })
+    hljs.initHighlightingOnLoad();
+</script>
+<script src="https://jaylanwood.github.io/js/application.min.bdeb64b910570b6c41badc6a05b7afb0c8ad9efd8525de3c7257d59e786326a3.js"></script>
+<script src="https://jaylanwood.github.io/js/plugin.min.51ff8c7317566f82259170fa36e09c4493adc9b9378b427a01ad3f017ebac7dd.js"></script>
+
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(未命名)',
+            },
+            ROOT_URL: 'https:\/\/jaylanwood.github.io\/',
+            CONTENT_URL: 'https:\/\/jaylanwood.github.io\/\/searchindex.json ',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script type="text/javascript" src="https://jaylanwood.github.io/js/insight.min.a343cd9a5a7698336b28ef3a7c16a3a1b1d2d5fb17dc8ed04022bbe08cc5459073a15bdafa3a8a58cdd56080784bdd69fa70b1ae8597565c799c57ed00f0e120.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+<script>
+    tocbot.init({
+        
+        tocSelector: '.js-toc',
+        
+        contentSelector: '.js-toc-content',
+        
+        headingSelector: 'h1, h2, h3',
+        
+        hasInnerContainers: true,
+    });
+</script>
+
+
+  </body>
+</html>

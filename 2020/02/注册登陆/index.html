@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>
+        注册登陆 - 这就是Jaylan的博客吗
+      </title>
+    <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  
+  <meta name="theme-color" content="#000000" />
+  
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <meta name="description" content="从注册登陆实例学习Cookie\Session\LocalStorage\SessionStorage\Cache-Control\Expi" />
+  <meta name="generator" content="Hugo 0.65.3 with theme pure" />
+  <title>注册登陆 - 这就是Jaylan的博客吗</title>
+  
+  
+  <link rel="stylesheet" href="https://jaylanwood.github.io/css/style.min.74c0595da1a4d9c68db698100b0660f846b95ddc1f9ec899e6e62641e0527235.css">
+  
+  <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
+  <meta property="og:title" content="注册登陆" />
+<meta property="og:description" content="从注册登陆实例学习Cookie\Session\LocalStorage\SessionStorage\Cache-Control\Expi" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jaylanwood.github.io/2020/02/%E6%B3%A8%E5%86%8C%E7%99%BB%E9%99%86/" />
+<meta property="article:published_time" content="2020-02-26T01:33:12+08:00" />
+<meta property="article:modified_time" content="2020-02-26T01:33:12+08:00" />
+<meta itemprop="name" content="注册登陆">
+<meta itemprop="description" content="从注册登陆实例学习Cookie\Session\LocalStorage\SessionStorage\Cache-Control\Expi">
+<meta itemprop="datePublished" content="2020-02-26T01:33:12&#43;08:00" />
+<meta itemprop="dateModified" content="2020-02-26T01:33:12&#43;08:00" />
+<meta itemprop="wordCount" content="3503">
+
+
+
+<meta itemprop="keywords" content="Cookie,Session,LocalStorage,SessionStorage,Cache-Control,Expires,ETag,Last-Modified," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="注册登陆"/>
+<meta name="twitter:description" content="从注册登陆实例学习Cookie\Session\LocalStorage\SessionStorage\Cache-Control\Expi"/>
+
+  <!--[if lte IE 9]>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+    <![endif]-->
+
+  <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+  </head>
+
+  
+  
+
+  <body class="main-center theme-black" itemscope itemtype="http://schema.org/WebPage"><header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/JaylanWood" target="_self">
+          <img class="img-circle img-rotate" src="https://jaylanwood.github.io/avatar.png" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">Jaylan</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">为美好的博客献上祝福</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i>Guangdong, China</small>
+      </div><div class="search" id="search-form-wrap">
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i
+                        class="icon icon-search"></i></button>
+            </span>
+        </div>
+        <div class="ins-search">
+            <div class="ins-search-mask"></div>
+            <div class="ins-search-container">
+                <div class="ins-input-wrapper">
+                    <input type="text" class="ins-search-input" placeholder="想要查找什么..."
+                        x-webkit-speech />
+                    <button type="button" class="close ins-close ins-selectable" data-dismiss="modal"
+                        aria-label="Close"><span aria-hidden="true">×</span></button>
+                </div>
+                <div class="ins-section-wrapper">
+                    <div class="ins-section-container"></div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar"
+        aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement"
+      role="navigation">
+      <ul class="nav navbar-nav main-nav">
+        <li class="menu-item menu-item-home">
+          <a href="/">
+            <i class="icon icon-home-fill"></i>
+            <span class="menu-title">主页</span>
+          </a>
+        </li>
+        <li class="menu-item menu-item-archives">
+          <a href="/posts/">
+            <i class="icon icon-archives-fill"></i>
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/">
+            <i class="icon icon-folder"></i>
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/">
+            <i class="icon icon-tags"></i>
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        <li class="menu-item menu-item-about">
+          <a href="/about/">
+            <i class="icon icon-cup-fill"></i>
+            <span class="menu-title">关于</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header><aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content"><p>一口一篇文章</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+      <div class="widget">
+    <h3 class="widget-title"> 分类</h3>
+    <div class="widget-body">
+        <ul class="category-list">
+            <li class="category-list-item"><a href="https://jaylanwood.github.io/categories/%E5%89%8D%E7%AB%AF/" class="category-list-link">前端</a><span class="category-list-count">12</span></li>
+            <li class="category-list-item"><a href="https://jaylanwood.github.io/categories/%E6%90%AD%E5%8D%9A%E5%AE%A2/" class="category-list-link">搭博客</a><span class="category-list-count">2</span></li>
+        </ul>
+    </div>
+</div>
+      <div class="widget">
+    <h3 class="widget-title"> 标签</h3>
+    <div class="widget-body">
+        <ul class="tag-list">
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/ajax/" class="tag-list-link">ajax</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/cache-control/" class="tag-list-link">cache-control</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/cookie/" class="tag-list-link">cookie</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/dom/" class="tag-list-link">dom</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/etag/" class="tag-list-link">etag</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/expires/" class="tag-list-link">expires</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/html/" class="tag-list-link">html</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/hugo/" class="tag-list-link">hugo</a><span
+                    class="tag-list-count">2</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/jsonp/" class="tag-list-link">jsonp</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/last-modified/" class="tag-list-link">last-modified</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/localstorage/" class="tag-list-link">localstorage</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/mvc/" class="tag-list-link">mvc</a><span
+                    class="tag-list-count">2</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/promise/" class="tag-list-link">promise</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/session/" class="tag-list-link">session</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/sessionstorage/" class="tag-list-link">sessionstorage</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/tween.js/" class="tag-list-link">tween.js</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E4%BA%8B%E4%BB%B6/" class="tag-list-link">事件</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E5%8A%A8%E7%94%BB/" class="tag-list-link">动画</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E5%8F%91%E5%B1%95%E5%8F%B2/" class="tag-list-link">发展史</a><span
+                    class="tag-list-count">2</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E5%9B%9E%E8%B0%83/" class="tag-list-link">回调</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E5%AD%98%E5%82%A8/" class="tag-list-link">存储</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E5%AF%B9%E8%B1%A1/" class="tag-list-link">对象</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E5%BC%82%E6%AD%A5/" class="tag-list-link">异步</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="tag-list-link">数据库</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E6%A8%A1%E5%9D%97/" class="tag-list-link">模块</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E7%AB%8B%E5%8D%B3%E6%89%A7%E8%A1%8C%E5%87%BD%E6%95%B0/" class="tag-list-link">立即执行函数</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E7%B1%BB/" class="tag-list-link">类</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E7%BC%93%E5%8A%A8/" class="tag-list-link">缓动</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E8%A7%A3%E6%9E%84%E8%B5%8B%E5%80%BC/" class="tag-list-link">解构赋值</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E8%AF%B7%E6%B1%82/" class="tag-list-link">请求</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E8%BD%AC%E8%BD%BD%E6%96%87%E7%AB%A0/" class="tag-list-link">转载文章</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E8%BD%AE%E6%92%AD/" class="tag-list-link">轮播</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E9%97%AD%E5%8C%85/" class="tag-list-link">闭包</a><span
+                    class="tag-list-count">1</span></li>
+            
+        </ul>
+
+    </div>
+</div>
+      
+<div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+        <ul class="recent-post-list list-unstyled no-thumbnail">
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://jaylanwood.github.io/2020/04/learnhtml/" class="title">LearnHTML</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-04-11 23:30:47 &#43;0800 CST" itemprop="datePublished">2020-04-11</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://jaylanwood.github.io/2020/04/%E8%BD%AC%E5%A4%A7%E5%89%8D%E7%AB%AF%E7%9A%84%E6%8A%80%E6%9C%AF%E5%8E%9F%E7%90%86%E5%92%8C%E5%8F%98%E8%BF%81%E5%8F%B2/" class="title">转：大前端的技术原理和变迁史</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-04-11 21:11:07 &#43;0800 CST" itemprop="datePublished">2020-04-11</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://jaylanwood.github.io/2020/04/%E5%89%8D%E7%AB%AF%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/" class="title">前端生存指南</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-04-10 07:17:06 &#43;0800 CST" itemprop="datePublished">2020-04-10</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://jaylanwood.github.io/2020/02/%E6%A8%A1%E5%9D%97%E5%8C%96mvc%E5%8C%96%E5%AF%B9%E8%B1%A1%E5%8C%96%E7%B1%BB%E5%8C%96/" class="title">模块化、MVC化、对象化、类化</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-02-26 01:49:33 &#43;0800 CST" itemprop="datePublished">2020-02-26</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://jaylanwood.github.io/2020/02/%E6%B3%A8%E5%86%8C%E7%99%BB%E9%99%86/" class="title">注册登陆</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-02-26 01:33:12 &#43;0800 CST" itemprop="datePublished">2020-02-26</time>
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+  </div>
+</aside>
+
+    
+    
+<aside class="sidebar sidebar-toc collapse" id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <h4 class="toc-title">文章目录</h4>
+    <nav id="toc" class="js-toc toc">
+
+    </nav>
+  </div>
+</aside>
+<main class="main" role="main"><div class="content">
+  <article id="-" class="article article-type-" itemscope
+    itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      <h1 itemprop="name">
+  <a
+    class="article-title"
+    href="/2020/02/%E6%B3%A8%E5%86%8C%E7%99%BB%E9%99%86/"
+    >注册登陆</a
+  >
+</h1>
+
+      <div class="article-meta">
+        
+<span class="article-date">
+  <i class="icon icon-calendar-check"></i>&nbsp;
+<a href="https://jaylanwood.github.io/2020/02/%E6%B3%A8%E5%86%8C%E7%99%BB%E9%99%86/" class="article-date">
+  <time datetime="2020-02-26 01:33:12 &#43;0800 CST" itemprop="datePublished">2020-02-26</time>
+</a>
+</span>
+<span class="article-category">
+  <i class="icon icon-folder"></i>&nbsp;
+  <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF/"> 前端 </a>
+</span>  
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>&nbsp;
+    <a class="article-tag-link" href="/tags/cookie/"> Cookie </a>
+    <a class="article-tag-link" href="/tags/session/"> Session </a>
+    <a class="article-tag-link" href="/tags/localstorage/"> LocalStorage </a>
+    <a class="article-tag-link" href="/tags/sessionstorage/"> SessionStorage </a>
+    <a class="article-tag-link" href="/tags/cache-control/"> Cache-Control </a>
+    <a class="article-tag-link" href="/tags/expires/"> Expires </a>
+    <a class="article-tag-link" href="/tags/etag/"> ETag </a>
+    <a class="article-tag-link" href="/tags/last-modified/"> Last-Modified </a>
+  </span>
+
+        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2020/02/%E6%B3%A8%E5%86%8C%E7%99%BB%E9%99%86/#comments"
+            class="article-comment-link">评论</a></span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 3503字</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 7分 </span>
+      </div>
+    </div>
+    <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
+      <h1 id="从注册登陆实例学习cookiesessionlocalstoragesessionstoragecache-controlexpiresetaglast-modified">从注册登陆实例学习Cookie\Session\LocalStorage\SessionStorage\Cache-Control\Expires\ETag\Last-Modified</h1>
+<h2 id="简介">简介</h2>
+<p>从做一个注册、登陆、主页、服务端的过程，学习相关的前端知识。</p>
+<p>注册 <code>sign_up.html</code></p>
+<p>登陆 <code>sign_in.html</code></p>
+<p>主页 <code>index.html</code></p>
+<p>服务端 <code>server.js</code></p>
+<h2 id="效果">效果</h2>
+<h3 id="sign_up页面">Sign_up页面</h3>
+<p><img src="https://raw.githubusercontent.com/JaylanWood/cloudimage/master/img/%E6%B3%A8%E5%86%8C%E9%A1%B5%E9%9D%A2.png" alt="注册页面"></p>
+<p>注册表单</p>
+<ol>
+<li>邮箱</li>
+<li>密码</li>
+<li>确认密码</li>
+<li>注册按钮</li>
+</ol>
+<h3 id="sign_in页面">Sign_in页面</h3>
+<p><img src="https://raw.githubusercontent.com/JaylanWood/cloudimage/master/img/%E7%99%BB%E9%99%86%E9%A1%B5%E9%9D%A2.png" alt="登陆页面"></p>
+<p>登陆表单</p>
+<ol>
+<li>邮箱</li>
+<li>密码</li>
+</ol>
+<h3 id="index主页">Index主页</h3>
+<p>显示密码 <code>你的密码是：xxx</code></p>
+<h2 id="代码">代码</h2>
+<p><a href="https://github.com/JaylanWood/Sign-Up-In">代码地址</a></p>
+<h2 id="注册流程">注册流程</h2>
+<h3 id="前端发请求">前端发请求</h3>
+<ol>
+<li>遍历 form 表单里 <code>email、password、password_confirmation</code> 的 3 个值</li>
+<li>把 3 个值赋值给一个 hash <code>{ email:'123@jj.com', password:'123', password_confirmation:'123' }</code></li>
+<li>通过 ajax 请求把 hash 作为请求体字符串发给服务器 <code>$.post('/sign_up', hash)</code></li>
+</ol>
+<h3 id="后端发响应">后端发响应</h3>
+<ol>
+<li>拿到请求，进行 URI 解码、分割 hash 字符串、合成新 hash。</li>
+<li>校验 email 格式，校验密码一致性，读取数据库检查 email 是否已经存在。</li>
+<li>都通过，就把 email 和 password 新增写入数据库。给前端响应注册成功的 JSON 字符串。</li>
+<li>若不通过，响应相应错误的 JSON 字符串。</li>
+</ol>
+<h3 id="前端收响应">前端收响应</h3>
+<ol>
+<li>拿到成功的200响应，在页面显示类似“恭喜你注册成功”之类的提示。</li>
+<li>若拿到失败的400响应，则根据响应的 JSON 在页面展示“邮箱格式错误、邮箱已被使用、密码格式错误”之类的提示。</li>
+</ol>
+<h3 id="其他细节">其他细节</h3>
+<ol>
+<li>前端也可以在发请求前，对 hash 请求体做验证。例如</li>
+<li>用正则验证email、password的规则</li>
+<li>password === password_confirmation 验证密码一致性</li>
+<li>遍历 email 字符串去空格</li>
+<li>但是，无法验证 email 是否已被使用，因为数据在服务器。</li>
+<li>前端的验证不是必须的，但是后端是肯定有验证的。</li>
+</ol>
+<h2 id="首次登陆流程">首次登陆流程</h2>
+<h3 id="前端发请求-1">前端发请求</h3>
+<p>和注册一样，把 email、password 合成一个 hash</p>
+<p>通过 ajax 把 hash 字符串发给服务器。<code>$.post('/sign_in', hash)</code></p>
+<h3 id="后端发响应-1">后端发响应</h3>
+<ol>
+<li>拿到请求，进行 URI 解码、分割 hash 字符串、合成新 hash 。</li>
+<li>遍历数据库的 email 和 password 做对比。</li>
+<li>若不通过，响应相应错误的 JSON 字符串。</li>
+<li>若通过，生成一个随机数的 SessionID，用一个名为 Session 的 hash 存下 <code>{SessionID:email}</code>这样的对照表。</li>
+<li>后端再通过 Cookie 给前端发送 SessionID。</li>
+</ol>
+<h3 id="前端收响应-1">前端收响应</h3>
+<p>前端若是收到服务器发来的401响应和相关的 JSON，则提示用户相应的错误，如密码错误之类。</p>
+<p>前端若是收到带 SessionID 的 Cookie 相应头，以及响应码 200，说明登陆成功。</p>
+<h2 id="带cookie登陆流程">带Cookie登陆流程</h2>
+<h3 id="前端带cookie访问主页">前端带cookie访问主页</h3>
+<p>得到 cookie 后，浏览器会请求同域名下的页面（如首页 index.html） 会自动带着 Cookie 。</p>
+<h3 id="后端接收带cookie的请求">后端接收带cookie的请求</h3>
+<p>后端收到 cookie，得到 SessionID，拿 SessionID 在 Session 哈希表里找到对应的 email，就能知道用户是谁。</p>
+<p>于是根据用户，读取 index.html 文件为字符串，并替换部分内容（本实例是替换密码显示）。</p>
+<p>把替换过部分内容的 index.html 字符串发给前端。</p>
+<h3 id="前端收到替换过部分内容的-indexhtml-字符串">前端收到替换过部分内容的 index.html 字符串</h3>
+<p>前端收到这个“针对用户定制”的 index.html 字符串，就能显示用户的个人信息了，如昵称、地址等。</p>
+<h3 id="其他细节-1">其他细节</h3>
+<p>Cookie 访问同一个域名时（同域名，没同源那么严格），都是会自动带上的。</p>
+<p>其实 Session 不是必要的，Cookie 也能直接存用户的 email，Session + SessionID 只是为了给 email 一个中转，中转出一个随机数 SessionID，让客户端无法通过篡改 Cookie 去登陆别人的账户。（email很容易猜，SessionID是随机的很难猜）</p>
+<h2 id="cookie">cookie</h2>
+<h3 id="cookie是什么">cookie是什么</h3>
+<p>cookie是服务器发给客户端的一个字符串。</p>
+<h3 id="cookie的流程">cookie的流程</h3>
+<p>前端登陆成功后，后端发送cookie给前端</p>
+<pre><code class="language-javascript">response.setHeader('Set-Cookie', `sign_in_eamil=${email}`)
+</code></pre>
+<p>以后前端发什么请求都会带上cookie</p>
+<p>服务器收到cookie再分割后，拿它和数据库的账户对比</p>
+<p>再针对该用户的信息，替换针对性的网页内容。</p>
+<h3 id="cookie的特性">cookie的特性</h3>
+<ol>
+<li>
+<p>服务器通过 set-cookie 头给客户端一串字符串</p>
+</li>
+<li>
+<p>客户端每次访问相同域名的网页时，必须带上这段字符串</p>
+</li>
+<li>
+<p>客户端要在一段时间内保存这个cookie</p>
+</li>
+<li>
+<p>cookie是可以被修改作假的</p>
+</li>
+<li>
+<p>cookie默认有效期20分钟左右，默认在关闭页面后失效，但服务器可以设置 cookie 有效期</p>
+</li>
+</ol>
+<h2 id="session">session</h2>
+<h3 id="session是什么">session是什么</h3>
+<p>session是服务器存储的一个哈希表。</p>
+<h3 id="为什么有session">为什么有session</h3>
+<p>因为cookie直接发送账户email，会被用户修改cookie，登陆其他人的email账户。</p>
+<p>所以我们需要用session+随机数sessionID来存储email，用户只有session，是没办法知道对应的email，更没办法修改session来登陆其他mail了。</p>
+<h3 id="session的作用">session的作用</h3>
+<p>服务器把 sessionID（随机数）通过 cookie 发送给客户端</p>
+<p>客户端访问服务器时，服务器读取 sessionID</p>
+<p>服务器有一块内存（哈希表）保存了所有 session</p>
+<p>通过 sessionID 可以得到对应用户的隐私信息，如账号、email</p>
+<h3 id="session的缺点">session的缺点</h3>
+<p>session会占用一定内存。</p>
+<p>本来cookie直接把用户的账号发给客户端，服务器就只需要在数据库存储账号密码就行了。</p>
+<p>使用session后，要用session来存储用户账号，服务器就多存了一份数据，即session。</p>
+<h3 id="session的特性">session的特性</h3>
+<ol>
+<li>服务器将 sessionID（随机数）通过 cookie 发送给客户端</li>
+<li>客户端访问服务器时，服务器读取 sessionID</li>
+<li>服务器有一块内存（哈希表）保存了所有 session</li>
+<li>通过 sessionID 我们可以得到对应用户的隐私信息（账户、email）</li>
+<li>这块内存（哈希表）就是服务器上的所有 session</li>
+</ol>
+<h2 id="localstorage">localStorage</h2>
+<h3 id="localstorage是什么">localStorage是什么</h3>
+<p>localStorage是浏览器存储的一个哈希表。</p>
+<p>localStorage是html5提供的API。</p>
+<p>localStorage只能存储字符串。</p>
+<h3 id="localstorage的基本api">localStorage的基本API</h3>
+<pre><code class="language-javascript">localStorage.setItem('a','1')
+localStorage.getItem('a')
+localStorage.clear()
+
+localStorage.setItem('jsonString',JSON.stringify({name:'hehe'}))
+</code></pre>
+<h3 id="localstorage的特性">localStorage的特性</h3>
+<ol>
+<li>localStorage 跟 HTTP 无关</li>
+<li>HTTP 不会带上 localStorage 的值</li>
+<li>只有相同域名的页面才能互相读取 localStorage</li>
+<li>每个域名 localStorage 最大存储量为 5MB 左右（每个浏览器不一样）</li>
+<li>常用场景：记录有没有提示过用户，例如域名搬迁的首次提示。（没有用的信息，不能记录密码）</li>
+<li>localStorage 永久有效，除非用户清理缓存</li>
+</ol>
+<h2 id="sessionstorage">sessionStorage</h2>
+<h3 id="sessionstorage的特性">sessionStorage的特性</h3>
+<ol>
+<li>sessionStorage 跟 HTTP 无关</li>
+<li>HTTP 不会带上 sessionStorage 的值</li>
+<li>只有相同域名的页面才能互相读取 sessionStorage</li>
+<li>每个域名 sessionStorage 最大存储量为 5MB 左右（每个浏览器不一样）</li>
+<li>sessionStorage 在用户关闭页面（会话结束）后就失效</li>
+</ol>
+<h2 id="cookiesessionlocalstoragesessionstorage的关系">cookie、session、localStorage、sessionStorage的关系</h2>
+<ol>
+<li>session 一般是通过 cookie 实现的，即服务器通过 cookie 把 sessionID 发给客户端。</li>
+<li>localStorage 是跟 HTTP 无关的，访问服务器不会带上 localStorage。sessionStorage同理。</li>
+<li>sessionStorage 和 localStorage 差不多，但是 sessionStorage 在关闭页面就失效。</li>
+</ol>
+<h2 id="session的2种实现方法">session的2种实现方法</h2>
+<h3 id="session用cookie的实现方法">session用cookie的实现方法</h3>
+<p>服务器把sessionID发cookie请求头。</p>
+<pre><code class="language-javascript">response.setHeader('Set-Cookie', `sessionId=${sessionId}`)
+</code></pre>
+<p>前端不用发sessionID，因为cookie自带，服务器能收到。</p>
+<pre><code class="language-javascript">$.post('/sign_in', hash)
+  .then((response) =&gt; {
+    window.location.href = '/'
+  }, (request) =&gt; {
+    alert('邮箱与密码不匹配')
+  })
+</code></pre>
+<h3 id="session不用cookie的实现方法">session不用cookie的实现方法</h3>
+<p>服务器直接发sessionID作为响应体</p>
+<pre><code class="language-javascript">response.write(`sessionId=${sessionId}`)
+</code></pre>
+<p>前端把sessionID存在localStorage，并通过查询参数把sessionID作为请求体发送给服务器。</p>
+<pre><code class="language-javascript">$.post('/sign_in', hash)
+  .then((response) =&gt; {
+    let object = JSON.parse(response)
+    localStorage.setItem('sessionId', object.sessionId)
+    window.location.href = `/?sessionId=${object.sessionId}`
+  }, (request) =&gt; {
+    alert('邮箱与密码不匹配')
+  })
+</code></pre>
+<p>服务器通过查询参数获取sessionID</p>
+<pre><code class="language-javascript">let mySession = sessions[query.sessionId]
+</code></pre>
+<h2 id="cache-control-缓存控制">Cache-Control 缓存控制</h2>
+<p>同一URL请求，浏览器已经缓存过，就不再发该请求，直接本地加载缓存。</p>
+<p>服务器代码</p>
+<pre><code class="language-javascript">if (path === '/main.js') {
+  let string = fs.readFileSync('/main.js', 'utf8')
+  response.setHeader('Content-type', 'application/javascript;charset=utf8')
+  // Cache-Control 缓存控制
+  response.setHeader('Cache-Control', 'max-age=30')
+  response.statusCode = 200
+  response.write(string)
+  response.end()
+}
+</code></pre>
+<p>一般来说，HTML不设置缓存，CSS和JS的缓存时间设置10年。</p>
+<p>服务器要更新CSS和JS的话，修改URL，服务端和前端的URL查询参数加上<code>v=2</code>这样：</p>
+<pre><code class="language-bash">http://www.baidu.com/main.js?v=2
+</code></pre>
+<h2 id="expires">Expires</h2>
+<p>跟 Cache-Control 差不多，时间设置是用格林尼治时间点。</p>
+<p>服务器代码</p>
+<pre><code class="language-javascript">// 缓存控制，格林尼治时间2025年前别再请求这个文件
+response.setHeader('Expires', 'Wed, 21 Oct 2025 07:28:00 GMT')
+</code></pre>
+<p>Expires 设置的是本地时间点，如果用户本地时间被修改到2026年这样，Expires 就没用了。</p>
+<h2 id="etag">ETag</h2>
+<p>服务器通过ETag响应头发文件的md5给客户端，客户端下次发请求会带上文件的md5，如果md5一致，则不再下载文件，直接从客户端本地读取文件。</p>
+<pre><code class="language-javascript">if (path === '/main.js') {
+  let string = fs.readFileSync('/main.js', 'utf8')
+  response.setHeader('Content-type', 'application/javascript;charset=utf8')
+  let fileMd5 = md5(string)
+  // ETag
+  response.setHeader('ETag', 'fileMd5')
+  if (request.headers['if-none-match'] === fileMd5) {
+    response.statusCode = 304
+  } else {
+    response.write(string)
+  }
+  response.end()
+}
+</code></pre>
+<p>ETag和Cache-Control的区别在于</p>
+<p>ETag要发请求然后判读要不要下载，只响应304，不发响应体。</p>
+<p>Cache-Control是直接不请求。</p>
+<h2 id="last-modified--if-modified-since">Last-Modified / If-Modified-Since</h2>
+<p>在浏览器第一次请求某一个 URL 时，服务器端的返回状态会是200，内容是你请求的资源，同时有一个 Last-Modified 的属性标记此文件在服务期端最后被修改的时间，格式类似这样：</p>
+<pre><code class="language-php">Last-Modified: Mon, 30 Nov 2015 23:21:37 GMT
+</code></pre>
+<p>浏览器第二次请求此 URL 时，根据 HTTP 协议的规定，浏览器会向服务器传送 If-Modified-Since 报头，询问该时间之后文件是否有被修改过：</p>
+<pre><code class="language-php">If-Modified-Since: Mon, 30 Nov 2015 23:21:37 GMT
+</code></pre>
+<p>如果服务器端的资源没有变化，则自动返回 HTTP 304 （Not Changed）状态码，内容为空，这样就节省了传输数据量。当服务器端代码发生改变或者重启服务器时，则重新发出资源，返回和第一次请求时类似。从而保证不向客户端重复发出资源，也保证当服务器有变化时，客户端能够得到最新的资源。</p>
+
+    </div>
+    <div class="article-footer">
+<blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接: </strong>
+      <a href="https://jaylanwood.github.io/2020/02/%E6%B3%A8%E5%86%8C%E7%99%BB%E9%99%86/" title="注册登陆" target="_blank" rel="external">https://jaylanwood.github.io/2020/02/%E6%B3%A8%E5%86%8C%E7%99%BB%E9%99%86/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>License：</strong><a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN</a>
+    </li>
+  </ul>
+</blockquote>
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/JaylanWood" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="https://jaylanwood.github.io/avatar.png" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/JaylanWood" target="_blank"><span class="text-dark">Jaylan</span><small class="ml-1x">为美好的博客献上祝福</small></a></h3>
+        <div>我家博客还蛮大的</div>
+      </div>
+    </figure>
+  </div>
+</div>
+    </div>
+  </article>
+<section id="comments">
+</section>
+
+</div><nav class="bar bar-footer clearfix" data-stick-bottom>
+    <div class="bar-inner">
+        <ul class="pager pull-left">
+            <li class="prev">
+                <a href="https://jaylanwood.github.io/2020/02/%E5%8A%A8%E7%94%BB%E4%B8%8E%E7%BC%93%E5%8A%A8/" title="动画与缓动"><i
+                        class="icon icon-angle-left"
+                        aria-hidden="true"></i><span>&nbsp;&nbsp;下一篇</span></a>
+            </li>
+            <li class="next">
+                <a href="https://jaylanwood.github.io/2020/02/%E6%A8%A1%E5%9D%97%E5%8C%96mvc%E5%8C%96%E5%AF%B9%E8%B1%A1%E5%8C%96%E7%B1%BB%E5%8C%96/"
+                    title="模块化、MVC化、对象化、类化"><span>上一篇&nbsp;&nbsp;</span><i
+                        class="icon icon-angle-right" aria-hidden="true"></i></a>
+            </li>
+            
+            <li class="toggle-toc">
+                <a class="toggle-btn collapsed" data-toggle="collapse" href="#collapseToc" aria-expanded="false"
+                    title="文章目录" role="button">
+                    <span>[&nbsp;</span><span>文章目录</span>
+                    <i class="text-collapsed icon icon-anchor"></i>
+                    <i class="text-in icon icon-close"></i>
+                    <span>]</span>
+                </a>
+            </li>
+        </ul>
+        <div class="bar-right">
+            <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter"
+                data-mobile-sites="weibo,qq,qzone"></div>
+        </div>
+    </div>
+</nav>
+
+</main><footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+<ul class="social-links">
+    <li><a href="https://github.com/JaylanWood" target="_blank" title="github" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-github"></i></a></li>
+    <li><a href="https://jaylanwood.github.io/index.xml" target="_blank" title="rss" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-rss"></i></a></li>
+</ul>
+  <div class="copyright">
+    &copy;2019 -
+    2020
+    <div class="publishby">
+      
+    </div>
+  </div>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+            showMathMenu: false, //disables context menu
+            tex2jax: {
+            inlineMath: [ ['$','$'], ['\\(','\\)'] ]
+           }
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/highlight.min.js"></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/python.min.js" defer></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/javascript.min.js" defer></script><script>
+    hljs.configure({
+        tabReplace: '    ', 
+        classPrefix: ''     
+        
+    })
+    hljs.initHighlightingOnLoad();
+</script>
+<script src="https://jaylanwood.github.io/js/application.min.bdeb64b910570b6c41badc6a05b7afb0c8ad9efd8525de3c7257d59e786326a3.js"></script>
+<script src="https://jaylanwood.github.io/js/plugin.min.51ff8c7317566f82259170fa36e09c4493adc9b9378b427a01ad3f017ebac7dd.js"></script>
+
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(未命名)',
+            },
+            ROOT_URL: 'https:\/\/jaylanwood.github.io\/',
+            CONTENT_URL: 'https:\/\/jaylanwood.github.io\/\/searchindex.json ',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script type="text/javascript" src="https://jaylanwood.github.io/js/insight.min.a343cd9a5a7698336b28ef3a7c16a3a1b1d2d5fb17dc8ed04022bbe08cc5459073a15bdafa3a8a58cdd56080784bdd69fa70b1ae8597565c799c57ed00f0e120.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+<script>
+    tocbot.init({
+        
+        tocSelector: '.js-toc',
+        
+        contentSelector: '.js-toc-content',
+        
+        headingSelector: 'h1, h2, h3',
+        
+        hasInnerContainers: true,
+    });
+</script>
+
+
+  </body>
+</html>

@@ -1,0 +1,1246 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>
+        转：大前端的技术原理和变迁史 - 这就是Jaylan的博客吗
+      </title>
+    <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  
+  <meta name="theme-color" content="#000000" />
+  
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <meta name="description" content="说明 本文转载自掘金，写得非常好，适合让前端新手有一个全局性的理解和制定学习规划。 作者：村口蹲一郎 时间：2018/07/27 原文：文章链接 简介" />
+  <meta name="generator" content="Hugo 0.65.3 with theme pure" />
+  <title>转：大前端的技术原理和变迁史 - 这就是Jaylan的博客吗</title>
+  
+  
+  <link rel="stylesheet" href="https://jaylanwood.github.io/css/style.min.74c0595da1a4d9c68db698100b0660f846b95ddc1f9ec899e6e62641e0527235.css">
+  
+  <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
+  <meta property="og:title" content="转：大前端的技术原理和变迁史" />
+<meta property="og:description" content="说明 本文转载自掘金，写得非常好，适合让前端新手有一个全局性的理解和制定学习规划。 作者：村口蹲一郎 时间：2018/07/27 原文：文章链接 简介" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jaylanwood.github.io/2020/04/%E8%BD%AC%E5%A4%A7%E5%89%8D%E7%AB%AF%E7%9A%84%E6%8A%80%E6%9C%AF%E5%8E%9F%E7%90%86%E5%92%8C%E5%8F%98%E8%BF%81%E5%8F%B2/" />
+<meta property="article:published_time" content="2020-04-11T21:11:07+08:00" />
+<meta property="article:modified_time" content="2020-04-11T21:11:07+08:00" />
+<meta itemprop="name" content="转：大前端的技术原理和变迁史">
+<meta itemprop="description" content="说明 本文转载自掘金，写得非常好，适合让前端新手有一个全局性的理解和制定学习规划。 作者：村口蹲一郎 时间：2018/07/27 原文：文章链接 简介">
+<meta itemprop="datePublished" content="2020-04-11T21:11:07&#43;08:00" />
+<meta itemprop="dateModified" content="2020-04-11T21:11:07&#43;08:00" />
+<meta itemprop="wordCount" content="7725">
+
+
+
+<meta itemprop="keywords" content="发展史,转载文章," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="转：大前端的技术原理和变迁史"/>
+<meta name="twitter:description" content="说明 本文转载自掘金，写得非常好，适合让前端新手有一个全局性的理解和制定学习规划。 作者：村口蹲一郎 时间：2018/07/27 原文：文章链接 简介"/>
+
+  <!--[if lte IE 9]>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+    <![endif]-->
+
+  <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+  </head>
+
+  
+  
+
+  <body class="main-center theme-black" itemscope itemtype="http://schema.org/WebPage"><header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/JaylanWood" target="_self">
+          <img class="img-circle img-rotate" src="https://jaylanwood.github.io/avatar.png" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">Jaylan</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">为美好的博客献上祝福</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i>Guangdong, China</small>
+      </div><div class="search" id="search-form-wrap">
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i
+                        class="icon icon-search"></i></button>
+            </span>
+        </div>
+        <div class="ins-search">
+            <div class="ins-search-mask"></div>
+            <div class="ins-search-container">
+                <div class="ins-input-wrapper">
+                    <input type="text" class="ins-search-input" placeholder="想要查找什么..."
+                        x-webkit-speech />
+                    <button type="button" class="close ins-close ins-selectable" data-dismiss="modal"
+                        aria-label="Close"><span aria-hidden="true">×</span></button>
+                </div>
+                <div class="ins-section-wrapper">
+                    <div class="ins-section-container"></div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar"
+        aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement"
+      role="navigation">
+      <ul class="nav navbar-nav main-nav">
+        <li class="menu-item menu-item-home">
+          <a href="/">
+            <i class="icon icon-home-fill"></i>
+            <span class="menu-title">主页</span>
+          </a>
+        </li>
+        <li class="menu-item menu-item-archives">
+          <a href="/posts/">
+            <i class="icon icon-archives-fill"></i>
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/">
+            <i class="icon icon-folder"></i>
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/">
+            <i class="icon icon-tags"></i>
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        <li class="menu-item menu-item-about">
+          <a href="/about/">
+            <i class="icon icon-cup-fill"></i>
+            <span class="menu-title">关于</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header><aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content"><p>一口一篇文章</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+      <div class="widget">
+    <h3 class="widget-title"> 分类</h3>
+    <div class="widget-body">
+        <ul class="category-list">
+            <li class="category-list-item"><a href="https://jaylanwood.github.io/categories/%E5%89%8D%E7%AB%AF/" class="category-list-link">前端</a><span class="category-list-count">12</span></li>
+            <li class="category-list-item"><a href="https://jaylanwood.github.io/categories/%E6%90%AD%E5%8D%9A%E5%AE%A2/" class="category-list-link">搭博客</a><span class="category-list-count">2</span></li>
+        </ul>
+    </div>
+</div>
+      <div class="widget">
+    <h3 class="widget-title"> 标签</h3>
+    <div class="widget-body">
+        <ul class="tag-list">
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/ajax/" class="tag-list-link">ajax</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/cache-control/" class="tag-list-link">cache-control</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/cookie/" class="tag-list-link">cookie</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/dom/" class="tag-list-link">dom</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/etag/" class="tag-list-link">etag</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/expires/" class="tag-list-link">expires</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/html/" class="tag-list-link">html</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/hugo/" class="tag-list-link">hugo</a><span
+                    class="tag-list-count">2</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/jsonp/" class="tag-list-link">jsonp</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/last-modified/" class="tag-list-link">last-modified</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/localstorage/" class="tag-list-link">localstorage</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/mvc/" class="tag-list-link">mvc</a><span
+                    class="tag-list-count">2</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/promise/" class="tag-list-link">promise</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/session/" class="tag-list-link">session</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/sessionstorage/" class="tag-list-link">sessionstorage</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/tween.js/" class="tag-list-link">tween.js</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E4%BA%8B%E4%BB%B6/" class="tag-list-link">事件</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E5%8A%A8%E7%94%BB/" class="tag-list-link">动画</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E5%8F%91%E5%B1%95%E5%8F%B2/" class="tag-list-link">发展史</a><span
+                    class="tag-list-count">2</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E5%9B%9E%E8%B0%83/" class="tag-list-link">回调</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E5%AD%98%E5%82%A8/" class="tag-list-link">存储</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E5%AF%B9%E8%B1%A1/" class="tag-list-link">对象</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E5%BC%82%E6%AD%A5/" class="tag-list-link">异步</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="tag-list-link">数据库</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E6%A8%A1%E5%9D%97/" class="tag-list-link">模块</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E7%AB%8B%E5%8D%B3%E6%89%A7%E8%A1%8C%E5%87%BD%E6%95%B0/" class="tag-list-link">立即执行函数</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E7%B1%BB/" class="tag-list-link">类</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E7%BC%93%E5%8A%A8/" class="tag-list-link">缓动</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E8%A7%A3%E6%9E%84%E8%B5%8B%E5%80%BC/" class="tag-list-link">解构赋值</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E8%AF%B7%E6%B1%82/" class="tag-list-link">请求</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E8%BD%AC%E8%BD%BD%E6%96%87%E7%AB%A0/" class="tag-list-link">转载文章</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E8%BD%AE%E6%92%AD/" class="tag-list-link">轮播</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E9%97%AD%E5%8C%85/" class="tag-list-link">闭包</a><span
+                    class="tag-list-count">1</span></li>
+            
+        </ul>
+
+    </div>
+</div>
+      
+<div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+        <ul class="recent-post-list list-unstyled no-thumbnail">
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://jaylanwood.github.io/2020/04/learnhtml/" class="title">LearnHTML</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-04-11 23:30:47 &#43;0800 CST" itemprop="datePublished">2020-04-11</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://jaylanwood.github.io/2020/04/%E8%BD%AC%E5%A4%A7%E5%89%8D%E7%AB%AF%E7%9A%84%E6%8A%80%E6%9C%AF%E5%8E%9F%E7%90%86%E5%92%8C%E5%8F%98%E8%BF%81%E5%8F%B2/" class="title">转：大前端的技术原理和变迁史</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-04-11 21:11:07 &#43;0800 CST" itemprop="datePublished">2020-04-11</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://jaylanwood.github.io/2020/04/%E5%89%8D%E7%AB%AF%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/" class="title">前端生存指南</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-04-10 07:17:06 &#43;0800 CST" itemprop="datePublished">2020-04-10</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://jaylanwood.github.io/2020/02/%E6%A8%A1%E5%9D%97%E5%8C%96mvc%E5%8C%96%E5%AF%B9%E8%B1%A1%E5%8C%96%E7%B1%BB%E5%8C%96/" class="title">模块化、MVC化、对象化、类化</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-02-26 01:49:33 &#43;0800 CST" itemprop="datePublished">2020-02-26</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://jaylanwood.github.io/2020/02/%E6%B3%A8%E5%86%8C%E7%99%BB%E9%99%86/" class="title">注册登陆</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-02-26 01:33:12 &#43;0800 CST" itemprop="datePublished">2020-02-26</time>
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+  </div>
+</aside>
+
+    
+    
+<aside class="sidebar sidebar-toc collapse" id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <h4 class="toc-title">文章目录</h4>
+    <nav id="toc" class="js-toc toc">
+
+    </nav>
+  </div>
+</aside>
+<main class="main" role="main"><div class="content">
+  <article id="-" class="article article-type-" itemscope
+    itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      <h1 itemprop="name">
+  <a
+    class="article-title"
+    href="/2020/04/%E8%BD%AC%E5%A4%A7%E5%89%8D%E7%AB%AF%E7%9A%84%E6%8A%80%E6%9C%AF%E5%8E%9F%E7%90%86%E5%92%8C%E5%8F%98%E8%BF%81%E5%8F%B2/"
+    >转：大前端的技术原理和变迁史</a
+  >
+</h1>
+
+      <div class="article-meta">
+        
+<span class="article-date">
+  <i class="icon icon-calendar-check"></i>&nbsp;
+<a href="https://jaylanwood.github.io/2020/04/%E8%BD%AC%E5%A4%A7%E5%89%8D%E7%AB%AF%E7%9A%84%E6%8A%80%E6%9C%AF%E5%8E%9F%E7%90%86%E5%92%8C%E5%8F%98%E8%BF%81%E5%8F%B2/" class="article-date">
+  <time datetime="2020-04-11 21:11:07 &#43;0800 CST" itemprop="datePublished">2020-04-11</time>
+</a>
+</span>
+<span class="article-category">
+  <i class="icon icon-folder"></i>&nbsp;
+  <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF/"> 前端 </a>
+</span>  
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>&nbsp;
+    <a class="article-tag-link" href="/tags/%E5%8F%91%E5%B1%95%E5%8F%B2/"> 发展史 </a>
+    <a class="article-tag-link" href="/tags/%E8%BD%AC%E8%BD%BD%E6%96%87%E7%AB%A0/"> 转载文章 </a>
+  </span>
+
+        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2020/04/%E8%BD%AC%E5%A4%A7%E5%89%8D%E7%AB%AF%E7%9A%84%E6%8A%80%E6%9C%AF%E5%8E%9F%E7%90%86%E5%92%8C%E5%8F%98%E8%BF%81%E5%8F%B2/#comments"
+            class="article-comment-link">评论</a></span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 7725字</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 16分 </span>
+      </div>
+    </div>
+    <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
+      <h2 id="说明">说明</h2>
+<p>本文转载自掘金，写得非常好，适合让前端新手有一个全局性的理解和制定学习规划。</p>
+<p>作者：村口蹲一郎</p>
+<p>时间：2018/07/27</p>
+<p>原文：<a href="https://juejin.im/post/5b5adc9b6fb9a04f9244555d">文章链接</a></p>
+<h2 id="简介">简介</h2>
+<p>本文适合前端新手入门，阅读人群最好是前端新手或者后台开发人员，因为我不敢保证对前端老司机有太多收获。</p>
+<p>通过阅读本文，你将会大致了解前端这些年发生的事情，以及一些前端当前主流技术的简单原理介绍。所有涉及的内容，都是尽可能的让你捅破这层窗户纸，知道其大致的玩法。</p>
+<h2 id="目录">目录</h2>
+<ol>
+<li>前端技术发展轨迹
+<ul>
+<li>角色架构发展史</li>
+<li>前端技术发展史</li>
+<li>ECMAScript语法发展史</li>
+<li>Ajax技术发展史</li>
+</ul>
+</li>
+<li>当前主流技术原理介绍
+<ul>
+<li>SPA 单页面应用原理</li>
+<li>Node.js 服务器端JS运行原理</li>
+<li>SSR 服务器端渲染原理</li>
+<li>Vue MVVM原理</li>
+<li>Webpack 打包原理</li>
+<li>Sass CSS编译原理</li>
+</ul>
+</li>
+<li>一些新技术探索
+<ul>
+<li>TypeScript</li>
+<li>PWA</li>
+<li>GraphQL</li>
+<li>Flutter</li>
+</ul>
+</li>
+<li>两个流行的概念解答
+<ul>
+<li>什么是大前端</li>
+<li>什么是前端工程化</li>
+</ul>
+</li>
+</ol>
+<h2 id="一前端技术发展轨迹">一、前端技术发展轨迹</h2>
+<p>本节知识点：</p>
+<ul>
+<li>角色架构发展史</li>
+<li>前端技术发展史</li>
+<li>ECMAScript语法发展史</li>
+<li>Ajax技术发展史</li>
+</ul>
+<h3 id="11-角色架构发展史">1.1 角色架构发展史</h3>
+<p><img src="https://raw.githubusercontent.com/JaylanWood/cloudimage/master/img/164daee36340b5d2-20200411212512865.png" alt="img"></p>
+<p>Web1.0 到 Web2.0过渡的标志，就是Ajax的出现（2005年）。</p>
+<h3 id="12-前端技术发展史">1.2 前端技术发展史</h3>
+<p><img src="https://raw.githubusercontent.com/JaylanWood/cloudimage/master/img/164daee3634db870-20200411212539226.png" alt="img"></p>
+<h3 id="13-ecmascript语法发展史">1.3 ECMAScript语法发展史</h3>
+<p><img src="https://raw.githubusercontent.com/JaylanWood/cloudimage/master/img/164daee363218836-20200411212607503.png" alt="img"></p>
+<h3 id="14-ajax技术发展史">1.4 Ajax技术发展史</h3>
+<p><strong>AJAX</strong> 即 <strong>Asynchronous JavaScript and XML</strong>（异步的 JavaScript 与 XML 技术）。</p>
+<p><img src="https://raw.githubusercontent.com/JaylanWood/cloudimage/master/img/164eead0461be1eb-20200411212704128.png" alt="img"></p>
+<h4 id="step1xmlhttprequest-原生对象">STEP1：XMLHttpRequest 原生对象</h4>
+<pre><code class="language-javascript">var request = new XMLHttpRequest();
+request.open('GET', '/my/url', true);
+
+request.onload = function() {
+  if (request.status &gt;= 200 &amp;&amp; request.status &lt; 400) {
+    // Success!
+    var data = JSON.parse(request.responseText);
+  } else {
+    // We reached our target server, but it returned an error
+
+  }
+};
+
+request.onerror = function() {
+  // There was a connection error of some sort
+};
+
+request.send();
+</code></pre>
+<h4 id="step2ajax-操作">STEP2：$.ajax 操作</h4>
+<pre><code class="language-javascript">$.ajax({
+    type: 'GET',
+    url: '/my/url',
+    data: data,
+    success : function(result){
+        //TODO RESULT
+    }
+});
+</code></pre>
+<h4 id="step3promise-操作">STEP3：Promise 操作</h4>
+<pre><code class="language-javascript">let getData = function (url) {
+    return new Promsie(function (resolve, reject) {
+        $.ajax({
+            type: 'GET',
+            url: url,
+            success: function (data) {
+                resolve(data);         
+            },
+            error: function (err) {
+                reject(err);
+            }
+        });
+    });
+};
+
+var data = getData('/my/url').then(function (data) {
+     //TODO DATA
+});
+</code></pre>
+<h4 id="step4生成器-gererator">STEP4：生成器 Gererator</h4>
+<pre><code class="language-javascript">let it = null;
+let ajax = function(url,data){
+    $.ajax({
+       type: 'GET',
+       url: url,
+       data: data || {},
+       success : function(result){
+			it.next(result);
+       }
+    });
+};
+
+function *getData(){
+    var data = yield ajax('/my/url');
+    console.log('data=',data);
+};
+
+it = getData();
+it.next(); 
+</code></pre>
+<h4 id="step5asyncawait-高级操作">STEP5：Async/Await 高级操作</h4>
+<pre><code class="language-javascript">let ajax = function(url,data){
+    return $.ajax({
+       type: 'GET',
+       url: url,
+       data: data || {}
+    });
+};
+
+async function getData(){
+    var data = await ajax('/my/url');
+    console.log('data=',data);
+};
+
+getData();
+</code></pre>
+<p>Ajax的相关背景资料：</p>
+<blockquote>
+<p>1999年，微软公司发布IE浏览器5.0版，第一次引入新功能：允许JavaScript脚本向服务器发起HTTP请求。这个功能当时并没有引起注意，直到2004年Gmail发布和2005年Google Map发布，才引起广泛重视。</p>
+<p>2005年2月，AJAX这个词第一次正式提出，指围绕这个功能进行开发的一整套做法。从此，AJAX成为脚本发起HTTP通信的代名词，W3C也在2006年发布了它的国际标准。</p>
+</blockquote>
+<h2 id="二当前主流技术原理介绍">二、当前主流技术原理介绍</h2>
+<p>本节知识点：</p>
+<ul>
+<li>SPA 单页面应用原理</li>
+<li>Node.js 服务器端JS运行原理</li>
+<li>SSR 服务器端渲染原理</li>
+<li>Vue MVVM原理</li>
+<li>Webpack 打包原理</li>
+<li>Sass CSS开发原理</li>
+</ul>
+<h3 id="21-spa-单页面应用原理">2.1 SPA 单页面应用原理</h3>
+<p>什么是SPA? SPA 即单页面，就是页面整体不刷新，不同的页面只改变局部的内容的一种实现方式。</p>
+<p>一个完整的URI有以下几部分组成：</p>
+<pre><code>scheme:[//[user[:password]@]host[:port]][/path][?query][#fragment]
+</code></pre>
+<p>浏览器的URL也遵循以上规则，而对于以上规则中，只有 <code>#</code> 后面的 <code>fragment</code> 发生改变时，页面不会重新请求，其它参数变化，均会引起页面的重新请求，而在Js中恰恰还有事件 <code>window.onhashchange</code> 能监听到 <code>fragment</code> 的变化，于是就利用这个原理来达到一个修改局部内容的操作。</p>
+<p><code>#fragment</code> 部分就是对应到Js中的 <code>location.hash</code> 的值。</p>
+<p>直接上代码描述：</p>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+    &lt;head&gt;
+        &lt;script type=&quot;text/javascript&quot;&gt;
+        	window.onhashchange = function(){
+                var page = location.hash;
+                if(page === '#home'){
+                    document.getElementById('main').innerHTML = '这是首页';
+                    return;
+                };
+                
+                if(page === '#help'){
+                    document.getElementById('main').innerHTML = '这是帮助页面';
+                    return;
+                };
+                
+                document.getElementById('main').innerHTML = '404';
+            }
+        &lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;header&gt;
+        	&lt;a href=&quot;#home&quot;&gt;首页&lt;/a&gt;
+            &lt;a href=&quot;#help&quot;&gt;帮助&lt;/a&gt;
+        &lt;/header&gt;
+        &lt;article id=&quot;main&quot;&gt;&lt;/article&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>以上代码直接在HTML上面有2个链接，点击后在页面的部分区域直接显示这2个链接对应的不同的页面内容。</p>
+<p><img src="https://raw.githubusercontent.com/JaylanWood/cloudimage/master/img/164daee3d1e7fb23-20200411212738150.gif" alt="img"></p>
+<h3 id="22-nodejs-服务器端js运行原理">2.2 Node.js 服务器端JS运行原理</h3>
+<p>服务器上如何应用Js呢？这句话可以理解为：在非网页情况下如何运行Js程序（或者命令行如何运行）。</p>
+<p>与Java在服务器上运行需要按照JDK一样，Js要运行也需要安装Node环境，安装以后就可以运行了，具体的可以对照着Java程序来解释说明。</p>
+<p><img src="https://raw.githubusercontent.com/JaylanWood/cloudimage/master/img/164daee417ae5fc9-20200411212754767.png" alt="img"></p>
+<h3 id="23-ssr-服务器端渲染原理">2.3 SSR 服务器端渲染原理</h3>
+<p>用过Java的人一定对 <code>FreeMarker</code> 不陌生，其工作原理：</p>
+<p><img src="https://raw.githubusercontent.com/JaylanWood/cloudimage/master/img/164daee4c6e0fad3.png" alt="img"></p>
+<p>对于Node.js来说也是一样，只是使用的框架不是FreeMarker罢了！究其原理无非都是：</p>
+<pre><code>Template + Data = Output
+</code></pre>
+<p>只是现在前端说的这个SSR，其实就是指后台渲染好数据，直接返回到浏览器，浏览器就直接显示了，下面我们做一个对比，用来说明传统的AJax操作和SSR之间的区别。</p>
+<h4 id="使用ajax操作数据渲染到页面">使用Ajax操作数据渲染到页面</h4>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+    &lt;head&gt;
+        &lt;script type=&quot;text/javascript&quot; src=&quot;lib/jquery.min.js&quot;&gt;&lt;/script&gt;
+        &lt;script type=&quot;text/javascript&quot;&gt;
+            /*
+             * 使用jQuery将后台接口返回的数据显示到页面上
+             */
+            function renderData(){
+                $.post(url,param,function(result){
+                    //假设返回的是是一个List，我们追加到页面的ul中
+                    $.each(result,function(i,d){
+                        $('#list').append('&lt;li&gt;' + d.name + '&lt;/li&gt;');
+                    })
+                });  
+            };
+            renderData();
+        &lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;ul id=&quot;list&quot;&gt;&lt;/ul&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>主要流程如下：</p>
+<ul>
+<li>用户地址栏输入URL</li>
+<li>浏览器使用HTTP协议从后台获取资源</li>
+<li>浏览器解析并渲染HTML页面呈现到浏览器上，同时异步执行Ajax操作</li>
+<li>浏览器发送Ajax请求后台接口</li>
+<li>浏览器获取到数据后，执行回调函数，将内容动态追加到页面上</li>
+</ul>
+<h4 id="使用ssr技术显示页面">使用SSR技术显示页面</h4>
+<p>下面示例我们以Vue框架后台直出方案为例：</p>
+<pre><code class="language-javascript">const Vue = require('vue')
+const server = require('express')()
+const renderer = require('vue-server-renderer').createRenderer()
+
+server.get('*', (req, res) =&gt; {
+  //vue对象包含了template+data
+  const app = new Vue({
+    data: {
+        list: [{
+            name : 'lilei'
+        },{
+            name : 'hanmeimei'
+        }]
+    },
+    template: `&lt;ul&gt;&lt;li v-for=&quot;item in list&quot;&gt;{{item.name}}&lt;/li&gt;&lt;/ul&gt;`
+  })
+
+  //将vue对象传入最终返回output结果html
+  //再将html通过reponse对象返回给前端浏览器
+  renderer.renderToString(app, (err, html) =&gt; {
+    res.end(`
+      &lt;!DOCTYPE html&gt;
+      &lt;html&gt;
+        &lt;body&gt;${html}&lt;/body&gt;
+      &lt;/html&gt;
+    `)
+  })
+})
+
+server.listen(8080)
+</code></pre>
+<p>主要流程如下：</p>
+<ul>
+<li>用户地址栏输入URL</li>
+<li>浏览器使用HTTP协议从后台获取资源</li>
+<li>浏览器解析并渲染HTML页面呈现到浏览器上</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/JaylanWood/cloudimage/master/img/164daee40e785d9d-20200411212835717.png" alt="img"></p>
+<p>如果有人对这个vue示例的完整构建流程感兴趣，可以按照如下流程快速搭建环境并允许起来：</p>
+<ul>
+<li>下载并安装Nodejs：https://nodejs.org/zh-cn/download/</li>
+<li>新建一个目录，打开命令窗口，切换到当前目录</li>
+<li>执行命令：npm init，一直回车进行下一步，快速创建一个node工程</li>
+<li>安装所需要的js包：npm i vue express vue-server-renderer &ndash;save-dev</li>
+<li>新建文件：vi index.js，将上面的vue代码片段全部粘贴进去</li>
+<li>执行文件启动Node程序：node index.js</li>
+<li>打开浏览器访问：http://localhost:8080（注意端口号不要跟本地已有程序冲突）</li>
+</ul>
+<h3 id="24-vue-mvvm原理">2.4 Vue MVVM原理</h3>
+<p>什么是MVC？什么是MVVM？</p>
+<p><img src="https://raw.githubusercontent.com/JaylanWood/cloudimage/master/img/164daee418d7aa1c-20200411212847796.png" alt="img"></p>
+<p>通过上图可以清晰的看到，MVVM相比MVC来说，缺少了 <code>Controller</code> 一层，传统 <code>Controller</code> 做的事情就是处理一堆复杂的逻辑，然后将数据输出到 <code>View</code> 上面。那么现在缺少了这一层以后，<code>View</code> 和 <code>ViewModel</code> 之间如何进行双向自动关联数据绑定的呢？</p>
+<p>也就是说，页面上数据发生变化，Js中的数据如何跟着也变化；相反，Js中数据变化了，页面如何自动跟着变化？</p>
+<p><img src="https://raw.githubusercontent.com/JaylanWood/cloudimage/master/img/164daee4371d676b-20200411212919933.png" alt="img"></p>
+<p>举个例子来进一步阐明这个问题，下面的效果如何实现？</p>
+<p><img src="https://raw.githubusercontent.com/JaylanWood/cloudimage/master/img/164daee45e217c01-20200411212929459.gif" alt="img"></p>
+<h4 id="页面数据发生变化如何通知到js">页面数据发生变化如何通知到JS</h4>
+<p>通过给页面元素添加 <code>onchange</code> 或者 <code>oninput</code> 事件，在事件中获取表单的值，然后赋值给Js对应的对象上即可。</p>
+<p>比如：示例中的输入框就可以添加oninput事件</p>
+<pre><code class="language-html">&lt;input type=&quot;text&quot; oninput=&quot;evtInput&quot; /&gt;
+</code></pre>
+<p>然后在js中定义这个函数执行相关赋值操作就可以：</p>
+<pre><code class="language-javascript">function evtInput(){
+    vue.name = this.value;
+}
+</code></pre>
+<h4 id="js数据变化如何通知到页面">JS数据变化如何通知到页面</h4>
+<p>JavaScript原生有个方法 <code>Object.defineProperty()</code> ，这个方法可以重新设置一个js对象中某个元素的一些属性，同时提供了 <code>get</code> 和 <code>set</code> 方法，允许用户对元素进行重新赋值和取值操作。</p>
+<p><img src="https://raw.githubusercontent.com/JaylanWood/cloudimage/master/img/164daee4da9e360a-20200411212947109.png" alt="img"></p>
+<p>简单分析一下代码：</p>
+<p><img src="https://raw.githubusercontent.com/JaylanWood/cloudimage/master/img/164daee4917c3afb-20200411213004774.png" alt="img"></p>
+<p>正式由于我们可以通过拦截一个属性的 <code>set</code> 方法。所以，我们就可以在 <code>set</code> 方法中讲获取到的新值赋值给页面元素就可以了。</p>
+<pre><code class="language-javascript">Object.defineProperty(data,'name',{
+    set : function(v){
+		document.getElementById('input').value = v;
+	}
+});
+</code></pre>
+<h3 id="25-webpack-打包原理">2.5 Webpack 打包原理</h3>
+<h4 id="前端为什么要打包">前端为什么要打包？</h4>
+<p>那么前端为什么要进行打包呢？前端代码不是直接就能运行到浏览器么，还打包干嘛？</p>
+<p>要搞清楚这个问题，那么我们就以java为例可能比较恰当，比如：java的工程目录中有一个源码目录：<code>src</code></p>
+<p>它是用来存放java源码的，但是java实际编译后肯定就没有src这个目录了对吧？</p>
+<p>那么 <code>src</code> 源码的作用是什么呢？就是用来更好的归类整理我们的源代码，它有可能是跟我们实际运行的代码结构完全不一样，因为实际运行的是机器能读懂的，而源码是给人看的。</p>
+<p>所以前端也一样，由于当前阶段，前端的业务逻辑也变的非常复杂，再不是传统意义上的一个 html、一个js、一个css就能搞定的。所以我们要分模块，分目录存放源码，最终通过打包再组装成浏览器可以读懂的代码和目录结构。</p>
+<p>比如：我们通过vue的脚手架创建一个vue的webpack项目，看看它的默认的源码目录（src）的树结构：</p>
+<pre><code>src
+├── App.vue
+├── assets
+│   └── logo.png
+├── components
+│   └── HelloWorld.vue
+├── main.js
+└── router
+    └── index.js
+</code></pre>
+<p>src中除了有3个子目录 <code>assets</code> <code>components</code> <code>router</code> ，还有2个 <code>.vue</code> 结尾的文件。所以，这种目录结构和文件在浏览器中肯定是无法运行的，如果我们要运行，就必须对它进行编译，翻译成浏览器能读懂的html/js/css文件才行。</p>
+<p>当我们打包以后，看到项目的dist目录下就有了编译以后的，浏览器可执行的代码结构：</p>
+<pre><code>dist
+├── index.html
+└── static
+    ├── css
+    │   ├── app.30790115300ab27614ce176899523b62.css
+    │   └── app.30790115300ab27614ce176899523b62.css.map
+    └── js
+        ├── app.b22ce679862c47a75225.js
+        ├── app.b22ce679862c47a75225.js.map
+        ├── manifest.2ae2e69a05c33dfc65f8.js
+        ├── manifest.2ae2e69a05c33dfc65f8.js.map
+        ├── vendor.7fed9fa7b7ba482410b7.js
+        └── vendor.7fed9fa7b7ba482410b7.js.map
+</code></pre>
+<p>所以，当前前端代码逻辑复杂，各种框架横行的年代，源码都是不能直接在浏览器访问的，都需要借助打包工具，如：gulp、webpack这些工具进行打包翻译，才能得到真正的可执行的文件。</p>
+<h4 id="webpack-打包原理">Webpack 打包原理</h4>
+<p>一句话概括Webpack的本质：</p>
+<blockquote>
+<p>webpack 是一个打包模块化js的工具，可以通过Loader转换文件，通过Plugin扩展功能。</p>
+</blockquote>
+<p>Webpack打包的简易示意图：</p>
+<p><img src="https://raw.githubusercontent.com/JaylanWood/cloudimage/master/img/164daee564eb40be-20200411213036467.png" alt="img"></p>
+<h3 id="26-sass-css编译原理">2.6 Sass CSS编译原理</h3>
+<p>什么是Sass？就是一种能提高CSS开发效率的工具。</p>
+<p>其编译原理是：</p>
+<p><img src="https://raw.githubusercontent.com/JaylanWood/cloudimage/master/img/164daee56891f7e3-20200411213048609.png" alt="img"></p>
+<p><strong>实际在项目中怎么用Sass呢？</strong></p>
+<p>前面在说Webpack的时候说过了，现在前端技术离开打包工具是不能直接运行 ，类似于这种Sass文件也一样。所以，我们只需要在Webpack中增加Sass文件的Loader，这样在代码编译环境，就能自动把Sass文件转换为Css文件，最后引入到Html中的是Css文件，这样页面就能正常渲染了。</p>
+<p><strong>Sass有什么好处？</strong></p>
+<p>test.scss文件：</p>
+<pre><code class="language-scss">$color-red: #00ff00;
+$color-white: #ffffff;
+
+#main p {
+  color: $color-red;
+  width: 97%;
+
+  .redbox {
+    background-color: $color-red;
+    color: $color-white;
+  }
+}
+</code></pre>
+<p>如果用传统的css写：</p>
+<pre><code class="language-css">#main p {
+  color: #00ff00;
+  width: 97%; 
+}
+
+#main p .redbox {
+    background-color: #00ff00;
+    color: #ffffff; 
+}
+</code></pre>
+<h2 id="三一些新技术探索">三、一些新技术探索</h2>
+<p>本节知识点：</p>
+<ul>
+<li>TypeScript</li>
+<li>PWA</li>
+<li>GraphQL</li>
+<li>Flutter</li>
+</ul>
+<h3 id="31-typescript">3.1 TypeScript</h3>
+<p>什么是TypeScript？</p>
+<blockquote>
+<p>TypeScript 是微软开源发布的JavaScript类型的超集，它可以编译成纯JavaScript。</p>
+<p>它是一个Js框架，可以用来开发前端系统。</p>
+</blockquote>
+<p>之所以说TypeScript是JavaScript的超集，就意味着TypeScript在JavaScript的语法基础上，又扩展了更多语法，使得开发更加方便。</p>
+<p>接下来我们看看TypeScript的相比JavaScript额外增加的部分：</p>
+<blockquote>
+<p>学Java的同学不要惊慌，个人看来TypeScript就是把Java用JavaScript重新实现了一遍！</p>
+</blockquote>
+<p><strong>1、强数据类型</strong></p>
+<pre><code class="language-javascript">//Boolean类型
+let isDone: boolean = false;
+
+//数字类型
+let decLiteral: number = 6;
+
+//字符串
+let name: string = &quot;bob&quot;;
+
+//数组
+let list: Array&lt;number&gt; = [1, 2, 3];
+
+//函数定义
+function add(x: number, y: number): number {
+    return x + y;
+}
+</code></pre>
+<p><strong>2、接口</strong></p>
+<pre><code class="language-javascript">interface LabelledValue {
+  label: string;
+}
+
+function printLabel(labelledObj: LabelledValue) {
+  console.log(labelledObj.label);
+}
+
+let myObj = {size: 10, label: &quot;Size 10 Object&quot;};
+printLabel(myObj);
+</code></pre>
+<blockquote>
+<p>这里的接口与Java中的接口不一样，TypeScript中的接口仅仅是对参数的一种契约约定，即：参数必须是接口定义的结构和参数名等。</p>
+</blockquote>
+<p><strong>3、类</strong></p>
+<pre><code class="language-javascript">//定义类
+class Greeter {
+    greeting: string;
+    constructor(message: string) {
+        this.greeting = message;
+    }
+    greet() {
+        return &quot;Hello, &quot; + this.greeting;
+    }
+}
+
+let greeter = new Greeter(&quot;world&quot;);
+
+//类的继承
+class Animal {
+    move(distanceInMeters: number = 0) {
+        console.log(`Animal moved ${distanceInMeters}m.`);
+    }
+}
+
+class Dog extends Animal {
+    bark() {
+        console.log('Woof! Woof!');
+    }
+}
+
+//共有、私有变量、方法
+class Animal {
+    private id: number; //仅类内部访问，实例无法访问
+    public name: string;//类内部和实例都可以访问
+    protected pid: number;//仅类内部和子类可以访问
+    
+    public constructor(theName: string) { this.name = theName; }
+    public move(distanceInMeters: number) {
+        console.log(`${this.name} moved ${distanceInMeters}m.`);
+    }
+}
+</code></pre>
+<p><strong>4、泛型</strong></p>
+<pre><code>function identity&lt;T&gt;(arg: T): T {
+    return arg;
+}
+</code></pre>
+<p><strong>5、枚举</strong></p>
+<pre><code>enum Direction {
+    Up = 1,
+    Down,
+    Left,
+    Right
+}
+</code></pre>
+<h3 id="32-pwa">3.2 PWA</h3>
+<p>什么是PWA？</p>
+<blockquote>
+<p>Progressive Web App, 简称 PWA，是渐进式提升 Web App 的体验的一种新方法，能给用户原生应用的体验。</p>
+<p>PWA 本质上是 Web App，就是运行在手机上的App不是纯Native的，而是很多页面都是网页。</p>
+</blockquote>
+<p><code>Web App</code> ，我们都知道就是App中有网页嘛！但是 <code>Progressive</code> <code>渐进式</code> 又该怎么理解？</p>
+<p>个人理解，<code>渐进式</code> 的意思就是：<code>循序渐进的发展或者改造</code>。</p>
+<p>PWA更直白的意思就是：</p>
+<blockquote>
+<p>第一步：我们现在要开发一个App，但是开发纯原生App的维护和扩展成本太高，所以我们需要增加一些网页进去，毕竟网页好维护嘛！（这部分其实就是混合类App，也叫：Hybrid App）</p>
+<p>第二步：但是我们App中增加网页不能太暴力，太暴力容易让用户觉得很不自然，所以需要使用循序渐进的方式进行，那么如何循序渐进的进行才能让用户的体验达到极致（也就是几乎看不出来某一个页面是一个网页！）</p>
+<p>第三步：我们就需要增加一些策略，先保证用户体验，比如：为了保证安全网页全部使用HTTPS、使用离线缓存来减少用户打开页面的等待时间等等。</p>
+</blockquote>
+<p>所以，PWA就是以循序渐进的方式，提升混合类APP的用户体验，而影响体验最大的问题就是页面加载，所以PWA最核心的技术就是：<code>离线缓存</code> ，离线缓存大家普遍采用的方案就是：<code>Service Worker</code></p>
+<h3 id="33-graphql">3.3 GraphQL</h3>
+<p>在了解什么是GraphQL之前，我们先了解一下什么是SQL？</p>
+<p>什么是SQL？</p>
+<blockquote>
+<p>Structured Query Language，一种结构化的查询语言，它是关系式数据库管理系统的标准语言。</p>
+</blockquote>
+<p>说白了，SQL是一种特定的语法，也可以称之为是数据库管理的API，操作数据库必须通过这个语法进行。</p>
+<p>什么是GraphQL呢？</p>
+<blockquote>
+<p>一种用于API的查询语言</p>
+<p>GraphQL 既是一种用于 API 的查询语言也是一个满足你数据查询的运行时。 GraphQL 对你的 API 中的数据提供了一套易于理解的完整描述，使得客户端能够准确地获得它需要的数据，而且没有任何冗余，也让 API 更容易地随着时间推移而演进，还能用于构建强大的开发者工具。</p>
+</blockquote>
+<p>用一组图来说明下：</p>
+<p><img src="https://raw.githubusercontent.com/JaylanWood/cloudimage/master/img/164daee4df600d83-20200411213112303.png" alt="img"></p>
+<p>那你又要说了？没有GraphQL我现在客户端和后台之间不照样可以交互吗？</p>
+<p>没错！你是这么交互的：</p>
+<p><img src="https://raw.githubusercontent.com/JaylanWood/cloudimage/master/img/164daee522a1fa9c-20200411213122884.png" alt="img"></p>
+<p>所以，不是说离开GraphQL我们就不能活，而是它给我们提供了一种全新的API查询交互方式，使得客户端和后台的接口通信更加高效罢了。</p>
+<p>那么GraphQL相比传统的接口请求，都有哪些优势呢？</p>
+<p><strong>1、所见即所得</strong></p>
+<pre><code>//查询条件
+{
+    user(uid:1) {
+        uid
+        name
+    }
+}
+
+//返回结果
+{
+  &quot;data&quot;: {
+    &quot;user&quot;: {
+      &quot;uid&quot;: &quot;1&quot;,
+      &quot;name&quot;: &quot;xxx&quot;
+    }
+  }
+}
+</code></pre>
+<p>传统的API是什么样子？</p>
+<pre><code>//查询条件
+{
+    uid : 1
+}
+
+//返回结果
+{
+  &quot;data&quot;: {
+    &quot;user&quot;: {
+      &quot;uid&quot;: &quot;1&quot;,
+      &quot;name&quot;: &quot;xxx&quot;
+    }
+  }
+}
+</code></pre>
+<p><strong>2、减少网络请求次数</strong></p>
+<p>只需要一次网络请求，就能获得资源和子资源的数据（例如，上文中文章的评论信息）。</p>
+<pre><code>//查询条件
+{
+    article(aid:1) {
+        title
+        content
+        author {
+            uid
+            name
+        }
+    },
+    comment {
+        content,
+        author {
+            uid
+            name
+        }
+    }
+}
+</code></pre>
+<p>传统的查询，一般先查询Article，再查询Comment。当然你可以一次性去查，让后台一次性返回来，但是一般没有后台会给你设计这样的一个API：<code>getArticleAndComment</code>，如何按照Restful的接口标准，你应该需要查询2次。</p>
+<p><strong>3、参数类型强校验</strong></p>
+<p>GraphQL规定了一套数据类型，这就保证接口查询的时候，字段类型就被明确定义，而传统的接口一般很难保证查询参数的类型。</p>
+<p>比如，以下就是GraphQL的语法定义：</p>
+<pre><code>type Starship {
+  id: ID!
+  name: String!
+  length(unit: LengthUnit = METER): Float
+}
+</code></pre>
+<h3 id="34-flutter">3.4 Flutter</h3>
+<p>什么是Flutter？</p>
+<blockquote>
+<p>Flutter是谷歌的移动UI框架，可以快速在iOS和Android上构建高质量的原生用户界面。</p>
+</blockquote>
+<p>下图就是使用Flutter开发一款App的样子：</p>
+<p><img src="https://raw.githubusercontent.com/JaylanWood/cloudimage/master/img/164daee56b014c1f-20200411213139564.gif" alt="img"></p>
+<p>类似于 <code>React Native</code> 框架一样，Flutter也是可以调用一些App系统级的命令，能让你快速开发一款混合类App（Hybrid App）。</p>
+<p>有兴趣的可以去官网学习：<a href="https://flutterchina.club/">Flutter中文网</a></p>
+<h2 id="四两个流行的概念解答">四、两个流行的概念解答</h2>
+<p>本节知识点：</p>
+<ul>
+<li>什么是大前端</li>
+<li>什么是前端工程化</li>
+</ul>
+<h3 id="41-什么是大前端">4.1 什么是大前端</h3>
+<p>本文的标题是 <code>大前端的技术原理和演变史</code>，现在给大家解答一下，什么是：<code>大前端</code>。</p>
+<p><code>大前端</code> 就是相比 <code>前端</code> 而言变大了，那么到底传统意义的前端指什么？变成大前端又有哪些东西变大了呢？</p>
+<p>传统的意义的前端指是什么呢？</p>
+<blockquote>
+<p>传统的前端就是指直接面对客户的应用或者系统，比如：网页、手机App。</p>
+<p>而开发网页、搞iOS和Android开发的程序员都可以称之为前端工程师。</p>
+<p>只是传统意义来说，前端工程师仅仅指网页开发的人，而iOS和Android开发的一般指客户端开发人员，或者归结到软件工程师岗位去了。</p>
+</blockquote>
+<p>那么大前端又指什么呢？其实经过各种资料考证，并没有这么一个明确的定义，只是随着技术的进步，大家有了一种默认的约定，大前端之所以称之为大前端，主要体现在以下一些方面：</p>
+<p><strong>1、大前端 - 前后端分离</strong></p>
+<p>随着前后端职责和技术框架的分离发展，产品对前端的要求越来越高，用户对前端的期待越来越高，前端技术发展越来越快，导致前端这个岗位并没有像JSP时代那种画画页面就完事了。这部分体现的是前端的要求更高，责任越大了。</p>
+<p><strong>2、大前端 - Node全栈</strong></p>
+<p>前后端分离后，前端要独立完成一个事情是不行的，因为缺少后台的支持。但是随着Node的出现，前端可以不用依赖后台人员，也不用学习新的后台语言，就可以轻松搞定后台的这部分事情。这样，面对一些小的系统，前端工程师就可以搞定整个系统。这部分体现了前端的全面性和全栈性。</p>
+<p><strong>3、大前端 - 应对各种端</strong></p>
+<p>传统的前端工程师，一般指网页开发工程师，网站一般指运行在PC浏览器，慢慢的也要运行在手机上。但是，随着移动互联网的发展，突然冒出来更多的移动设备，比如：手机分为Android手机和苹果手机、智能手表、VR/AR技术支撑的可穿戴设备、眼睛、头盔、车载系统、智能电视系统等等。而这些设备都需要前端的支撑，这时候对前端的技术要求、能力要求就更高。这部分体现了前端的涉猎范围变大。</p>
+<p><strong>4、大前端 - 微应用</strong></p>
+<p>当微信小程序出来以后，大家第一感觉是前端又可以火一把啦，不需要后台、不需要服务端，只需要在微信平台上开发网页就可以发布上线了。</p>
+<p>而近期又有国内多个手机厂家联合推出 <code>快应用</code> , 跟小程序差不多，只是通过简单的前端开发发布以后，用户不需要安装应用就可以直接在类似于小米、vivo、oppo等手机上打开这样的应用。</p>
+<p>类似于这些微应用，免后台、免安装的形式出现，也促使了前端这个行业也将涉及到这样的新型领域中，一起推动技术的进步。这部分体现了前端是时代发展的幸运儿。</p>
+<p>综上所述，我们可以得到一个大致的定义：</p>
+<blockquote>
+<p>大前端指前端涉猎范围越来越广、涉及的端越来越多、技术要求越来越高、影响范围越来越大的一种体现。</p>
+</blockquote>
+<h3 id="42-什么是前端工程化">4.2 什么是前端工程化</h3>
+<p>前端工程化的定义：</p>
+<blockquote>
+<p>前端工程化是根据业务特点，将前端开发流程规范化，标准化，它包括了开发流程，技术选型，代码规范，构建发布等，用于提升前端工程师的开发效率和代码质量，最终交付一个稳定性高、扩展性好、易于维护的系统的过程。</p>
+</blockquote>
+<p>一般情况下，一个符合前端工程化要求的方案应该包含以下要素：</p>
+<ul>
+<li>开发规范</li>
+<li>模块化开发</li>
+<li>组件化开发</li>
+<li>组件仓库</li>
+<li>性能优化</li>
+<li>部署</li>
+<li>开发流程</li>
+<li>开发工具</li>
+</ul>
+<p>另外，我们再谈到工程化，不能只想着前端工程化，而应该站在整个系统考虑如何进行工程化，也就是说对于一整个项目，我们谈到工程化应该考虑哪些因素呢？</p>
+<p><img src="https://raw.githubusercontent.com/JaylanWood/cloudimage/master/img/164daee5974b12c0-20200411213156184.png" alt="img"></p>
+<p>一个系统的工程化建设，应该包含以下因素：</p>
+<ul>
+<li>目标，搞清楚目标群体，并持续为他们做好最优质的服务；</li>
+<li>边界，与别的系统划清界限，同时做好接口，保证自身系统职责定位清晰的同时，管理好依赖系统，增加自身健壮性；</li>
+<li>壁垒，自身平台建设，其中就包含了前端工程化建设，以及后台工程化建设，还有项目整体建设等诸多因素。</li>
+</ul>
+<h2 id="参考资料">参考资料</h2>
+<ul>
+<li><a href="https://github.com/ruanyf/jstraining/blob/master/docs/history.md">前端开发的历史和趋势-阮一峰</a></li>
+<li><a href="https://javascript.ruanyifeng.com/introduction/history.html">JavaScript语言的历史-阮一峰</a></li>
+<li><a href="https://www.jianshu.com/p/94c12c6bfbe6">关于原生JS的AJAX</a></li>
+<li><a href="https://segmentfault.com/a/1190000015711829">JavaScript异步编程</a></li>
+<li><a href="http://youmightnotneedjquery.com/">YOU MIGHT NOT NEED JQUERY</a></li>
+<li><a href="https://davidwalsh.name/async-generators">Going Async With ES6 Generators</a></li>
+<li><a href="https://zh.wikipedia.org/wiki/%E7%BB%9F%E4%B8%80%E8%B5%84%E6%BA%90%E6%A0%87%E5%BF%97%E7%AC%A6">统一资源标志符-维基百科</a></li>
+<li><a href="https://zh.wikipedia.org/wiki/%E7%BB%9F%E4%B8%80%E8%B5%84%E6%BA%90%E5%AE%9A%E4%BD%8D%E7%AC%A6">统一资源定位符-维基百科</a></li>
+<li><a href="https://github.com/DMQ/mvvm">剖析Vue实现原理 - 如何实现双向绑定mvvm</a></li>
+<li><a href="https://ssr.vuejs.org/zh/">Vue.js 服务器端渲染指南</a></li>
+<li><a href="https://webpack.js.org/guides/output-management/">Webpack:Output Management</a></li>
+<li><a href="https://github.com/gwuhaolin/blog/issues/4">webpack原理与实战-gwuhaolin/blog</a></li>
+<li><a href="https://zhongsp.gitbooks.io/typescript-handbook/">TypeScript Handbook（中文版）</a></li>
+<li><a href="https://lavas.baidu.com/pwa/README">什么是 PWA</a></li>
+<li><a href="https://segmentfault.com/a/1190000012878342">GraphQL和RESTful的比较</a></li>
+<li><a href="http://www.infoq.com/cn/articles/talking-about-daqianduan">当我们在谈大前端的时候，我们谈的是什么</a></li>
+<li><a href="https://github.com/fouber/blog/issues/10">前端工程——基础篇-张云龙</a></li>
+</ul>
+
+    </div>
+    <div class="article-footer">
+<blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接: </strong>
+      <a href="https://jaylanwood.github.io/2020/04/%E8%BD%AC%E5%A4%A7%E5%89%8D%E7%AB%AF%E7%9A%84%E6%8A%80%E6%9C%AF%E5%8E%9F%E7%90%86%E5%92%8C%E5%8F%98%E8%BF%81%E5%8F%B2/" title="转：大前端的技术原理和变迁史" target="_blank" rel="external">https://jaylanwood.github.io/2020/04/%E8%BD%AC%E5%A4%A7%E5%89%8D%E7%AB%AF%E7%9A%84%E6%8A%80%E6%9C%AF%E5%8E%9F%E7%90%86%E5%92%8C%E5%8F%98%E8%BF%81%E5%8F%B2/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>License：</strong><a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN</a>
+    </li>
+  </ul>
+</blockquote>
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/JaylanWood" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="https://jaylanwood.github.io/avatar.png" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/JaylanWood" target="_blank"><span class="text-dark">Jaylan</span><small class="ml-1x">为美好的博客献上祝福</small></a></h3>
+        <div>我家博客还蛮大的</div>
+      </div>
+    </figure>
+  </div>
+</div>
+    </div>
+  </article>
+<section id="comments">
+</section>
+
+</div><nav class="bar bar-footer clearfix" data-stick-bottom>
+    <div class="bar-inner">
+        <ul class="pager pull-left">
+            <li class="prev">
+                <a href="https://jaylanwood.github.io/2020/04/%E5%89%8D%E7%AB%AF%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/" title="前端生存指南"><i
+                        class="icon icon-angle-left"
+                        aria-hidden="true"></i><span>&nbsp;&nbsp;下一篇</span></a>
+            </li>
+            <li class="next">
+                <a href="https://jaylanwood.github.io/2020/04/learnhtml/"
+                    title="LearnHTML"><span>上一篇&nbsp;&nbsp;</span><i
+                        class="icon icon-angle-right" aria-hidden="true"></i></a>
+            </li>
+            
+            <li class="toggle-toc">
+                <a class="toggle-btn collapsed" data-toggle="collapse" href="#collapseToc" aria-expanded="false"
+                    title="文章目录" role="button">
+                    <span>[&nbsp;</span><span>文章目录</span>
+                    <i class="text-collapsed icon icon-anchor"></i>
+                    <i class="text-in icon icon-close"></i>
+                    <span>]</span>
+                </a>
+            </li>
+        </ul>
+        <div class="bar-right">
+            <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter"
+                data-mobile-sites="weibo,qq,qzone"></div>
+        </div>
+    </div>
+</nav>
+
+</main><footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+<ul class="social-links">
+    <li><a href="https://github.com/JaylanWood" target="_blank" title="github" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-github"></i></a></li>
+    <li><a href="https://jaylanwood.github.io/index.xml" target="_blank" title="rss" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-rss"></i></a></li>
+</ul>
+  <div class="copyright">
+    &copy;2019 -
+    2020
+    <div class="publishby">
+      
+    </div>
+  </div>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+            showMathMenu: false, //disables context menu
+            tex2jax: {
+            inlineMath: [ ['$','$'], ['\\(','\\)'] ]
+           }
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/highlight.min.js"></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/python.min.js" defer></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/javascript.min.js" defer></script><script>
+    hljs.configure({
+        tabReplace: '    ', 
+        classPrefix: ''     
+        
+    })
+    hljs.initHighlightingOnLoad();
+</script>
+<script src="https://jaylanwood.github.io/js/application.min.bdeb64b910570b6c41badc6a05b7afb0c8ad9efd8525de3c7257d59e786326a3.js"></script>
+<script src="https://jaylanwood.github.io/js/plugin.min.51ff8c7317566f82259170fa36e09c4493adc9b9378b427a01ad3f017ebac7dd.js"></script>
+
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(未命名)',
+            },
+            ROOT_URL: 'https:\/\/jaylanwood.github.io\/',
+            CONTENT_URL: 'https:\/\/jaylanwood.github.io\/\/searchindex.json ',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script type="text/javascript" src="https://jaylanwood.github.io/js/insight.min.a343cd9a5a7698336b28ef3a7c16a3a1b1d2d5fb17dc8ed04022bbe08cc5459073a15bdafa3a8a58cdd56080784bdd69fa70b1ae8597565c799c57ed00f0e120.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+<script>
+    tocbot.init({
+        
+        tocSelector: '.js-toc',
+        
+        contentSelector: '.js-toc-content',
+        
+        headingSelector: 'h1, h2, h3',
+        
+        hasInnerContainers: true,
+    });
+</script>
+
+
+  </body>
+</html>

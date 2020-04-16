@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>
+        动画与缓动 - 这就是Jaylan的博客吗
+      </title>
+    <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  
+  <meta name="theme-color" content="#000000" />
+  
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <meta name="description" content="动画与缓动 简介 这是一个前端简单动画和缓动函数的学习记录。 项目地址 项目地址 效果预览 1.页面加载动画 -呼吸 效果预览 代码 html &amp;lt;!-- 加载动画 --&amp;gt; &amp;lt;div class=&amp;quot;webWelcome active&amp;quot;&amp;gt; &amp;lt;div class=&amp;quot;loading&amp;quot;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt;" />
+  <meta name="generator" content="Hugo 0.65.3 with theme pure" />
+  <title>动画与缓动 - 这就是Jaylan的博客吗</title>
+  
+  
+  <link rel="stylesheet" href="https://jaylanwood.github.io/css/style.min.74c0595da1a4d9c68db698100b0660f846b95ddc1f9ec899e6e62641e0527235.css">
+  
+  <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
+  <meta property="og:title" content="动画与缓动" />
+<meta property="og:description" content="动画与缓动 简介 这是一个前端简单动画和缓动函数的学习记录。 项目地址 项目地址 效果预览 1.页面加载动画 -呼吸 效果预览 代码 html &lt;!-- 加载动画 --&gt; &lt;div class=&quot;webWelcome active&quot;&gt; &lt;div class=&quot;loading&quot;&gt;&lt;/div&gt; &lt;/div&gt;" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jaylanwood.github.io/2020/02/%E5%8A%A8%E7%94%BB%E4%B8%8E%E7%BC%93%E5%8A%A8/" />
+<meta property="article:published_time" content="2020-02-09T23:36:57+08:00" />
+<meta property="article:modified_time" content="2020-02-09T23:36:57+08:00" />
+<meta itemprop="name" content="动画与缓动">
+<meta itemprop="description" content="动画与缓动 简介 这是一个前端简单动画和缓动函数的学习记录。 项目地址 项目地址 效果预览 1.页面加载动画 -呼吸 效果预览 代码 html &lt;!-- 加载动画 --&gt; &lt;div class=&quot;webWelcome active&quot;&gt; &lt;div class=&quot;loading&quot;&gt;&lt;/div&gt; &lt;/div&gt;">
+<meta itemprop="datePublished" content="2020-02-09T23:36:57&#43;08:00" />
+<meta itemprop="dateModified" content="2020-02-09T23:36:57&#43;08:00" />
+<meta itemprop="wordCount" content="1084">
+
+
+
+<meta itemprop="keywords" content="动画,缓动,tween.js," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="动画与缓动"/>
+<meta name="twitter:description" content="动画与缓动 简介 这是一个前端简单动画和缓动函数的学习记录。 项目地址 项目地址 效果预览 1.页面加载动画 -呼吸 效果预览 代码 html &lt;!-- 加载动画 --&gt; &lt;div class=&quot;webWelcome active&quot;&gt; &lt;div class=&quot;loading&quot;&gt;&lt;/div&gt; &lt;/div&gt;"/>
+
+  <!--[if lte IE 9]>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+    <![endif]-->
+
+  <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+  </head>
+
+  
+  
+
+  <body class="main-center theme-black" itemscope itemtype="http://schema.org/WebPage"><header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/JaylanWood" target="_self">
+          <img class="img-circle img-rotate" src="https://jaylanwood.github.io/avatar.png" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">Jaylan</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">为美好的博客献上祝福</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i>Guangdong, China</small>
+      </div><div class="search" id="search-form-wrap">
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i
+                        class="icon icon-search"></i></button>
+            </span>
+        </div>
+        <div class="ins-search">
+            <div class="ins-search-mask"></div>
+            <div class="ins-search-container">
+                <div class="ins-input-wrapper">
+                    <input type="text" class="ins-search-input" placeholder="想要查找什么..."
+                        x-webkit-speech />
+                    <button type="button" class="close ins-close ins-selectable" data-dismiss="modal"
+                        aria-label="Close"><span aria-hidden="true">×</span></button>
+                </div>
+                <div class="ins-section-wrapper">
+                    <div class="ins-section-container"></div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar"
+        aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement"
+      role="navigation">
+      <ul class="nav navbar-nav main-nav">
+        <li class="menu-item menu-item-home">
+          <a href="/">
+            <i class="icon icon-home-fill"></i>
+            <span class="menu-title">主页</span>
+          </a>
+        </li>
+        <li class="menu-item menu-item-archives">
+          <a href="/posts/">
+            <i class="icon icon-archives-fill"></i>
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/">
+            <i class="icon icon-folder"></i>
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/">
+            <i class="icon icon-tags"></i>
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        <li class="menu-item menu-item-about">
+          <a href="/about/">
+            <i class="icon icon-cup-fill"></i>
+            <span class="menu-title">关于</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header><aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content"><p>一口一篇文章</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+      <div class="widget">
+    <h3 class="widget-title"> 分类</h3>
+    <div class="widget-body">
+        <ul class="category-list">
+            <li class="category-list-item"><a href="https://jaylanwood.github.io/categories/%E5%89%8D%E7%AB%AF/" class="category-list-link">前端</a><span class="category-list-count">12</span></li>
+            <li class="category-list-item"><a href="https://jaylanwood.github.io/categories/%E6%90%AD%E5%8D%9A%E5%AE%A2/" class="category-list-link">搭博客</a><span class="category-list-count">2</span></li>
+        </ul>
+    </div>
+</div>
+      <div class="widget">
+    <h3 class="widget-title"> 标签</h3>
+    <div class="widget-body">
+        <ul class="tag-list">
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/ajax/" class="tag-list-link">ajax</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/cache-control/" class="tag-list-link">cache-control</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/cookie/" class="tag-list-link">cookie</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/dom/" class="tag-list-link">dom</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/etag/" class="tag-list-link">etag</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/expires/" class="tag-list-link">expires</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/html/" class="tag-list-link">html</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/hugo/" class="tag-list-link">hugo</a><span
+                    class="tag-list-count">2</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/jsonp/" class="tag-list-link">jsonp</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/last-modified/" class="tag-list-link">last-modified</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/localstorage/" class="tag-list-link">localstorage</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/mvc/" class="tag-list-link">mvc</a><span
+                    class="tag-list-count">2</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/promise/" class="tag-list-link">promise</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/session/" class="tag-list-link">session</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/sessionstorage/" class="tag-list-link">sessionstorage</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/tween.js/" class="tag-list-link">tween.js</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E4%BA%8B%E4%BB%B6/" class="tag-list-link">事件</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E5%8A%A8%E7%94%BB/" class="tag-list-link">动画</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E5%8F%91%E5%B1%95%E5%8F%B2/" class="tag-list-link">发展史</a><span
+                    class="tag-list-count">2</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E5%9B%9E%E8%B0%83/" class="tag-list-link">回调</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E5%AD%98%E5%82%A8/" class="tag-list-link">存储</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E5%AF%B9%E8%B1%A1/" class="tag-list-link">对象</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E5%BC%82%E6%AD%A5/" class="tag-list-link">异步</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="tag-list-link">数据库</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E6%A8%A1%E5%9D%97/" class="tag-list-link">模块</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E7%AB%8B%E5%8D%B3%E6%89%A7%E8%A1%8C%E5%87%BD%E6%95%B0/" class="tag-list-link">立即执行函数</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E7%B1%BB/" class="tag-list-link">类</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E7%BC%93%E5%8A%A8/" class="tag-list-link">缓动</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E8%A7%A3%E6%9E%84%E8%B5%8B%E5%80%BC/" class="tag-list-link">解构赋值</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E8%AF%B7%E6%B1%82/" class="tag-list-link">请求</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E8%BD%AC%E8%BD%BD%E6%96%87%E7%AB%A0/" class="tag-list-link">转载文章</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E8%BD%AE%E6%92%AD/" class="tag-list-link">轮播</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E9%97%AD%E5%8C%85/" class="tag-list-link">闭包</a><span
+                    class="tag-list-count">1</span></li>
+            
+        </ul>
+
+    </div>
+</div>
+      
+<div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+        <ul class="recent-post-list list-unstyled no-thumbnail">
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://jaylanwood.github.io/2020/04/learnhtml/" class="title">LearnHTML</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-04-11 23:30:47 &#43;0800 CST" itemprop="datePublished">2020-04-11</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://jaylanwood.github.io/2020/04/%E8%BD%AC%E5%A4%A7%E5%89%8D%E7%AB%AF%E7%9A%84%E6%8A%80%E6%9C%AF%E5%8E%9F%E7%90%86%E5%92%8C%E5%8F%98%E8%BF%81%E5%8F%B2/" class="title">转：大前端的技术原理和变迁史</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-04-11 21:11:07 &#43;0800 CST" itemprop="datePublished">2020-04-11</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://jaylanwood.github.io/2020/04/%E5%89%8D%E7%AB%AF%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/" class="title">前端生存指南</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-04-10 07:17:06 &#43;0800 CST" itemprop="datePublished">2020-04-10</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://jaylanwood.github.io/2020/02/%E6%A8%A1%E5%9D%97%E5%8C%96mvc%E5%8C%96%E5%AF%B9%E8%B1%A1%E5%8C%96%E7%B1%BB%E5%8C%96/" class="title">模块化、MVC化、对象化、类化</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-02-26 01:49:33 &#43;0800 CST" itemprop="datePublished">2020-02-26</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://jaylanwood.github.io/2020/02/%E6%B3%A8%E5%86%8C%E7%99%BB%E9%99%86/" class="title">注册登陆</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-02-26 01:33:12 &#43;0800 CST" itemprop="datePublished">2020-02-26</time>
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+  </div>
+</aside>
+
+    
+    
+<aside class="sidebar sidebar-toc collapse" id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <h4 class="toc-title">文章目录</h4>
+    <nav id="toc" class="js-toc toc">
+
+    </nav>
+  </div>
+</aside>
+<main class="main" role="main"><div class="content">
+  <article id="-" class="article article-type-" itemscope
+    itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      <h1 itemprop="name">
+  <a
+    class="article-title"
+    href="/2020/02/%E5%8A%A8%E7%94%BB%E4%B8%8E%E7%BC%93%E5%8A%A8/"
+    >动画与缓动</a
+  >
+</h1>
+
+      <div class="article-meta">
+        
+<span class="article-date">
+  <i class="icon icon-calendar-check"></i>&nbsp;
+<a href="https://jaylanwood.github.io/2020/02/%E5%8A%A8%E7%94%BB%E4%B8%8E%E7%BC%93%E5%8A%A8/" class="article-date">
+  <time datetime="2020-02-09 23:36:57 &#43;0800 CST" itemprop="datePublished">2020-02-09</time>
+</a>
+</span>
+<span class="article-category">
+  <i class="icon icon-folder"></i>&nbsp;
+  <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF/"> 前端 </a>
+</span>  
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>&nbsp;
+    <a class="article-tag-link" href="/tags/%E5%8A%A8%E7%94%BB/"> 动画 </a>
+    <a class="article-tag-link" href="/tags/%E7%BC%93%E5%8A%A8/"> 缓动 </a>
+    <a class="article-tag-link" href="/tags/tween.js/"> tween.js </a>
+  </span>
+
+        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2020/02/%E5%8A%A8%E7%94%BB%E4%B8%8E%E7%BC%93%E5%8A%A8/#comments"
+            class="article-comment-link">评论</a></span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1084字</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 3分 </span>
+      </div>
+    </div>
+    <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
+      <h1 id="动画与缓动">动画与缓动</h1>
+<h2 id="简介">简介</h2>
+<p>这是一个前端简单动画和缓动函数的学习记录。</p>
+<h2 id="项目地址">项目地址</h2>
+<p><a href="https://github.com/JaylanWood/anchorAnimation">项目地址</a></p>
+<p><a href="https://jaylanwood.github.io/anchorAnimation/index.html">效果预览</a></p>
+<h3 id="1页面加载动画--呼吸">1.页面加载动画 -呼吸</h3>
+<p>效果预览</p>
+<p><img src="https://raw.githubusercontent.com/JaylanWood/cloudimage/master/img/%E5%8A%A0%E8%BD%BD%E5%8A%A8%E7%94%BB-%E5%91%BC%E5%90%B8.gif" alt="加载动画-呼吸"></p>
+<p>代码</p>
+<p>html</p>
+<pre><code class="language-html">&lt;!-- 加载动画 --&gt;
+&lt;div class=&quot;webWelcome active&quot;&gt;
+	&lt;div class=&quot;loading&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<p>css</p>
+<pre><code class="language-css">/* 页面加载动画 */
+.webWelcome {
+    display: none;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: gray;
+    z-index: 10;
+}
+.webWelcome.active {
+    display: flex
+}
+.webWelcome&gt;.loading,
+.webWelcome&gt;.loading::after {
+    content: &quot;&quot;;
+    display: block;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    animation: scale-up-center 1.5s linear infinite;
+}
+.webWelcome&gt;.loading::after {
+    animation-delay: 0.75s;
+}
+@keyframes scale-up-center {
+    0% {
+        transform: scale(0);
+        background-color: rgba(0, 0, 0, 1);
+    }
+
+    100% {
+        transform: scale(1);
+        background-color: rgba(0, 0, 0, 0);
+    }
+}
+</code></pre>
+<h2 id="2自制超链接a的锚点跳转动画">2.自制超链接a的锚点跳转动画</h2>
+<p>利用setInterval,每一段时间滚动一次窗口。</p>
+<p>html</p>
+<pre><code class="language-html">&lt;section&gt;
+    &lt;a class=&quot;default&quot; href=&quot;#default&quot;&gt;默认的a跳转&lt;/a&gt;
+    &lt;a class=&quot;myAnimation&quot; href=&quot;#myAnimation&quot;&gt;自制的a跳转动画&lt;/a&gt;
+    &lt;a class=&quot;tweenjsAnimation&quot; href=&quot;#tweenjsAnimation&quot;&gt;tweenjs的a跳转缓动动画&lt;/a&gt;
+
+    &lt;div id=&quot;default&quot;&gt;&lt;/div&gt;
+    &lt;div id=&quot;myAnimation&quot;&gt;&lt;/div&gt;
+    &lt;div id=&quot;tweenjsAnimation&quot;&gt;&lt;/div&gt;
+&lt;/section&gt;
+&lt;!-- tween.js --&gt;
+&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/tween.js/16.3.5/Tween.min.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+<p>js</p>
+<pre><code class="language-javascript">// 1.自制超链接a的锚点跳转动画
+let myAnimationaTags = document.querySelector('.myAnimation')
+myAnimationaTags.onclick = function (xxx) {
+    // 取消a默认的跳转动作
+    xxx.preventDefault()
+
+    // 找到a要跳转的目标
+    let a = xxx.currentTarget
+    let href = a.getAttribute('href')
+    let element = document.querySelector(href)
+
+    let targetTop = element.offsetTop // 目标高度
+    let currentTop = window.scrollY // 当前高度
+
+    /*** 用setInterval在500毫秒内滚完动画，滚25次 ***/
+    let n = 25 // 一共滚动25次（500毫秒25次，也就是50帧/s）
+    let duration = 500 / n // 多少时间滚动一次
+    let distance = (targetTop - currentTop) / n // 每次滚动的距离
+
+    let i = 0
+    let timerID = setInterval(() =&gt; {
+        if (i === n) {
+            window.clearInterval(timerID)
+            return
+        }
+        i = i + 1
+        window.scrollTo(0, currentTop + distance * i)
+    }, duration)
+}
+</code></pre>
+<h2 id="3用tweenjs做a跳转的缓动动画">3.用tween.js做a跳转的缓动动画</h2>
+<pre><code class="language-javascript">// 2.用tween.js做a跳转的缓动动画
+
+/*** tween.js需要的代码，不用管 ***/
+function animate(time) {
+    requestAnimationFrame(animate);
+    TWEEN.update(time);
+}
+requestAnimationFrame(animate);
+/*** tween.js需要的代码，不用管 ***/
+
+let tweenjsAnimationaTags = document.querySelector('.tweenjsAnimation')
+tweenjsAnimationaTags.onclick = function (xxx) {
+    // 取消a默认的跳转动作
+    xxx.preventDefault()
+
+    // 找到a要跳转的目标
+    let a = xxx.currentTarget
+    let href = a.getAttribute('href')
+    let element = document.querySelector(href)
+
+    let targetTop = element.offsetTop // 目标高度
+    let currentTop = window.scrollY // 当前高度
+
+    // 用tween.js缓动
+    let time = Math.abs((targetTop - currentTop) / 100 * 500)
+    if (time &gt; 500) {
+        time = 500
+    }
+
+    const coords = {
+        y: currentTop
+    }; // 初始位置
+    const tween = new TWEEN.Tween(coords)
+        .to({
+            y: targetTop
+        }, time) // time秒内移动到targetTop
+        .easing(TWEEN.Easing.Quadratic.InOut) // 使用的tween的缓动函数Quadratic.InOut
+        .onUpdate(() =&gt; {
+            window.scrollTo(0, coords.y) // 窗口滚动到coords.y，coords.y是由tween更新的，最后coords.y等于targetTop
+        })
+        .start();
+}
+</code></pre>
+<h2 id="4tweenjs的官方快速上手demo">4.tween.js的官方快速上手demo</h2>
+<pre><code class="language-javascript">// 3.tween.js的官方快速上手demo
+
+// 创建box
+const box = document.createElement('div');
+box.innerText='tween.js官方demo'
+box.style.setProperty('background-color', '#008800');
+box.style.setProperty('width', '100px');
+box.style.setProperty('height', '100px');
+document.body.appendChild(box);
+
+// Setup the animation loop.
+function animate(time) {
+    requestAnimationFrame(animate);
+    TWEEN.update(time);
+}
+requestAnimationFrame(animate);
+
+const coords = {
+    x: 0,
+    y: 0
+}; // 初始位置(0, 0)
+const tween = new TWEEN.Tween(coords) // 创建tween
+    .to({
+        x: 300,
+        y: 200
+    }, 1000) // 1秒内移动到(300, 200)
+    .easing(TWEEN.Easing.Quadratic.Out) // 使用的tween的缓动函数
+    .onUpdate(() =&gt; {
+        // 改变box的style添加动画
+        box.style.setProperty('transform', `translate(${coords.x}px, ${coords.y}px)`);
+    })
+    .start(); // 启动
+</code></pre>
+
+    </div>
+    <div class="article-footer">
+<blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接: </strong>
+      <a href="https://jaylanwood.github.io/2020/02/%E5%8A%A8%E7%94%BB%E4%B8%8E%E7%BC%93%E5%8A%A8/" title="动画与缓动" target="_blank" rel="external">https://jaylanwood.github.io/2020/02/%E5%8A%A8%E7%94%BB%E4%B8%8E%E7%BC%93%E5%8A%A8/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>License：</strong><a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN</a>
+    </li>
+  </ul>
+</blockquote>
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/JaylanWood" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="https://jaylanwood.github.io/avatar.png" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/JaylanWood" target="_blank"><span class="text-dark">Jaylan</span><small class="ml-1x">为美好的博客献上祝福</small></a></h3>
+        <div>我家博客还蛮大的</div>
+      </div>
+    </figure>
+  </div>
+</div>
+    </div>
+  </article>
+<section id="comments">
+</section>
+
+</div><nav class="bar bar-footer clearfix" data-stick-bottom>
+    <div class="bar-inner">
+        <ul class="pager pull-left">
+            <li class="prev">
+                <a href="https://jaylanwood.github.io/2020/02/leancloud/" title="LeanCloud"><i
+                        class="icon icon-angle-left"
+                        aria-hidden="true"></i><span>&nbsp;&nbsp;下一篇</span></a>
+            </li>
+            <li class="next">
+                <a href="https://jaylanwood.github.io/2020/02/%E6%B3%A8%E5%86%8C%E7%99%BB%E9%99%86/"
+                    title="注册登陆"><span>上一篇&nbsp;&nbsp;</span><i
+                        class="icon icon-angle-right" aria-hidden="true"></i></a>
+            </li>
+            
+            <li class="toggle-toc">
+                <a class="toggle-btn collapsed" data-toggle="collapse" href="#collapseToc" aria-expanded="false"
+                    title="文章目录" role="button">
+                    <span>[&nbsp;</span><span>文章目录</span>
+                    <i class="text-collapsed icon icon-anchor"></i>
+                    <i class="text-in icon icon-close"></i>
+                    <span>]</span>
+                </a>
+            </li>
+        </ul>
+        <div class="bar-right">
+            <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter"
+                data-mobile-sites="weibo,qq,qzone"></div>
+        </div>
+    </div>
+</nav>
+
+</main><footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+<ul class="social-links">
+    <li><a href="https://github.com/JaylanWood" target="_blank" title="github" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-github"></i></a></li>
+    <li><a href="https://jaylanwood.github.io/index.xml" target="_blank" title="rss" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-rss"></i></a></li>
+</ul>
+  <div class="copyright">
+    &copy;2019 -
+    2020
+    <div class="publishby">
+      
+    </div>
+  </div>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+            showMathMenu: false, //disables context menu
+            tex2jax: {
+            inlineMath: [ ['$','$'], ['\\(','\\)'] ]
+           }
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/highlight.min.js"></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/python.min.js" defer></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/javascript.min.js" defer></script><script>
+    hljs.configure({
+        tabReplace: '    ', 
+        classPrefix: ''     
+        
+    })
+    hljs.initHighlightingOnLoad();
+</script>
+<script src="https://jaylanwood.github.io/js/application.min.bdeb64b910570b6c41badc6a05b7afb0c8ad9efd8525de3c7257d59e786326a3.js"></script>
+<script src="https://jaylanwood.github.io/js/plugin.min.51ff8c7317566f82259170fa36e09c4493adc9b9378b427a01ad3f017ebac7dd.js"></script>
+
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(未命名)',
+            },
+            ROOT_URL: 'https:\/\/jaylanwood.github.io\/',
+            CONTENT_URL: 'https:\/\/jaylanwood.github.io\/\/searchindex.json ',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script type="text/javascript" src="https://jaylanwood.github.io/js/insight.min.a343cd9a5a7698336b28ef3a7c16a3a1b1d2d5fb17dc8ed04022bbe08cc5459073a15bdafa3a8a58cdd56080784bdd69fa70b1ae8597565c799c57ed00f0e120.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+<script>
+    tocbot.init({
+        
+        tocSelector: '.js-toc',
+        
+        contentSelector: '.js-toc-content',
+        
+        headingSelector: 'h1, h2, h3',
+        
+        hasInnerContainers: true,
+    });
+</script>
+
+
+  </body>
+</html>

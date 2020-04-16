@@ -1,0 +1,1251 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>
+        请求、异步、回调、Promise、解构赋值 - 这就是Jaylan的博客吗
+      </title>
+    <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  
+  <meta name="theme-color" content="#000000" />
+  
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <meta name="description" content="简介 这是一个前端新人的关于请求与响应的笔记。 github 演示 基础准备 做一个服务器 server.js server.js var http = require(&#39;http&#39;) var fs = require(&#39;fs&#39;) var url = require(&#39;url&#39;) var port = process.argv[2] if (!port) { console.log(&#39;请" />
+  <meta name="generator" content="Hugo 0.65.3 with theme pure" />
+  <title>请求、异步、回调、Promise、解构赋值 - 这就是Jaylan的博客吗</title>
+  
+  
+  <link rel="stylesheet" href="https://jaylanwood.github.io/css/style.min.74c0595da1a4d9c68db698100b0660f846b95ddc1f9ec899e6e62641e0527235.css">
+  
+  <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
+  <meta property="og:title" content="请求、异步、回调、Promise、解构赋值" />
+<meta property="og:description" content="简介 这是一个前端新人的关于请求与响应的笔记。 github 演示 基础准备 做一个服务器 server.js server.js var http = require(&#39;http&#39;) var fs = require(&#39;fs&#39;) var url = require(&#39;url&#39;) var port = process.argv[2] if (!port) { console.log(&#39;请" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jaylanwood.github.io/2020/01/%E8%AF%B7%E6%B1%82%E5%BC%82%E6%AD%A5%E5%9B%9E%E8%B0%83promise%E8%A7%A3%E6%9E%84%E8%B5%8B%E5%80%BC/" />
+<meta property="article:published_time" content="2020-01-31T15:15:50+08:00" />
+<meta property="article:modified_time" content="2020-01-31T15:15:50+08:00" />
+<meta itemprop="name" content="请求、异步、回调、Promise、解构赋值">
+<meta itemprop="description" content="简介 这是一个前端新人的关于请求与响应的笔记。 github 演示 基础准备 做一个服务器 server.js server.js var http = require(&#39;http&#39;) var fs = require(&#39;fs&#39;) var url = require(&#39;url&#39;) var port = process.argv[2] if (!port) { console.log(&#39;请">
+<meta itemprop="datePublished" content="2020-01-31T15:15:50&#43;08:00" />
+<meta itemprop="dateModified" content="2020-01-31T15:15:50&#43;08:00" />
+<meta itemprop="wordCount" content="4708">
+
+
+
+<meta itemprop="keywords" content="请求,异步,回调,Promise,解构赋值,JSONP,AJAX," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="请求、异步、回调、Promise、解构赋值"/>
+<meta name="twitter:description" content="简介 这是一个前端新人的关于请求与响应的笔记。 github 演示 基础准备 做一个服务器 server.js server.js var http = require(&#39;http&#39;) var fs = require(&#39;fs&#39;) var url = require(&#39;url&#39;) var port = process.argv[2] if (!port) { console.log(&#39;请"/>
+
+  <!--[if lte IE 9]>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+    <![endif]-->
+
+  <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+  </head>
+
+  
+  
+
+  <body class="main-center theme-black" itemscope itemtype="http://schema.org/WebPage"><header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/JaylanWood" target="_self">
+          <img class="img-circle img-rotate" src="https://jaylanwood.github.io/avatar.png" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">Jaylan</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">为美好的博客献上祝福</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i>Guangdong, China</small>
+      </div><div class="search" id="search-form-wrap">
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i
+                        class="icon icon-search"></i></button>
+            </span>
+        </div>
+        <div class="ins-search">
+            <div class="ins-search-mask"></div>
+            <div class="ins-search-container">
+                <div class="ins-input-wrapper">
+                    <input type="text" class="ins-search-input" placeholder="想要查找什么..."
+                        x-webkit-speech />
+                    <button type="button" class="close ins-close ins-selectable" data-dismiss="modal"
+                        aria-label="Close"><span aria-hidden="true">×</span></button>
+                </div>
+                <div class="ins-section-wrapper">
+                    <div class="ins-section-container"></div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar"
+        aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement"
+      role="navigation">
+      <ul class="nav navbar-nav main-nav">
+        <li class="menu-item menu-item-home">
+          <a href="/">
+            <i class="icon icon-home-fill"></i>
+            <span class="menu-title">主页</span>
+          </a>
+        </li>
+        <li class="menu-item menu-item-archives">
+          <a href="/posts/">
+            <i class="icon icon-archives-fill"></i>
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/">
+            <i class="icon icon-folder"></i>
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/">
+            <i class="icon icon-tags"></i>
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        <li class="menu-item menu-item-about">
+          <a href="/about/">
+            <i class="icon icon-cup-fill"></i>
+            <span class="menu-title">关于</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header><aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content"><p>一口一篇文章</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+      <div class="widget">
+    <h3 class="widget-title"> 分类</h3>
+    <div class="widget-body">
+        <ul class="category-list">
+            <li class="category-list-item"><a href="https://jaylanwood.github.io/categories/%E5%89%8D%E7%AB%AF/" class="category-list-link">前端</a><span class="category-list-count">12</span></li>
+            <li class="category-list-item"><a href="https://jaylanwood.github.io/categories/%E6%90%AD%E5%8D%9A%E5%AE%A2/" class="category-list-link">搭博客</a><span class="category-list-count">2</span></li>
+        </ul>
+    </div>
+</div>
+      <div class="widget">
+    <h3 class="widget-title"> 标签</h3>
+    <div class="widget-body">
+        <ul class="tag-list">
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/ajax/" class="tag-list-link">ajax</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/cache-control/" class="tag-list-link">cache-control</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/cookie/" class="tag-list-link">cookie</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/dom/" class="tag-list-link">dom</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/etag/" class="tag-list-link">etag</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/expires/" class="tag-list-link">expires</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/html/" class="tag-list-link">html</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/hugo/" class="tag-list-link">hugo</a><span
+                    class="tag-list-count">2</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/jsonp/" class="tag-list-link">jsonp</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/last-modified/" class="tag-list-link">last-modified</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/localstorage/" class="tag-list-link">localstorage</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/mvc/" class="tag-list-link">mvc</a><span
+                    class="tag-list-count">2</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/promise/" class="tag-list-link">promise</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/session/" class="tag-list-link">session</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/sessionstorage/" class="tag-list-link">sessionstorage</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/tween.js/" class="tag-list-link">tween.js</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E4%BA%8B%E4%BB%B6/" class="tag-list-link">事件</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E5%8A%A8%E7%94%BB/" class="tag-list-link">动画</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E5%8F%91%E5%B1%95%E5%8F%B2/" class="tag-list-link">发展史</a><span
+                    class="tag-list-count">2</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E5%9B%9E%E8%B0%83/" class="tag-list-link">回调</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E5%AD%98%E5%82%A8/" class="tag-list-link">存储</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E5%AF%B9%E8%B1%A1/" class="tag-list-link">对象</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E5%BC%82%E6%AD%A5/" class="tag-list-link">异步</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="tag-list-link">数据库</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E6%A8%A1%E5%9D%97/" class="tag-list-link">模块</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E7%AB%8B%E5%8D%B3%E6%89%A7%E8%A1%8C%E5%87%BD%E6%95%B0/" class="tag-list-link">立即执行函数</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E7%B1%BB/" class="tag-list-link">类</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E7%BC%93%E5%8A%A8/" class="tag-list-link">缓动</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E8%A7%A3%E6%9E%84%E8%B5%8B%E5%80%BC/" class="tag-list-link">解构赋值</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E8%AF%B7%E6%B1%82/" class="tag-list-link">请求</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E8%BD%AC%E8%BD%BD%E6%96%87%E7%AB%A0/" class="tag-list-link">转载文章</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E8%BD%AE%E6%92%AD/" class="tag-list-link">轮播</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E9%97%AD%E5%8C%85/" class="tag-list-link">闭包</a><span
+                    class="tag-list-count">1</span></li>
+            
+        </ul>
+
+    </div>
+</div>
+      
+<div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+        <ul class="recent-post-list list-unstyled no-thumbnail">
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://jaylanwood.github.io/2020/04/learnhtml/" class="title">LearnHTML</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-04-11 23:30:47 &#43;0800 CST" itemprop="datePublished">2020-04-11</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://jaylanwood.github.io/2020/04/%E8%BD%AC%E5%A4%A7%E5%89%8D%E7%AB%AF%E7%9A%84%E6%8A%80%E6%9C%AF%E5%8E%9F%E7%90%86%E5%92%8C%E5%8F%98%E8%BF%81%E5%8F%B2/" class="title">转：大前端的技术原理和变迁史</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-04-11 21:11:07 &#43;0800 CST" itemprop="datePublished">2020-04-11</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://jaylanwood.github.io/2020/04/%E5%89%8D%E7%AB%AF%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/" class="title">前端生存指南</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-04-10 07:17:06 &#43;0800 CST" itemprop="datePublished">2020-04-10</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://jaylanwood.github.io/2020/02/%E6%A8%A1%E5%9D%97%E5%8C%96mvc%E5%8C%96%E5%AF%B9%E8%B1%A1%E5%8C%96%E7%B1%BB%E5%8C%96/" class="title">模块化、MVC化、对象化、类化</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-02-26 01:49:33 &#43;0800 CST" itemprop="datePublished">2020-02-26</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://jaylanwood.github.io/2020/02/%E6%B3%A8%E5%86%8C%E7%99%BB%E9%99%86/" class="title">注册登陆</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-02-26 01:33:12 &#43;0800 CST" itemprop="datePublished">2020-02-26</time>
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+  </div>
+</aside>
+
+    
+    
+<aside class="sidebar sidebar-toc collapse" id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <h4 class="toc-title">文章目录</h4>
+    <nav id="toc" class="js-toc toc">
+
+    </nav>
+  </div>
+</aside>
+<main class="main" role="main"><div class="content">
+  <article id="-" class="article article-type-" itemscope
+    itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      <h1 itemprop="name">
+  <a
+    class="article-title"
+    href="/2020/01/%E8%AF%B7%E6%B1%82%E5%BC%82%E6%AD%A5%E5%9B%9E%E8%B0%83promise%E8%A7%A3%E6%9E%84%E8%B5%8B%E5%80%BC/"
+    >请求、异步、回调、Promise、解构赋值</a
+  >
+</h1>
+
+      <div class="article-meta">
+        
+<span class="article-date">
+  <i class="icon icon-calendar-check"></i>&nbsp;
+<a href="https://jaylanwood.github.io/2020/01/%E8%AF%B7%E6%B1%82%E5%BC%82%E6%AD%A5%E5%9B%9E%E8%B0%83promise%E8%A7%A3%E6%9E%84%E8%B5%8B%E5%80%BC/" class="article-date">
+  <time datetime="2020-01-31 15:15:50 &#43;0800 CST" itemprop="datePublished">2020-01-31</time>
+</a>
+</span>
+<span class="article-category">
+  <i class="icon icon-folder"></i>&nbsp;
+  <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF/"> 前端 </a>
+</span>  
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>&nbsp;
+    <a class="article-tag-link" href="/tags/%E8%AF%B7%E6%B1%82/"> 请求 </a>
+    <a class="article-tag-link" href="/tags/%E5%BC%82%E6%AD%A5/"> 异步 </a>
+    <a class="article-tag-link" href="/tags/%E5%9B%9E%E8%B0%83/"> 回调 </a>
+    <a class="article-tag-link" href="/tags/promise/"> Promise </a>
+    <a class="article-tag-link" href="/tags/%E8%A7%A3%E6%9E%84%E8%B5%8B%E5%80%BC/"> 解构赋值 </a>
+    <a class="article-tag-link" href="/tags/jsonp/"> JSONP </a>
+    <a class="article-tag-link" href="/tags/ajax/"> AJAX </a>
+  </span>
+
+        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2020/01/%E8%AF%B7%E6%B1%82%E5%BC%82%E6%AD%A5%E5%9B%9E%E8%B0%83promise%E8%A7%A3%E6%9E%84%E8%B5%8B%E5%80%BC/#comments"
+            class="article-comment-link">评论</a></span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 4708字</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 10分 </span>
+      </div>
+    </div>
+    <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
+      <h2 id="简介">简介</h2>
+<p>这是一个前端新人的关于请求与响应的笔记。</p>
+<p><a href="https://github.com/JaylanWood/request">github 演示</a></p>
+<p><img src="https://raw.githubusercontent.com/JaylanWood/cloudimage/master/img/%E8%AF%B7%E6%B1%82.png" alt="效果预览图"></p>
+<h2 id="基础准备">基础准备</h2>
+<h3 id="做一个服务器-serverjs">做一个服务器 server.js</h3>
+<p>server.js</p>
+<pre><code class="language-javascript">var http = require('http')
+var fs = require('fs')
+var url = require('url')
+var port = process.argv[2]
+
+if (!port) {
+  console.log('请指定端口号。\n例如：node server.js 8080')
+  process.exit(1)
+}
+
+var server = http.createServer(function (request, response) {
+  var parsedUrl = url.parse(request.url, true)
+  var pathWithQuery = request.url
+  var queryString = ''
+  if (pathWithQuery.indexOf('?') &gt;= 0) {
+    queryString = pathWithQuery.substring(pathWithQuery.indexOf('?'))
+  }
+  var path = parsedUrl.pathname
+  var query = parsedUrl.query
+  var method = request.method
+
+  /******** 路由代码开始 ********/
+
+  console.log('含查询字符串的路径\n' + pathWithQuery)
+
+  if (path === '/' || path === '/index.html') {
+    // 1.请求 /index.html 或 /。返回 index.html 文件的字符串
+    var string = fs.readFileSync('./index.html')
+    response.statusCode = 200
+    response.setHeader('Content-Type', 'text/html;charset=utf-8')
+    response.write(string)
+    response.end()
+  } else {
+    // 0.请求失败。返回 '请求失败' 字符串。
+    response.statusCode = 404
+    response.setHeader('Content-Type', 'text/html;charset=utf-8')
+    response.write('请求失败')
+    response.end()
+  }
+
+  /******** 路由代码结束 ********/
+})
+
+server.listen(port)
+console.log('监听 ' + port + ' 成功\n请用浏览器打开 http://localhost:' + port)
+</code></pre>
+<p>运行 server.js</p>
+<pre><code class="language-bash">node server.js 8080
+</code></pre>
+<p>请求测试</p>
+<pre><code>在地址栏输入 http://localhost:8080，请求的是 / ，返回的是 index.html 文件转成的字符串。
+在地址栏输入 http://localhost:8080/hehe，请求的是 /hehe，返回的是 '请求失败' 字符串。
+</code></pre>
+<h3 id="数据库是什么鬼">数据库是什么鬼</h3>
+<p>文件系统是一种数据库</p>
+<p>MySQL 是一种数据库</p>
+<p>只要能长久地存数据，就是数据库</p>
+<h3 id="用文件做一个数据库-moneydb">用文件做一个数据库 money.db</h3>
+<p>创建 money.db 文件作为数据库</p>
+<pre><code class="language-bash">echo &quot;99&quot;&gt;money.db
+// 创建一个文件money.db，内容为99，作为数据库。
+</code></pre>
+<p>money.db 的内容</p>
+<pre><code>99
+</code></pre>
+<p>index.html 用 <code>&amp;&amp;&amp;amount&amp;&amp;&amp;</code> 占位，等待数据替换。</p>
+<pre><code class="language-html">&lt;h5&gt;余额&lt;span id=&quot;amount&quot;&gt;&amp;&amp;&amp;amount&amp;&amp;&amp;&lt;/span&gt;&lt;/h5&gt;
+</code></pre>
+<h3 id="服务器接受请求修改数据库并返回响应">服务器接受请求修改数据库并返回响应</h3>
+<p>server.js 当请求 <code>/</code> 或 <code>index.html</code> 时，读取 <code>money.db</code> 替换到 index.html 的 <code>&amp;&amp;&amp;amount&amp;&amp;&amp;</code>。</p>
+<pre><code class="language-javascript">if (path === '/' || path === '/index.html') {
+  // 请求 /index.html。返回 index.html 文件的字符串。
+  var string = fs.readFileSync('./index.html', 'utf8')
+  var amount = fs.readFileSync('./money.db', 'utf8')
+  string = string.replace('&amp;&amp;&amp;amount&amp;&amp;&amp;', amount)
+
+  response.setHeader('Content-Type', 'text/html;charset=utf-8')
+  response.write(string)
+  response.statusCode = 200
+  response.end()
+}
+</code></pre>
+<h2 id="各种发请求">各种发请求</h2>
+<h3 id="1用-form-发请求">1.用 form 发请求</h3>
+<p>用 form 可以发 get 请求，但是会刷新页面或新开页面。</p>
+<p>index.html</p>
+<pre><code class="language-html">&lt;h5&gt;余额&lt;span id=&quot;amount&quot;&gt;&amp;&amp;&amp;amount&amp;&amp;&amp;&lt;/span&gt;&lt;/h5&gt;
+&lt;form action=&quot;/formpay&quot; method=&quot;POST&quot;&gt;
+    &lt;input type=&quot;submit&quot; value=&quot;付款&quot;&gt;
+&lt;/form&gt;
+</code></pre>
+<p>server.js</p>
+<pre><code class="language-javascript">if (path === '/formpay' &amp;&amp; method.toUpperCase() === 'POST') {
+  // 请求 /formpay 且类型是 POST。操作数据库，并返回 'success' 字符串。 
+  var amount = fs.readFileSync('./money.db', 'utf8')
+  var newAmount = amount - 1
+  fs.writeFileSync('./money.db', newAmount)
+
+  response.write('formpay success')
+  response.statusCode = 200
+  response.end()
+}
+</code></pre>
+<p>浏览器收到 &lsquo;pay success&rsquo; 的字符串，整个页面渲染成只有 &lsquo;pay success&rsquo; 字符串的新页面。此时，后退到 index.html 并刷新，会请求 index.html 读取到新的余额。</p>
+<h4 id="用-iframe-接收-form-得到的响应页面">用 iframe 接收 form 得到的响应页面</h4>
+<p>form 默认会在新页面展示接收到的 &lsquo;pay success&rsquo; 字符串。</p>
+<p>我们用 iframe 来展示，就不用跳转页面了。（注意：firefox可以，但chrome还是会跳转）</p>
+<pre><code class="language-html">&lt;h5&gt;余额&lt;span id=&quot;amount&quot;&gt;&amp;&amp;&amp;amount&amp;&amp;&amp;&lt;/span&gt;&lt;/h5&gt;
+&lt;form action=&quot;/pay&quot; method=&quot;POST&quot; target=&quot;result&quot;&gt;
+    &lt;input type=&quot;submit&quot; value=&quot;付款&quot;&gt;
+&lt;/form&gt;
+&lt;iframe id=&quot;result&quot; src=&quot;about:blank&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;
+</code></pre>
+<p>但是余额上的数字还是没法更新，因为数据库变了，但是当前页面没有请求并接收到新的数据库。</p>
+<h3 id="2用-a-发请求">2.用 a 发请求</h3>
+<p>用 a 可以发 get 请求，但是会刷新页面或新开页面。</p>
+<p>index.html</p>
+<pre><code class="language-html">&lt;a href=&quot;/apay&quot;&gt;用a发请求&lt;/a&gt;
+</code></pre>
+<p>server.js</p>
+<pre><code class="language-javascript">if (path === '/apay') {
+  // 请求 /apay。
+  var amount = fs.readFileSync('./money.db', 'utf8')
+  var newAmount = amount - 1
+  fs.writeFileSync('./money.db', newAmount)
+
+  response.write('apay success')
+  response.statusCode = 200
+  response.end()
+}
+</code></pre>
+<h3 id="3用-img-发-get-请求">3.用 img 发 get 请求</h3>
+<p>用 img 可以发 get 请求，可以局部刷新，但是只能以图片的形式展示。</p>
+<p>index.html</p>
+<pre><code class="language-javascript">//点击按钮，生成一个 img，img 的 src 发起 get 请求。
+imgButton.addEventListener('click', (e) =&gt; {
+    let image = document.createElement('img')
+    image.src = '/imgpay'
+    image.onload = function () {
+        alert('img成功')
+        // window.location.reload() // 1.成功后帮用户刷新页面
+        amount.innerText = amount.innerText - 1 // 2.直接局部修改余额
+    }
+    image.onerror = function () {
+        alert('img失败')
+    }
+})
+</code></pre>
+<p>server.js</p>
+<pre><code class="language-javascript">//接收请求，操作数据库，返回图片、状态码、header。
+if (path === '/imgpay') {
+  // 请求 /imgpay。操作数据库，并返回图片。 
+  var amount = fs.readFileSync('./money.db', 'utf8')
+  var newAmount = amount - 1
+  fs.writeFileSync('./money.db', newAmount)
+
+  response.setHeader('Content-Type', 'images/jpg')
+  response.write(fs.readFileSync('./success.jpg'))
+  response.statusCode = 200
+  response.end()
+}
+</code></pre>
+<h3 id="4用-link-发请求">4.用 link 发请求</h3>
+<p>用 link 可以发 get 请求，但是只能以 CSS、favicon 的形式展示。</p>
+<p>index.html</p>
+<pre><code class="language-javascript">linkpay.onclick = function () {
+    var link = document.createElement('link')
+    link.rel = 'stylesheet'
+    link.href = '/linkpay'
+    document.head.appendChild(link)
+}
+</code></pre>
+<p>server.js</p>
+<pre><code class="language-javascript">if (path === '/linkpay') {
+  // 请求 /linkpay。
+  var amount = fs.readFileSync('./money.db', 'utf8')
+  var newAmount = amount - 1
+  fs.writeFileSync('./money.db', newAmount)
+
+  response.write('apay success')
+  response.statusCode = 200
+  response.end()
+}
+</code></pre>
+<h3 id="5用-script-发-get-请求">5.用 script 发 get 请求</h3>
+<p>用 script 可以发 get 请求，局部刷新，只能 get 不能 post，但是只能以脚本的形式运行。</p>
+<p>index.html</p>
+<pre><code class="language-javascript">scriptButton.addEventListener('click', (e) =&gt; {
+    let script = document.createElement('script')
+    script.src = '/scriptpay'
+    document.body.appendChild(script)
+    script.onload = function (e) { // 状态码是 200~299 则表示成功      
+        alert('scriptpay success')
+        e.currentTarget.remove() // 把服务器返回的 JS 标签移除。
+    }
+    script.onerror = function (e) { // 状态码大于等于 400 则表示失败
+        alert('scriptpay fail')
+        e.currentTarget.remove()
+    }
+})
+</code></pre>
+<p>server.js</p>
+<pre><code class="language-javascript">if (path === '/scriptpay') {
+  // 请求 /scriptpay。操作数据库，并返回 script 语法的字符串。
+  var amount = fs.readFileSync('./money.db', 'utf8')
+  amount -= 1
+  fs.writeFileSync('./money.db', amount)
+
+  response.setHeader('Content-Type', 'application/javascript')
+  response.write(`
+    amount.innerText = amount.innerText - 1
+  `)
+  response.statusCode = 200
+  response.end()
+} 
+</code></pre>
+<p>浏览器收到复符合 JavaScript 语法的字符串，会执行它。</p>
+<pre><code class="language-javascript">amount.innerText = amount.innerText - 1 // 假设之前是99，付款后数据库是98。
+</code></pre>
+<h4 id="跨域-srj">跨域 SRJ</h4>
+<p>这种技术叫做 SRJ - Server Rendered JavaScript，服务器返回的 JavaScript。</p>
+<h4 id="javascript-是可以跨域的">JavaScript 是可以跨域的</h4>
+<p>例如：在我们的网页引用 CDN 的 jQuery，我们的域名肯定跟 cdn.bootcss.com 这个域名不同啊！</p>
+<pre><code class="language-html">&lt;script src=&quot;https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+<h3 id="6jsonp-跨域发请求">6.JSONP 跨域发请求</h3>
+<p>index.html</p>
+<pre><code class="language-javascript">JSONPButton.addEventListener('click', (e) =&gt; {
+    // 1.创建script
+    var script = document.createElement('script')
+    // 2.创建随机字符串
+    var functionName = 'jaylan' + parseInt(Math.random() * 10000000, 10)
+    // 3.创建一个函数
+    window[functionName] = function (JSONStr) {
+        amount.innerText = amount.innerText - 1
+        alert(JSONStr)
+    }
+    // 4.用 script 发起请求。请求路径是 /JSONPpay，请求的查询参数是 callback=functionName。
+    script.src = '/JSONPpay?callback=' + functionName
+    // 5.把 script 插入 body，使得 script 生效执行。
+    document.body.appendChild(script)
+
+    script.onload = function (e) { // 状态码是 200~299 则表示成功 
+        e.currentTarget.remove()
+        delete window[functionName] // 请求完了就干掉这个随机函数
+    }
+    script.onerror = function (e) { // 状态码大于等于 400 则表示失败
+        e.currentTarget.remove()
+        delete window[functionName] // 请求完了就干掉这个随机函数
+    }
+})
+</code></pre>
+<p>server.js</p>
+<pre><code class="language-javascript">if (path === '/jQueryJSONPpay') {
+  // 请求 /jQueryJSONPpay。
+  var amount = fs.readFileSync('./money.db', 'utf8')
+  var newAmount = amount - 1
+  fs.writeFileSync('./money.db', newAmount)
+
+  let callback = query.callback
+  response.setHeader('Content-Type', 'application/json')
+  response.write(`
+    ${callback}.call(undefined, {
+      &quot;success&quot;:true,
+      &quot;left&quot;:${newAmount}
+    })
+  `)
+
+  response.statusCode = 200
+  response.end()
+</code></pre>
+<h4 id="jsonp-到底干了什么">JSONP 到底干了什么</h4>
+<p>浏览器做了一个 functionName 的函数， 用 script 发起 <code>/JSONPpay?callback=functionName</code> 的请求。</p>
+<p>服务器收到这个请求，得到了 functionName 的函数名。服务器把 functionName.call(undefined, JSON) 这样的符合 JavaSCript 语法的字符串返回给浏览器。</p>
+<p>浏览器收到返回的字符串，就执行 JavaScript，于是把 functionName 给 call 调用了。</p>
+<h4 id="jsonp的意义">JSONP的意义</h4>
+<p>JSONP 实现了：</p>
+<p>前端做了一个函数，这个函数需要一个数据。</p>
+<p>后端把需要的数据做成 JSON对象，并且做成调用这个函数的语句，返回给前端。</p>
+<p>前端拿到语句，调用了函数。</p>
+<h4 id="jsonp为什么不能用post">JSONP为什么不能用POST</h4>
+<p>因为 JSONP 是通过动态创建 script 实现的，而 script 只能发 get 不能发 post。</p>
+<h4 id="通过jquery来使用jsonp更方便">通过jQuery来使用JSONP更方便</h4>
+<pre><code class="language-javascript">// 使用JSONP。jQuery把JSONP归类在ajax，不用在意。
+$.ajax({
+    url: &quot;http://localhost:8888/jQueryJSONPpay&quot;,
+    jsonp: &quot;callback&quot;,
+    dataType: &quot;jsonp&quot;,
+
+    // 请求的 JSON 内容
+    // data: {
+    //     q: &quot;select title,abstract,url from search.news where query=\&quot;cat\&quot;&quot;,
+    //     format: &quot;json&quot;
+    // },
+
+    //  请求成功后执行的函数
+    success: function (response) {
+        if (response.success) {
+            amount.innerText = amount.innerText - 1
+        }
+    }
+})
+</code></pre>
+<h3 id="7用xmlhttprequest发请求-xml响应">7.用XMLHttpRequest发请求 XML响应</h3>
+<p>用 XMLHttpRequest 发请求，响应回 XML 语法的字符串，解析 XML 当作 DOM 来用。</p>
+<p>index.html</p>
+<pre><code class="language-javascript">XMLpay.addEventListener('click', (e) =&gt; {
+    // 1.构造 XMLHttpRequest 请求
+    let request = new XMLHttpRequest() 
+    // 2.监控请求的状态变化
+    request.onreadystatechange = () =&gt; { 
+        if (request.readyState === 4) {
+            // 状态4===响应完毕
+            if (request.status &gt;= 200 &amp;&amp; request.status &lt; 300) {
+                console.log('请求成功')
+                // 把xml转化为dom
+                let parser = new DOMParser()
+                let xmlDoc = parser.parseFromString(request.responseText, &quot;text/html&quot;)
+                // 用dom一样来操作xml
+                let heading = xmlDoc.getElementsByTagName('heading')[0].textContent
+                console.log('打印响应xml的heading内容：' + heading)
+            } else if (request.status &gt;= 400) {
+                console.log('请求失败')
+            }
+        }
+    }
+    // 3.配置请求
+    request.open('GET', './XMLpay') 
+    // 4.发送请求
+    request.send() 
+})
+</code></pre>
+<p>sercer.js</p>
+<pre><code class="language-javascript">if (path === '/XMLpay') {
+  // 请求 /XMLpay。
+  var amount = fs.readFileSync('./money.db', 'utf8')
+  var newAmount = amount - 1
+  fs.writeFileSync('./money.db', newAmount)
+
+  response.statusCode = 200
+  response.setHeader('Content-Type', 'text/xml;charset=utf-8')
+  // XML语法的字符串
+  response.write(`
+      &lt;note&gt;
+        &lt;to&gt;sakura&lt;/to&gt;
+        &lt;form&gt;jaylan&lt;/form&gt;
+        &lt;heading&gt;welcome&lt;/heading&gt;
+        &lt;body&gt;bengbengbeng&lt;/body&gt;
+      &lt;/note&gt;
+    `)
+  response.end()
+}
+</code></pre>
+<h3 id="8用xmlhttprequest发请求-json响应">8.用XMLHttpRequest发请求 JSON响应</h3>
+<p>响应 XML 太麻烦了，不好用，于是用 JSON 代替 XML，JSON 是轻量级的数据交换语言。</p>
+<p>index.html</p>
+<pre><code class="language-javascript">// 1.构造 XMLHttpRequest 请求
+let request = new XMLHttpRequest()
+// 2.监控请求的状态变化
+request.onreadystatechange = () =&gt; {
+    if (request.readyState === 4) {
+        // 状态4===响应完毕
+        if (request.status &gt;= 200 &amp;&amp; request.status &lt; 300) {
+            console.log('请求成功')
+            let string = request.responseText
+            // 把符合 JSON 语法的字符串，转换成 JS 对应的值。
+            let object = window.JSON.parse(string)
+            // JSON.parse 是浏览器提供的
+            console.log(typeof object)
+            console.log(object)
+        } else if (request.status &gt;= 400) {
+            console.log('请求失败')
+        }
+    }
+}
+// 3.配置请求
+request.open('GET', './JSONpay')
+// 4.发送请求
+request.send()
+</code></pre>
+<p>readyState请求的5种状态</p>
+<table>
+<thead>
+<tr>
+<th><strong>值</strong></th>
+<th><strong>状态</strong></th>
+<th><strong>描述</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>UNSENT</td>
+<td>代理被创建，但尚未调用 open() 方法。</td>
+</tr>
+<tr>
+<td>1</td>
+<td>OPENED</td>
+<td>open() 方法已经被调用。</td>
+</tr>
+<tr>
+<td>2</td>
+<td>HEADERS_RECEIVED</td>
+<td>send() 方法已经被调用，并且头部和状态已经可获得。</td>
+</tr>
+<tr>
+<td>3</td>
+<td>LOADING</td>
+<td>响应下载中； responseText 属性已经包含部分数据。</td>
+</tr>
+<tr>
+<td>4</td>
+<td>DONE</td>
+<td>响应下载操作已完成。</td>
+</tr>
+</tbody>
+</table>
+<p>server.js</p>
+<pre><code class="language-javascript">if (path === '/JSONpay') {
+    // 请求 /JSONpay。
+    var amount = fs.readFileSync('./money.db', 'utf8')
+    var newAmount = amount - 1
+    fs.writeFileSync('./money.db', newAmount)
+
+    response.statusCode = 200
+    response.setHeader('Content-Type', 'text/json;charset=utf-8')
+    // response.setHeader('Access-Control-Allow-Origin', 'http://localhost:8888/')
+    // JSON语法的字符串
+    response.write(`{
+      &quot;note&quot;:{
+        &quot;to&quot;:&quot;八重樱&quot;,
+        &quot;from&quot;:&quot;飞鱼丸&quot;,
+        &quot;heading&quot;:&quot;嘤嘤嘤&quot;,
+        &quot;body&quot;:&quot;大姐你回来啦&quot;
+      }
+    }`)
+    response.end()
+  }
+</code></pre>
+<h4 id="javascript-与-json">JavaScript 与 JSON</h4>
+<ol>
+<li>
+<p>JSON 没有 function 和 undefined。</p>
+</li>
+<li>
+<p>JSON 的字符串首尾必须是双引号&rdquo;。</p>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>JavaScript</th>
+<th>JSON</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>undefined</td>
+<td>没有</td>
+</tr>
+<tr>
+<td>null</td>
+<td>null</td>
+</tr>
+<tr>
+<td>[&lsquo;a&rsquo;,&lsquo;b&rsquo;]</td>
+<td>[&ldquo;a&rdquo;,&ldquo;b&rdquo;]</td>
+</tr>
+<tr>
+<td>function  fn(){}</td>
+<td>没有</td>
+</tr>
+<tr>
+<td>{name:&lsquo;sakura&rsquo;}</td>
+<td>{&ldquo;name&rdquo;:&ldquo;sakura&rdquo;}</td>
+</tr>
+<tr>
+<td>&lsquo;sakura&rsquo;</td>
+<td>&ldquo;sakura&rdquo;</td>
+</tr>
+<tr>
+<td>var  a = {}  a.self  = a</td>
+<td>没有变量</td>
+</tr>
+<tr>
+<td><code>{__proto__}</code></td>
+<td>没有原型链</td>
+</tr>
+</tbody>
+</table>
+<p><a href="https://www.json.org/">JSON官网</a></p>
+<h3 id="9用ajax发请求">9.用AJAX发请求</h3>
+<p>index.html</p>
+<pre><code class="language-javascript">AJAXpay.addEventListener('click', (e) =&gt; {
+    let request = new XMLHttpRequest()
+    request.onreadystatechange = () =&gt; {
+        if (request.readyState === 4) {
+            if (request.status &gt;= 200 &amp;&amp; request.status &lt; 300) {
+                successFn.call(undefined, arg)
+            } else if (request.status &gt;= 400) {
+                failFn.call(undefined.arg)
+            }
+        }
+    }
+    request.open('GET', './AJAXpay')
+    request.send()
+})
+</code></pre>
+<h4 id="什么是ajax">什么是AJAX</h4>
+<p>AJAX不是JavaScript的规范，它只是一个哥们Jesse James Garrett“发明”的缩写：</p>
+<p>Asynchronous JavaScript and XML</p>
+<p>异步的 JavaScript 和 XML</p>
+<p>意思就是用JavaScript执行异步网络请求。</p>
+<p>用JavaScript发请求，用JavaScript处理响应。</p>
+<ol>
+<li>
+<p>使用XMLHttpRequest发请求。</p>
+</li>
+<li>
+<p>服务器返回符合XML格式的字符串。</p>
+</li>
+<li>
+<p>JS解析XML，并更新局部页面。</p>
+</li>
+<li>
+<p>因为XML不好用，后来人们用JSON替代了XML。</p>
+</li>
+</ol>
+<p>金句：</p>
+<ol>
+<li>你才返回对象，你全家都返回对象</li>
+<li>JS 是一门语言，JSON 是另一门语言，JSON 这门语言抄袭了 JS这门语言</li>
+<li>AJAX 就是用 JS 发请求</li>
+<li>响应的第四部分是字符串，可以用 JSON 语法表示一个对象，也可以用 JSON 语法表示一个数组，还可以用 XML 语法，还可以用 HTML 语法，还可以用 CSS 语法，还可以用 JS 语法，还可以用我自创的语法</li>
+</ol>
+<h4 id="只有-ajax-要同源策略其他-aimgformlinkscript-都可以跨源">只有 AJAX 要同源策略，其他 a\img\form\link\script 都可以跨源。</h4>
+<p>只有 协议+端口+域名 一模一样才允许发 AJAX 请求</p>
+<p>一模一样一模一样一模一样一模一样一模一样一模一样一模一样一模一样</p>
+<ol>
+<li><a href="http://baidu.com/">http://baidu.com</a> 可以向 <a href="http://www.baidu.com/">http://www.baidu.com</a> 发 AJAX 请求吗 no</li>
+<li><a href="http://baidu.com/">http://baidu.com:80</a> 可以向 <a href="http://baidu.com:81/">http://baidu.com:81</a> 发 AJAX 请求吗 no</li>
+</ol>
+<p>浏览器必须保证
+只有 协议+端口+域名 一模一样才允许发 AJAX 请求
+CORS 可以告诉浏览器，我俩一家的，别阻止他</p>
+<p>突破同源策略 === 跨域</p>
+<h4 id="cors-跨域">CORS 跨域</h4>
+<p>Cross-Origin Resource Sharing</p>
+<p>server.js</p>
+<pre><code class="language-javascript">// CORS 跨源共享给http://frank.com:8001
+response.setHeader('Access-Control-Allow-Origin', 'http://frank.com:8001')
+</code></pre>
+<h4 id="ajax-的所有功能">AJAX 的所有功能</h4>
+<ul>
+<li>客户端的JS发起请求（浏览器上的）</li>
+<li>服务端的JS发送响应（Node.js上的）</li>
+</ul>
+<p>JS 可以设置任意请求 header</p>
+<pre><code>第一部分 request.open('get', '/xxx')
+
+第二部分 request.setHeader('content-type','x-www-form-urlencoded')
+
+第四部分 request.send('a=1&amp;b=2')
+</code></pre>
+<p>JS 可以获取任意响应 header</p>
+<pre><code>第一部分 request.status / request.statusText
+
+第二部分 request.getResponseHeader() / request.getAllResponseHeaders()
+
+第四部分 request.responseText
+</code></pre>
+<h3 id="10自制-windowjqueryajax">10.自制 window.jQuery.ajax</h3>
+<pre><code class="language-javascript">window.jQuery.ajax = function (options) {
+    // 代码
+}
+</code></pre>
+<h4 id="ajax-的回调">AJAX 的回调</h4>
+<pre><code class="language-javascript">window.myQuery.ajax = function ({url,method,body,successFn,failFn,}) {
+    let request = new XMLHttpRequest()
+    request.open(method, url)
+    request.onreadystatechange = () =&gt; {
+        if (request.readyState === 4) {
+            if (request.status &gt;= 200 &amp;&amp; request.status &lt; 300) {
+                // request.onreadystatechange 触发时，call successFn
+                successFn.call(undefined, request.responseText)
+            } else if (request.status &gt;= 400) {
+                failFn.call(undefined, request)
+            }
+        }
+    }
+    request.send(body)
+}
+// 使用方代码
+myQAJAX.addEventListener('click', (e) =&gt; {
+    window.myQuery.ajax({
+        url: '/xxx',
+        method: 'post',
+        body: 'a=1&amp;b=2',
+        // 使用方写的函数，使用方不call
+        successFn: (responseText) =&gt; {
+            console.log(1)
+        },
+        failFn: (request) =&gt; {
+            console.log(2)
+        }
+    })
+})
+// myQAJAX 按钮按下，调用 ajax()，写了一个 successFn 函数，但是它没调用。
+// request.onreadystatechange 监听变化，触发 successFn.call。
+// successFn:() =&gt;{} 这个函数就是回调函数。
+</code></pre>
+<h2 id="同步异步回调">同步、异步、回调</h2>
+<p>同步：一定要等任务执行完了，得到结果，才执行下一个任务。</p>
+<pre><code class="language-javascript">function taskSync() {
+    return '同步任务的返回值'
+}
+
+var result = taskSync() // 那么 result 就是同步任务的结果
+otherTask() // 然后执行下一个任务
+</code></pre>
+<p>异步：不等任务执行完，直接执行下一个任务。</p>
+<pre><code class="language-javascript">function taskAsync() {
+    var result = setTimeout(function () {
+        console.log('异步任务的结果')
+    }, 3000)
+    return result // 返回 setTimeout 的 TimerID
+}
+
+var result = taskAsync() // result 不是异步任务的结果，而是一个 timer id
+otherTask() // 立即执行其他任务，不等异步任务结束
+</code></pre>
+<p>聪明的你可能会发现，我们拿到的 result 不是异步执行的结果，而是一个 timer id，那么要怎么拿到异步任务的结果呢？</p>
+<p>用回调。</p>
+<p>改下代码如下：</p>
+<pre><code class="language-javascript">function taskAsync(callback) {
+    var result = setTimeout(function () {
+        callback('异步任务的结果')
+    }, 3000)
+    return result
+}
+
+function callback(result) {
+    console.log(result) // 三秒钟后，这个 callback 函数会被执行
+}
+
+taskAsync.call(callback) // taskAsync 来调用
+otherTask() // 立即执行其他任务，不等异步任务结束
+</code></pre>
+<p>所以「回调」经常用于获取「异步任务」的结果。</p>
+<h3 id="回调的问题">回调的问题</h3>
+<p>问题是每个程序员的回调名不一样</p>
+<h3 id="promise-解决了这个问题">Promise 解决了这个问题</h3>
+<p>请背下这个代码</p>
+<pre><code class="language-javascript">function xxx() {
+    return new Promise((f1, f2) =&gt; {
+        doSomething()
+        setTimeout(() =&gt; {
+            // 成功就调用 f1，失败就调用 f2
+        }, 3000)
+    })
+}
+xxx().then(success, fail)
+
+// 链式操作
+xxx().then(success, fail).then(success, fail)
+</code></pre>
+<h2 id="es6的解构赋值">ES6的解构赋值</h2>
+<p>解构赋值语法是一种 Javascript 表达式。通过解构赋值, 可以将属性/值从对象/数组中取出,赋值给其他变量。</p>
+<pre><code class="language-javascript">let a = obj.a
+let b = obj.b
+let c = obj.c
+// 等价于下面的这行代码。ES6 解构赋值。
+let{a,b,c}= obj
+</code></pre>
+<pre><code class="language-javascript">var a = 'a';
+var b = 'b';
+[a, b] = [b, a] // 交换变量 a b 的值。
+</code></pre>
+
+    </div>
+    <div class="article-footer">
+<blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接: </strong>
+      <a href="https://jaylanwood.github.io/2020/01/%E8%AF%B7%E6%B1%82%E5%BC%82%E6%AD%A5%E5%9B%9E%E8%B0%83promise%E8%A7%A3%E6%9E%84%E8%B5%8B%E5%80%BC/" title="请求、异步、回调、Promise、解构赋值" target="_blank" rel="external">https://jaylanwood.github.io/2020/01/%E8%AF%B7%E6%B1%82%E5%BC%82%E6%AD%A5%E5%9B%9E%E8%B0%83promise%E8%A7%A3%E6%9E%84%E8%B5%8B%E5%80%BC/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>License：</strong><a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN</a>
+    </li>
+  </ul>
+</blockquote>
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/JaylanWood" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="https://jaylanwood.github.io/avatar.png" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/JaylanWood" target="_blank"><span class="text-dark">Jaylan</span><small class="ml-1x">为美好的博客献上祝福</small></a></h3>
+        <div>我家博客还蛮大的</div>
+      </div>
+    </figure>
+  </div>
+</div>
+    </div>
+  </article>
+<section id="comments">
+</section>
+
+</div><nav class="bar bar-footer clearfix" data-stick-bottom>
+    <div class="bar-inner">
+        <ul class="pager pull-left">
+            <li class="prev">
+                <a href="https://jaylanwood.github.io/2020/01/dom%E4%BA%8B%E4%BB%B6/" title="DOM事件"><i
+                        class="icon icon-angle-left"
+                        aria-hidden="true"></i><span>&nbsp;&nbsp;下一篇</span></a>
+            </li>
+            <li class="next">
+                <a href="https://jaylanwood.github.io/2020/02/%E7%AB%8B%E5%8D%B3%E6%89%A7%E8%A1%8C%E5%87%BD%E6%95%B0%E9%97%AD%E5%8C%85/"
+                    title="立即执行函数、闭包"><span>上一篇&nbsp;&nbsp;</span><i
+                        class="icon icon-angle-right" aria-hidden="true"></i></a>
+            </li>
+            
+            <li class="toggle-toc">
+                <a class="toggle-btn collapsed" data-toggle="collapse" href="#collapseToc" aria-expanded="false"
+                    title="文章目录" role="button">
+                    <span>[&nbsp;</span><span>文章目录</span>
+                    <i class="text-collapsed icon icon-anchor"></i>
+                    <i class="text-in icon icon-close"></i>
+                    <span>]</span>
+                </a>
+            </li>
+        </ul>
+        <div class="bar-right">
+            <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter"
+                data-mobile-sites="weibo,qq,qzone"></div>
+        </div>
+    </div>
+</nav>
+
+</main><footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+<ul class="social-links">
+    <li><a href="https://github.com/JaylanWood" target="_blank" title="github" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-github"></i></a></li>
+    <li><a href="https://jaylanwood.github.io/index.xml" target="_blank" title="rss" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-rss"></i></a></li>
+</ul>
+  <div class="copyright">
+    &copy;2019 -
+    2020
+    <div class="publishby">
+      
+    </div>
+  </div>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+            showMathMenu: false, //disables context menu
+            tex2jax: {
+            inlineMath: [ ['$','$'], ['\\(','\\)'] ]
+           }
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/highlight.min.js"></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/python.min.js" defer></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/javascript.min.js" defer></script><script>
+    hljs.configure({
+        tabReplace: '    ', 
+        classPrefix: ''     
+        
+    })
+    hljs.initHighlightingOnLoad();
+</script>
+<script src="https://jaylanwood.github.io/js/application.min.bdeb64b910570b6c41badc6a05b7afb0c8ad9efd8525de3c7257d59e786326a3.js"></script>
+<script src="https://jaylanwood.github.io/js/plugin.min.51ff8c7317566f82259170fa36e09c4493adc9b9378b427a01ad3f017ebac7dd.js"></script>
+
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(未命名)',
+            },
+            ROOT_URL: 'https:\/\/jaylanwood.github.io\/',
+            CONTENT_URL: 'https:\/\/jaylanwood.github.io\/\/searchindex.json ',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script type="text/javascript" src="https://jaylanwood.github.io/js/insight.min.a343cd9a5a7698336b28ef3a7c16a3a1b1d2d5fb17dc8ed04022bbe08cc5459073a15bdafa3a8a58cdd56080784bdd69fa70b1ae8597565c799c57ed00f0e120.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+<script>
+    tocbot.init({
+        
+        tocSelector: '.js-toc',
+        
+        contentSelector: '.js-toc-content',
+        
+        headingSelector: 'h1, h2, h3',
+        
+        hasInnerContainers: true,
+    });
+</script>
+
+
+  </body>
+</html>
