@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>
+        为美好的 PBR 献上祝福 - 这就是Jaylan的博客吗
+      </title>
+    <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  
+  <meta name="theme-color" content="#000000" />
+  
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <meta name="description" content="简介 这篇文章是一个爱好者写的，也不是给技术大佬看的，所以有不对的地方请指正请轻喷，当然，有大佬指正小弟巴不得呢！ 你要是觉得我写的还挺好的话，" />
+  <meta name="generator" content="Hugo 0.65.3 with theme pure" />
+  <title>为美好的 PBR 献上祝福 - 这就是Jaylan的博客吗</title>
+  
+  
+  <link rel="stylesheet" href="https://jaylanwood.github.io/css/style.min.74c0595da1a4d9c68db698100b0660f846b95ddc1f9ec899e6e62641e0527235.css">
+  
+  <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
+  <meta property="og:title" content="为美好的 PBR 献上祝福" />
+<meta property="og:description" content="简介 这篇文章是一个爱好者写的，也不是给技术大佬看的，所以有不对的地方请指正请轻喷，当然，有大佬指正小弟巴不得呢！ 你要是觉得我写的还挺好的话，" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jaylanwood.github.io/2020/04/%E4%B8%BA%E7%BE%8E%E5%A5%BD%E7%9A%84-pbr-%E7%8C%AE%E4%B8%8A%E7%A5%9D%E7%A6%8F/" />
+<meta property="article:published_time" content="2020-04-17T07:13:13+08:00" />
+<meta property="article:modified_time" content="2020-04-17T07:13:13+08:00" />
+<meta itemprop="name" content="为美好的 PBR 献上祝福">
+<meta itemprop="description" content="简介 这篇文章是一个爱好者写的，也不是给技术大佬看的，所以有不对的地方请指正请轻喷，当然，有大佬指正小弟巴不得呢！ 你要是觉得我写的还挺好的话，">
+<meta itemprop="datePublished" content="2020-04-17T07:13:13&#43;08:00" />
+<meta itemprop="dateModified" content="2020-04-17T07:13:13&#43;08:00" />
+<meta itemprop="wordCount" content="3232">
+
+
+
+<meta itemprop="keywords" content="PBR,Fresnel,Metalness," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="为美好的 PBR 献上祝福"/>
+<meta name="twitter:description" content="简介 这篇文章是一个爱好者写的，也不是给技术大佬看的，所以有不对的地方请指正请轻喷，当然，有大佬指正小弟巴不得呢！ 你要是觉得我写的还挺好的话，"/>
+
+  <!--[if lte IE 9]>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+    <![endif]-->
+
+  <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+  </head>
+
+  
+  
+
+  <body class="main-center theme-black" itemscope itemtype="http://schema.org/WebPage"><header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/JaylanWood" target="_self">
+          <img class="img-circle img-rotate" src="https://jaylanwood.github.io/avatar.png" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">Jaylan</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">为美好的博客献上祝福</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i>Guangdong, China</small>
+      </div><div class="search" id="search-form-wrap">
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i
+                        class="icon icon-search"></i></button>
+            </span>
+        </div>
+        <div class="ins-search">
+            <div class="ins-search-mask"></div>
+            <div class="ins-search-container">
+                <div class="ins-input-wrapper">
+                    <input type="text" class="ins-search-input" placeholder="想要查找什么..."
+                        x-webkit-speech />
+                    <button type="button" class="close ins-close ins-selectable" data-dismiss="modal"
+                        aria-label="Close"><span aria-hidden="true">×</span></button>
+                </div>
+                <div class="ins-section-wrapper">
+                    <div class="ins-section-container"></div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar"
+        aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement"
+      role="navigation">
+      <ul class="nav navbar-nav main-nav">
+        <li class="menu-item menu-item-home">
+          <a href="/">
+            <i class="icon icon-home-fill"></i>
+            <span class="menu-title">主页</span>
+          </a>
+        </li>
+        <li class="menu-item menu-item-archives">
+          <a href="/posts/">
+            <i class="icon icon-archives-fill"></i>
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/">
+            <i class="icon icon-folder"></i>
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/">
+            <i class="icon icon-tags"></i>
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        <li class="menu-item menu-item-about">
+          <a href="/about/">
+            <i class="icon icon-cup-fill"></i>
+            <span class="menu-title">关于</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header><aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content"><p>一口一篇文章</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+      <div class="widget">
+    <h3 class="widget-title"> 分类</h3>
+    <div class="widget-body">
+        <ul class="category-list">
+            <li class="category-list-item"><a href="https://jaylanwood.github.io/categories/cg/" class="category-list-link">cg</a><span class="category-list-count">1</span></li>
+            <li class="category-list-item"><a href="https://jaylanwood.github.io/categories/%E5%89%8D%E7%AB%AF/" class="category-list-link">前端</a><span class="category-list-count">12</span></li>
+            <li class="category-list-item"><a href="https://jaylanwood.github.io/categories/%E6%90%AD%E5%8D%9A%E5%AE%A2/" class="category-list-link">搭博客</a><span class="category-list-count">2</span></li>
+        </ul>
+    </div>
+</div>
+      <div class="widget">
+    <h3 class="widget-title"> 标签</h3>
+    <div class="widget-body">
+        <ul class="tag-list">
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/ajax/" class="tag-list-link">ajax</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/cache-control/" class="tag-list-link">cache-control</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/cookie/" class="tag-list-link">cookie</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/dom/" class="tag-list-link">dom</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/etag/" class="tag-list-link">etag</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/expires/" class="tag-list-link">expires</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/fresnel/" class="tag-list-link">fresnel</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/html/" class="tag-list-link">html</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/hugo/" class="tag-list-link">hugo</a><span
+                    class="tag-list-count">2</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/jsonp/" class="tag-list-link">jsonp</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/last-modified/" class="tag-list-link">last-modified</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/localstorage/" class="tag-list-link">localstorage</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/metalness/" class="tag-list-link">metalness</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/mvc/" class="tag-list-link">mvc</a><span
+                    class="tag-list-count">2</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/pbr/" class="tag-list-link">pbr</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/promise/" class="tag-list-link">promise</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/session/" class="tag-list-link">session</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/sessionstorage/" class="tag-list-link">sessionstorage</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/tween.js/" class="tag-list-link">tween.js</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E4%BA%8B%E4%BB%B6/" class="tag-list-link">事件</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E5%8A%A8%E7%94%BB/" class="tag-list-link">动画</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E5%8F%91%E5%B1%95%E5%8F%B2/" class="tag-list-link">发展史</a><span
+                    class="tag-list-count">2</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E5%9B%9E%E8%B0%83/" class="tag-list-link">回调</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E5%AD%98%E5%82%A8/" class="tag-list-link">存储</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E5%AF%B9%E8%B1%A1/" class="tag-list-link">对象</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E5%BC%82%E6%AD%A5/" class="tag-list-link">异步</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="tag-list-link">数据库</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E6%A8%A1%E5%9D%97/" class="tag-list-link">模块</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E7%AB%8B%E5%8D%B3%E6%89%A7%E8%A1%8C%E5%87%BD%E6%95%B0/" class="tag-list-link">立即执行函数</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E7%B1%BB/" class="tag-list-link">类</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E7%BC%93%E5%8A%A8/" class="tag-list-link">缓动</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E8%A7%A3%E6%9E%84%E8%B5%8B%E5%80%BC/" class="tag-list-link">解构赋值</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E8%AF%B7%E6%B1%82/" class="tag-list-link">请求</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E8%BD%AC%E8%BD%BD%E6%96%87%E7%AB%A0/" class="tag-list-link">转载文章</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E8%BD%AE%E6%92%AD/" class="tag-list-link">轮播</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://jaylanwood.github.io/tags/%E9%97%AD%E5%8C%85/" class="tag-list-link">闭包</a><span
+                    class="tag-list-count">1</span></li>
+            
+        </ul>
+
+    </div>
+</div>
+      
+<div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+        <ul class="recent-post-list list-unstyled no-thumbnail">
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://jaylanwood.github.io/2020/04/%E4%B8%BA%E7%BE%8E%E5%A5%BD%E7%9A%84-pbr-%E7%8C%AE%E4%B8%8A%E7%A5%9D%E7%A6%8F/" class="title">为美好的 PBR 献上祝福</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-04-17 07:13:13 &#43;0800 CST" itemprop="datePublished">2020-04-17</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://jaylanwood.github.io/2020/04/learnhtml/" class="title">LearnHTML</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-04-11 23:30:47 &#43;0800 CST" itemprop="datePublished">2020-04-11</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://jaylanwood.github.io/2020/04/%E8%BD%AC%E5%A4%A7%E5%89%8D%E7%AB%AF%E7%9A%84%E6%8A%80%E6%9C%AF%E5%8E%9F%E7%90%86%E5%92%8C%E5%8F%98%E8%BF%81%E5%8F%B2/" class="title">转：大前端的技术原理和变迁史</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-04-11 21:11:07 &#43;0800 CST" itemprop="datePublished">2020-04-11</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://jaylanwood.github.io/2020/04/%E5%89%8D%E7%AB%AF%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/" class="title">前端生存指南</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-04-10 07:17:06 &#43;0800 CST" itemprop="datePublished">2020-04-10</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://jaylanwood.github.io/2020/02/%E6%A8%A1%E5%9D%97%E5%8C%96mvc%E5%8C%96%E5%AF%B9%E8%B1%A1%E5%8C%96%E7%B1%BB%E5%8C%96/" class="title">模块化、MVC化、对象化、类化</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-02-26 01:49:33 &#43;0800 CST" itemprop="datePublished">2020-02-26</time>
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+  </div>
+</aside>
+
+    
+    
+<aside class="sidebar sidebar-toc collapse" id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <h4 class="toc-title">文章目录</h4>
+    <nav id="toc" class="js-toc toc">
+
+    </nav>
+  </div>
+</aside>
+<main class="main" role="main"><div class="content">
+  <article id="-" class="article article-type-" itemscope
+    itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      <h1 itemprop="name">
+  <a
+    class="article-title"
+    href="/2020/04/%E4%B8%BA%E7%BE%8E%E5%A5%BD%E7%9A%84-pbr-%E7%8C%AE%E4%B8%8A%E7%A5%9D%E7%A6%8F/"
+    >为美好的 PBR 献上祝福</a
+  >
+</h1>
+
+      <div class="article-meta">
+        
+<span class="article-date">
+  <i class="icon icon-calendar-check"></i>&nbsp;
+<a href="https://jaylanwood.github.io/2020/04/%E4%B8%BA%E7%BE%8E%E5%A5%BD%E7%9A%84-pbr-%E7%8C%AE%E4%B8%8A%E7%A5%9D%E7%A6%8F/" class="article-date">
+  <time datetime="2020-04-17 07:13:13 &#43;0800 CST" itemprop="datePublished">2020-04-17</time>
+</a>
+</span>
+<span class="article-category">
+  <i class="icon icon-folder"></i>&nbsp;
+  <a class="article-category-link" href="/categories/cg/"> CG </a>
+</span>  
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>&nbsp;
+    <a class="article-tag-link" href="/tags/pbr/"> PBR </a>
+    <a class="article-tag-link" href="/tags/fresnel/"> Fresnel </a>
+    <a class="article-tag-link" href="/tags/metalness/"> Metalness </a>
+  </span>
+
+        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2020/04/%E4%B8%BA%E7%BE%8E%E5%A5%BD%E7%9A%84-pbr-%E7%8C%AE%E4%B8%8A%E7%A5%9D%E7%A6%8F/#comments"
+            class="article-comment-link">评论</a></span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 3232字</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 7分 </span>
+      </div>
+    </div>
+    <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
+      <h2 id="简介">简介</h2>
+<p>这篇文章是一个爱好者写的，也不是给技术大佬看的，所以有不对的地方请指正请轻喷，当然，有大佬指正小弟巴不得呢！</p>
+<p>你要是觉得我写的还挺好的话，就点个赞呗！</p>
+<p>作者：JaylanWood</p>
+<p>联系作者：jaylanwu@outlook.com</p>
+<h2 id="金属还是非金属-这不是个问题">金属还是非金属 这不是个问题</h2>
+<p><strong>来，做金属</strong></p>
+<p><img src="https://raw.githubusercontent.com/JaylanWood/cloudimage/master/uPic/%E9%87%91%E5%B1%9E-Gold.png" alt="金属-Gold"></p>
+<p>给做个纯金，你看这个24K纯金球又大又圆。</p>
+<p><strong>来，做非金属</strong></p>
+<p><img src="https://raw.githubusercontent.com/JaylanWood/cloudimage/master/uPic/%E9%9D%9E%E9%87%91%E5%B1%9E.png" alt="非金属"></p>
+<p><strong>来，给金属来点 diffuse 尝尝</strong></p>
+<p><img src="https://raw.githubusercontent.com/JaylanWood/cloudimage/master/uPic/Gold_with_diffuse.png" alt="Gold_with_diffuse"></p>
+<p>完了，这金做出全是杂质了，不值钱了！</p>
+<p><strong>为什么呢</strong></p>
+<p><img src="https://raw.githubusercontent.com/JaylanWood/cloudimage/master/uPic/Screen%20Shot%202020-04-17%20at%2005.14.42.png" alt="Screen Shot 2020-04-17 at 05.14.42"></p>
+<p><img src="https://raw.githubusercontent.com/JaylanWood/cloudimage/master/uPic/Screen%20Shot%202020-04-17%20at%2005.19.07.png" alt="Screen Shot 2020-04-17 at 05.19.07"></p>
+<p>引用龚大的话：</p>
+<blockquote>
+<p>对于金属来说，diffuse永远是0，材质的颜色来自于 specular。对于非金属来说，材质的颜色一部分来自于diffuse，一部分来自于specular。</p>
+</blockquote>
+<p>看懂了吗？！看到金属里那个红色的叉了吗？</p>
+<h2 id="能量守恒energy-conservation">能量守恒（Energy Conservation）</h2>
+<p>引用《THE PBR GUIDE - PART 1》</p>
+<blockquote>
+<p>能量守恒在PBR渲染中起到至关重要的作用。这个原则认为一个表面二次发射（反射或散射）的光必须少于这个表面接收到的光。换句话说，从表面反射的光将永远不会比入射到表面之前更强烈。</p>
+</blockquote>
+<p>英文原文：</p>
+<blockquote>
+<p>Energy conservation plays a vital role in physically-based rendering solutions. This principle states the total amount of light re-emitted by a surface (reflected and scattered back) is less than the total amount received. In other words, the light reflected from the surface will never be more intense than it was before it hit the surface.</p>
+</blockquote>
+<h2 id="f0-和-fresnel">F0 和 Fresnel</h2>
+<p><img src="https://raw.githubusercontent.com/JaylanWood/cloudimage/master/uPic/6885ad69-0e64-4011-be2e-144024ebc182-20200417071008926.png" alt="img"></p>
+<p>反射值随着光线与物体法线的夹角变化而变化，夹角从0到90度，非金属物体反射值从0.05左右（F0）到1，金属物体反射指从0.5左右（F0）到1。</p>
+<p><strong>来看看 Frenel 到底是怎么回事</strong></p>
+<p>用 Emission 来展示 Frenel 是怎么表达从 F0 到 F90（好像没F90这说法，反正我就这么叫了）</p>
+<p><img src="https://raw.githubusercontent.com/JaylanWood/cloudimage/master/uPic/%E6%9D%A5%E7%9C%8B%E7%9C%8BFresnel%E6%98%AF%E6%80%8E%E4%B9%88%E5%9B%9E%E4%BA%8B.png" alt="来看看Fresnel是怎么回事"></p>
+<p><strong>来看看非金属没有 Fresnel 会怎么样</strong></p>
+<p><img src="https://raw.githubusercontent.com/JaylanWood/cloudimage/master/uPic/%E9%9D%9E%E9%87%91%E5%B1%9E-%E6%B2%A1%E6%9C%89Fresnel%E4%BC%9A%E6%80%8E%E6%A0%B7.png" alt="非金属-没有Fresnel会怎样"></p>
+<p>Oh, shit!</p>
+<p><strong>于是，很多人将错就错做出了下面这样的错误材质</strong></p>
+<p><img src="https://raw.githubusercontent.com/JaylanWood/cloudimage/master/uPic/%E9%9D%9E%E9%87%91%E5%B1%9E-%E9%94%99%E8%AF%AF%E7%9A%84%E5%81%9A%E6%B3%95.png" alt="非金属-错误的做法"></p>
+<p>什么？你说你没发现错在哪里？也没见过这种错误的做法？来看看 vray 版？</p>
+<p><img src="https://raw.githubusercontent.com/JaylanWood/cloudimage/master/uPic/WechatIMG9.jpeg" alt="WechatIMG9"></p>
+<p>看看那些风骚的错误操作：</p>
+<ol>
+<li>把 Fresnel 关掉。</li>
+<li>关掉也就算了，也不见在 Reflect 里把 Fresnel 反射曲线给弄出来。</li>
+<li>把 Reflect 降低，看起来好像做对了，实际上已经错了。</li>
+</ol>
+<p><strong>不知道什么是 Fresnel 反射曲线？看图</strong></p>
+<p><img src="https://raw.githubusercontent.com/JaylanWood/cloudimage/master/uPic/Fresnel%20Curel.png" alt="Fresnel Curel"></p>
+<p>看到起始点在 0.9 以上的吗？那是金属的反射变化。</p>
+<p>看到起始点在 0.65 以下的吗？那是非金属的反射变化。</p>
+<p>题外话：知道为啥 substance 要把非金属 F0 设置为 0.04 了吗？！</p>
+<p><strong>还看不出来问题？没有对比就没有伤害！</strong></p>
+<p><img src="https://raw.githubusercontent.com/JaylanWood/cloudimage/master/uPic/Fresnel%20Combine.png" alt="Fresnel Combine"></p>
+<p>不管是金属还是非金属，都是有 Fresnel，记住：</p>
+<p><strong>Everything has Fresnel</strong></p>
+<p><strong>当然，跟随角度变化而变化的，不止反射强度，还有反射模糊，为了好理解，这里就不展开说了。</strong></p>
+<h2 id="金属度metalness">金属度（metalness）</h2>
+<p><strong>金属度是个啥？物理书上有写？我读书少，你别骗我！</strong></p>
+<p>好好好，不骗你，来看看技术大佬们是怎么说的：</p>
+<p><a href="https://www.chaosgroup.com/blog/understanding-metalness">UNDERSTANDING METALNESS</a> 中 Christopher Nichols 访问 Autodesk 着色器技术专家 Zap Andersson 的音频片段翻译，采访音频时间长达1:08:32，从39分开始讨论到金属度。</p>
+<p>译者：JaylanWood</p>
+<p>译文：</p>
+<blockquote>
+<p>Christopher Nichols：在现实世界中，没有东西既是金属又是非金属的，对吧？</p>
+<p>Zap Andersson：没错。意图是，当你使用此功能时，实际上是要更多地将金属度（metalness）这个参数当作是遮罩（mask）来使用，仅此而已。</p>
+<p>Christopher Nichols：当作遮罩，是吗？</p>
+<p>Christopher Nichols：所以，（金属度）那些中间值存在的理由是为了抗锯齿（aliasing）？</p>
+<p>Zap Andersson：基本上是的，仅此而已。</p>
+<p>Christopher Nichols：所以它是金属和非金属的遮罩。</p>
+<p>Zap Andersson：我的意思是，举个例子。比如说 substance painter，做一把战斧，它是一个一体的模型，上面只有一种材质，所有东西都在纹理中。因此，战斧的手柄是木头材质，战斧的斧头是金属材质。所以斧头上的金属度是1，手柄上的金属度是0。那么在它们衔接之间的一些抗锯齿像素中可能是0.5。</p>
+<p>Christopher Nichols：对。</p>
+<p>Zap Andersson：这就是正确的使用方式。</p>
+<p>Christopher Nichols：但是人们不一定理解这一点。</p>
+<p>Zap Andersson: 确实可能是这样的。有的人调一个0.35金属度，还指望它是科学的，但事实并非如此。</p>
+<p>Christopher Nichols：确实不科学。</p>
+<p>Zap Andersson：绝对不是。</p>
+</blockquote>
+<p><strong>金属度说得笼统点，不就是 F0、Fresnel 的简化。</strong></p>
+<p>金属度更多的是传统 GGX BRDF 的简化，把非金属的 F0 写死 0.04，美术们就不会违反能量守恒了。</p>
+<p>事实上，金属度并不是一个完全的物理学上的东西，1是金属，0是非金属，0-1之间是半导体。日常生活中基本上没有半导体，但是铁锈材质贴图里的0-1之间的灰度又是怎么回事？</p>
+<p>substance 里生锈材质的金属度就是0-1之间的，生锈材质它算不上是半导体。不过从微观层面，铁锈确实是金属和非金属混在一起。</p>
+<p>substance《The PBR Guide》有专门提到生锈材质：</p>
+<blockquote>
+<ol>
+<li>金属被氧化、腐蚀、上漆、覆尘后，这些区域需要被当做非导体（电介质）材质来看待。</li>
+<li>在金属贴图中，纯黑（0.0）代表了非金属，纯白（1.0）代表了金属，我们可以用过渡的灰阶来表示不同程度氧化和污垢。</li>
+<li>如果金属贴图中有值低于235 sRGB，那么在Base Color中对应区域的反射值也应该降低。</li>
+</ol>
+</blockquote>
+<p>其实从降低 Base Color 这一点，也正好说明了 PBR 是传统 GGX BRDF 模型的<strong>简化限制版</strong>。如果按照码农的叫法来说，这就是语法糖，so sweet！</p>
+<p><strong>精简</strong></p>
+<p>把 F0、Fresnel 这些复杂的东西做成了金属度（metalness），美术人员按照原始金属1、非金属0、生锈0-1 去考虑金属度就能把材质分清楚了。</p>
+<p><strong>限制</strong></p>
+<p>在金属工作流（Metal/Roughness Workflow）里，默认把非金属的 F0 设置在 0.04，美术人员想改都改不了，彻底杜绝破坏能量守恒定律的可能，保证了PBR的基于物理。</p>
+<p><strong>更省通道 更省内存</strong></p>
+<p>把 漫反射和反射 合成 金属度，并且金属度是灰色贴图，从程序角度，不就是省了通道省了内存嘛，游戏流行 PBR 啊。</p>
+<h2 id="为什么我觉得金属工作流是-pbr-的精髓">为什么我觉得金属工作流是 PBR 的精髓</h2>
+<h4 id="1来看看金属工作流metalroughness-workflow">1.来看看金属工作流（Metal/Roughness Workflow）</h4>
+<p><strong>优势</strong></p>
+<ol>
+<li>在金属工作流中，由于非导体（电介质）的F0都是规定好的，所以设计师在对非导体F0赋值时不易出错。</li>
+<li>纹理的缓存压力更小，因为金属贴图和粗糙度贴图都是灰度贴图。</li>
+<li>目前来说是兼容性最广的工作流。</li>
+</ol>
+<p><strong>劣势</strong></p>
+<ol>
+<li>非导体（电介质）F0 的值固定为4%，无法调整。然而，在大多是实现流程中都有控制器可以直接复写这个值，所以也不能算硬伤。</li>
+<li>白色边缘问题较明显，尤其在低分辨率的情况下问题突出。</li>
+</ol>
+<h4 id="2来看看镜面反射工作流specularglossiness-workflow">2.来看看镜面反射工作流（Specular/Glossiness Workflow）</h4>
+<p><strong>优势</strong></p>
+<ol>
+<li>边缘效应不会那么明显。</li>
+<li>可以在镜面反射贴图中对非导体（电介质）材质的F0值自由调整。</li>
+</ol>
+<p><strong>劣势</strong></p>
+<ol>
+<li>由于在镜面反射工作流的镜面反射贴图中，<strong>非导体（电介质）材质的 F0 值是可以自由调整的，所以也会导致设计师容易输入错误的值</strong>。而这些错误的值被着色器误读后可能会打破能量守恒定律，从而造成不正确的渲染效果。</li>
+<li>由于新增了一张RGB通道的镜面反射贴图，所以对性能消耗会更大。</li>
+<li>镜面反射工作流有些名词和传统的工作流太相似，但是实质所对应的数据可能是不一样的，因此会导致设计师容易误解或误操作。这种情况下就要求设计师有更好的PBR理论知识，例如了解非导体（电介质）的正确F0值，金属在漫反射色下表现为纯黑，以及在着色器没有自动校正情况下，能量守恒相关的基础知识。</li>
+</ol>
+<h4 id="3为啥因为镜面反射流可以乱调-f0-啊">3.为啥？因为镜面反射流可以乱调 F0 啊！</h4>
+<p>因为镜面反射工作流（Specular/Glossiness Workflow）是可以调整 F0 的，就是 Specular 这个参数可以调 F0，调的不好就打破了能量守恒和 PBR。</p>
+<p>所以说，在 PBR 里用 Specular 工作流的人基本都是大神，他们能根据现实材质的需要把 0.02-0.05 之间这么细微的 F0 给准确测出来，他们不满足于锁死的 F0。</p>
+<p>反正我是没办法找出那么多 F0 并记住。</p>
+<h2 id="为美好的-pbr-献上祝福">为美好的 PBR 献上祝福</h2>
+<p>作为半吊子爱好者，学啥啥吃力，一直觉得传统 GGX BRDF 调个材质跟研究物理光学似的，一不小心看到别人在 vray 把 Fresnel 去勾，就觉得很难受。</p>
+<p>感谢 PBR 带来的方便，再也不怕脑子不够用了。为美好的 PBR 献上祝福！撒花！</p>
+<h2 id="资料参考">资料参考</h2>
+<p><a href="https://zhuanlan.zhihu.com/p/21961722">金属，塑料，傻傻分不清楚</a></p>
+<p>作者：<a href="https://www.zhihu.com/people/minmin.gong">叛逆者</a></p>
+<p>简介：微软图形大神龚敏敏出品的文章，说得很透测。</p>
+<p><a href="https://www.chaosgroup.com/blog/understanding-metalness">UNDERSTANDING METALNESS</a></p>
+<p>作者：Christopher Nichols</p>
+<p>简介：一篇来自 Chaos Group Labs 的主管 Christopher Nichols 的博客，在文章结尾还附有 Christopher Nichols 访问 Autodesk 着色器技术专家 Zap Andersson 的音频，时间长达1:08:32，从39分开始讨论到金属度。</p>
+<p><a href="https://academy.substance3d.com/courses/the-pbr-guide-part-1">THE PBR GUIDE - PART 1</a> 和 <a href="https://academy.substance3d.com/courses/the-pbr-guide-part-2">THE PBR GUIDE - PART 2</a></p>
+<p>作者：Adobe Substance 官方</p>
+<p>简介：Adobe Substance 官方出品的 PBR 指导手册，可能是目前最好的 PBR 资料。</p>
+
+    </div>
+    <div class="article-footer">
+<blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接: </strong>
+      <a href="https://jaylanwood.github.io/2020/04/%E4%B8%BA%E7%BE%8E%E5%A5%BD%E7%9A%84-pbr-%E7%8C%AE%E4%B8%8A%E7%A5%9D%E7%A6%8F/" title="为美好的 PBR 献上祝福" target="_blank" rel="external">https://jaylanwood.github.io/2020/04/%E4%B8%BA%E7%BE%8E%E5%A5%BD%E7%9A%84-pbr-%E7%8C%AE%E4%B8%8A%E7%A5%9D%E7%A6%8F/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>License：</strong><a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN</a>
+    </li>
+  </ul>
+</blockquote>
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/JaylanWood" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="https://jaylanwood.github.io/avatar.png" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/JaylanWood" target="_blank"><span class="text-dark">Jaylan</span><small class="ml-1x">为美好的博客献上祝福</small></a></h3>
+        <div>我家博客还蛮大的</div>
+      </div>
+    </figure>
+  </div>
+</div>
+    </div>
+  </article>
+<section id="comments">
+</section>
+
+</div><nav class="bar bar-footer clearfix" data-stick-bottom>
+    <div class="bar-inner">
+        <ul class="pager pull-left">
+            <li class="prev">
+                <a href="https://jaylanwood.github.io/2020/04/learnhtml/" title="LearnHTML"><i
+                        class="icon icon-angle-left"
+                        aria-hidden="true"></i><span>&nbsp;&nbsp;下一篇</span></a>
+            </li>
+            
+            <li class="toggle-toc">
+                <a class="toggle-btn collapsed" data-toggle="collapse" href="#collapseToc" aria-expanded="false"
+                    title="文章目录" role="button">
+                    <span>[&nbsp;</span><span>文章目录</span>
+                    <i class="text-collapsed icon icon-anchor"></i>
+                    <i class="text-in icon icon-close"></i>
+                    <span>]</span>
+                </a>
+            </li>
+        </ul>
+        <div class="bar-right">
+            <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter"
+                data-mobile-sites="weibo,qq,qzone"></div>
+        </div>
+    </div>
+</nav>
+
+</main><footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+<ul class="social-links">
+    <li><a href="https://github.com/JaylanWood" target="_blank" title="github" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-github"></i></a></li>
+    <li><a href="https://jaylanwood.github.io/index.xml" target="_blank" title="rss" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-rss"></i></a></li>
+</ul>
+  <div class="copyright">
+    &copy;2019 -
+    2020
+    <div class="publishby">
+      
+    </div>
+  </div>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+            showMathMenu: false, //disables context menu
+            tex2jax: {
+            inlineMath: [ ['$','$'], ['\\(','\\)'] ]
+           }
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/highlight.min.js"></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/python.min.js" defer></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/javascript.min.js" defer></script><script>
+    hljs.configure({
+        tabReplace: '    ', 
+        classPrefix: ''     
+        
+    })
+    hljs.initHighlightingOnLoad();
+</script>
+<script src="https://jaylanwood.github.io/js/application.min.bdeb64b910570b6c41badc6a05b7afb0c8ad9efd8525de3c7257d59e786326a3.js"></script>
+<script src="https://jaylanwood.github.io/js/plugin.min.51ff8c7317566f82259170fa36e09c4493adc9b9378b427a01ad3f017ebac7dd.js"></script>
+
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(未命名)',
+            },
+            ROOT_URL: 'https:\/\/jaylanwood.github.io\/',
+            CONTENT_URL: 'https:\/\/jaylanwood.github.io\/\/searchindex.json ',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script type="text/javascript" src="https://jaylanwood.github.io/js/insight.min.a343cd9a5a7698336b28ef3a7c16a3a1b1d2d5fb17dc8ed04022bbe08cc5459073a15bdafa3a8a58cdd56080784bdd69fa70b1ae8597565c799c57ed00f0e120.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+<script>
+    tocbot.init({
+        
+        tocSelector: '.js-toc',
+        
+        contentSelector: '.js-toc-content',
+        
+        headingSelector: 'h1, h2, h3',
+        
+        hasInnerContainers: true,
+    });
+</script>
+
+
+  </body>
+</html>

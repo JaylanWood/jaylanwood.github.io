@@ -4,7 +4,56 @@
   
   <url>
     <loc>https://jaylanwood.github.io/categories/</loc>
-    <lastmod>2020-04-11T23:30:47+08:00</lastmod>
+    <lastmod>2020-04-17T07:13:13+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jaylanwood.github.io/categories/cg/</loc>
+    <lastmod>2020-04-17T07:13:13+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jaylanwood.github.io/tags/fresnel/</loc>
+    <lastmod>2020-04-17T07:13:13+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jaylanwood.github.io/tags/metalness/</loc>
+    <lastmod>2020-04-17T07:13:13+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jaylanwood.github.io/tags/pbr/</loc>
+    <lastmod>2020-04-17T07:13:13+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jaylanwood.github.io/posts/</loc>
+    <lastmod>2020-04-17T07:13:13+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jaylanwood.github.io/tags/</loc>
+    <lastmod>2020-04-17T07:13:13+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jaylanwood.github.io/2020/04/%E4%B8%BA%E7%BE%8E%E5%A5%BD%E7%9A%84-pbr-%E7%8C%AE%E4%B8%8A%E7%A5%9D%E7%A6%8F/</loc>
+    <lastmod>2020-04-17T07:13:13+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -18,20 +67,6 @@
   
   <url>
     <loc>https://jaylanwood.github.io/2020/04/learnhtml/</loc>
-    <lastmod>2020-04-11T23:30:47+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://jaylanwood.github.io/posts/</loc>
-    <lastmod>2020-04-11T23:30:47+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://jaylanwood.github.io/tags/</loc>
     <lastmod>2020-04-11T23:30:47+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
