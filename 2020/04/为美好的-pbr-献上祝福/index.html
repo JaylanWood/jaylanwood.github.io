@@ -42,7 +42,7 @@
 <meta itemprop="description" content="简介 这篇文章只是我这样一个爱好者写的，不是给技术大佬看的，所以有不对的地方请指正请轻喷，当然，有大佬指正小弟巴不得呢！ 作者：JaylanWo">
 <meta itemprop="datePublished" content="2020-04-17T07:13:13&#43;08:00" />
 <meta itemprop="dateModified" content="2020-04-17T07:13:13&#43;08:00" />
-<meta itemprop="wordCount" content="3637">
+<meta itemprop="wordCount" content="4214">
 
 
 
@@ -425,8 +425,8 @@
 
         <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2020/04/%E4%B8%BA%E7%BE%8E%E5%A5%BD%E7%9A%84-pbr-%E7%8C%AE%E4%B8%8A%E7%A5%9D%E7%A6%8F/#comments"
             class="article-comment-link">评论</a></span>
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 3637字</span>
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 8分 </span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 4214字</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 9分 </span>
       </div>
     </div>
     <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
@@ -460,7 +460,7 @@
 </blockquote>
 <h2 id="能量守恒energy-conservation">能量守恒（Energy Conservation）</h2>
 <p>散射（diffuse） + 反射（ glossy）&lt;= 入射（光源）</p>
-<p>注意：Blender 的 glossy 在 vray 里是 Reflect，一个意思。</p>
+<p>注意：Blender 的 glossy 在 vray 里是 Reflect，一个意思，就是镜面反射（Specular Reflection）。</p>
 <p>一时想不到怎么做个能量不守恒的材质，以后有机会再写这个。</p>
 <p>引用《THE PBR GUIDE - PART 1》</p>
 <blockquote>
@@ -509,7 +509,7 @@
 <p>代入水的IOR=1.33，得到F0是0.02：</p>
 <p><img src="https://raw.githubusercontent.com/JaylanWood/cloudimage/master/uPic/iortof0equationwater.gif" alt="IORtoF0equationWater"></p>
 <h2 id="金属度metalness">金属度（metalness）</h2>
-<p><strong>金属度是个啥？物理书上有写？我读书少，你别骗我！</strong></p>
+<h4 id="1金属度是个啥物理书上有写我读书少你别骗我">1.金属度是个啥？物理书上有写？我读书少，你别骗我！</h4>
 <p>好好好，不骗你，物理书确实没写金属度，来看看技术大佬们是怎么说的：</p>
 <p><a href="https://www.chaosgroup.com/blog/understanding-metalness">UNDERSTANDING METALNESS</a> 中 Christopher Nichols 访问 Autodesk 着色器技术专家 Zap Andersson 的音频片段翻译，采访音频时间长达1:08:32，从39分开始讨论到金属度。</p>
 <p>译者：JaylanWood</p>
@@ -530,9 +530,26 @@
 <p>Zap Andersson：绝对不是。</p>
 </blockquote>
 <p>抗锯齿和遮罩的说法确实是很新奇，从图像角度解释了金属度中间值。</p>
-<p><strong>金属度说得笼统点，不就是 F0、Fresnel 的简化。</strong></p>
+<h4 id="2金属度并不是一个完全的物理学上的东西">2.金属度并不是一个完全的物理学上的东西</h4>
+<p>来看看《The PBR Guide》对金属度贴图的描述:</p>
+<p><img src="https://raw.githubusercontent.com/JaylanWood/cloudimage/master/uPic/08294dc6-f38d-4cd6-af7f-fca8e9c00dda.png" alt="图26"></p>
+<p><em>Figure 26: Base color map contains reflectance values for raw metal as indicated by the metal map</em></p>
+<blockquote>
+<p>金属贴图中并没有包含直接被材质引用的真实世界的数据（如反照率颜色、反射值等），它只是比较简单地对着色器描述Base Color中的哪个区域应该被解析成反照率颜色（非导体），哪个区域应该被描述成金属的反射值。</p>
+<p>在金属贴图中，0.0（纯黑-0sRGB）代表了非金属，而1.0（纯白-255sRGB）代表了原始金属。当金属贴图被用于定义原始金属与非金属时，一般都是二态的：纯黑或纯白，意味着材质除了原始金属就是非金属。在实现过程中，当着色器监测到金属贴图中的白色区域时，它会检查 Base Color 贴图中相应的位置来获取金属的反射值并进行渲染（如图26）。</p>
+</blockquote>
+<p>事实上，PBR 把 diffuse 和 Specular Reflection 2个通道合成一个 Base color 通道。</p>
+<ul>
+<li>当一个材质是纯非金属材质时候，固有色（Base color）是漫反射率（Diffuse），镜面反射率不做说明的话是固定值。</li>
+<li>当一个材质是纯金属材质时候，固有色（Base color）是镜面反射率（Specular Reflection），漫反射率是0。</li>
+<li>当一个材质处于以上两者之间时，固有色（Base color）会同时影响两个反射率（Diffuse 和 Specular Reflection）。</li>
+</ul>
+<p><strong>为啥这样做？</strong></p>
+<p>因为纯金属不需要diffuse。</p>
+<p>纯非金属固定镜面反射率（Specular Reflection）从 F0的0.04 到 F90的1，只需要diffuse就行。</p>
+<h4 id="3金属度说得笼统点不就是-f0fresnel-的简化">3.金属度说得笼统点，不就是 F0、Fresnel 的简化。</h4>
 <p>金属度更多的是传统 GGX BRDF 的简化，把非金属的 F0 写死 0.04，美术们就不会违反能量守恒了。</p>
-<p>事实上，金属度并不是一个完全的物理学上的东西，1是金属，0是非金属，0-1之间是半导体。日常生活中基本上没有半导体，但是铁锈材质贴图里的0-1之间的灰度又是怎么回事？</p>
+<p>金属度并不是一个完全的物理学上的东西，1是金属，0是非金属，0-1之间是半导体。日常生活中基本上没有半导体，但是铁锈材质贴图里的0-1之间的灰度又是怎么回事？</p>
 <p>substance 里生锈材质的金属度就是0-1之间的，生锈材质它算不上是半导体。不过从微观层面，铁锈确实是金属和非金属混在一起。</p>
 <p>substance《The PBR Guide》有专门提到生锈材质：</p>
 <blockquote>
@@ -542,8 +559,7 @@
 <li>如果金属贴图中有值低于235 sRGB，那么在Base Color中对应区域的反射值也应该降低。</li>
 </ol>
 </blockquote>
-<p>其实从金属贴图中有值低于235 sRGB，就要降低 Base Color 这一点，说明</p>
-<p>也正好说明了 PBR 是传统 GGX BRDF 模型的<strong>简化限制版</strong>。如果按照码农的叫法来说，这就是语法糖，so sweet！</p>
+<p>PBR 是传统 GGX BRDF 模型的<strong>简化限制版</strong>。</p>
 <p><strong>精简</strong></p>
 <p>把 F0、Fresnel 这些复杂的东西做成了金属度（metalness），美术人员按照原始金属1、非金属0、生锈0-1 去考虑金属度就能把材质分清楚了。</p>
 <p><strong>限制</strong></p>
