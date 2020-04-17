@@ -42,7 +42,7 @@
 <meta itemprop="description" content="简介 这篇文章只是我这样一个爱好者写的，不是给技术大佬看的，所以有不对的地方请指正请轻喷，当然，有大佬指正小弟巴不得呢！ 作者：JaylanWo">
 <meta itemprop="datePublished" content="2020-04-17T07:13:13&#43;08:00" />
 <meta itemprop="dateModified" content="2020-04-17T07:13:13&#43;08:00" />
-<meta itemprop="wordCount" content="4214">
+<meta itemprop="wordCount" content="4374">
 
 
 
@@ -425,7 +425,7 @@
 
         <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2020/04/%E4%B8%BA%E7%BE%8E%E5%A5%BD%E7%9A%84-pbr-%E7%8C%AE%E4%B8%8A%E7%A5%9D%E7%A6%8F/#comments"
             class="article-comment-link">评论</a></span>
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 4214字</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 4374字</span>
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 9分 </span>
       </div>
     </div>
@@ -458,18 +458,6 @@
 <blockquote>
 <p>对于金属来说，diffuse永远是0，材质的颜色来自于 specular。对于非金属来说，材质的颜色一部分来自于diffuse，一部分来自于specular。</p>
 </blockquote>
-<h2 id="能量守恒energy-conservation">能量守恒（Energy Conservation）</h2>
-<p>散射（diffuse） + 反射（ glossy）&lt;= 入射（光源）</p>
-<p>注意：Blender 的 glossy 在 vray 里是 Reflect，一个意思，就是镜面反射（Specular Reflection）。</p>
-<p>一时想不到怎么做个能量不守恒的材质，以后有机会再写这个。</p>
-<p>引用《THE PBR GUIDE - PART 1》</p>
-<blockquote>
-<p>能量守恒在PBR渲染中起到至关重要的作用。这个原则认为一个表面二次发射（反射或散射）的光必须少于这个表面接收到的光。换句话说，从表面反射的光将永远不会比入射到表面之前更强烈。</p>
-</blockquote>
-<p>英文原文：</p>
-<blockquote>
-<p>Energy conservation plays a vital role in physically-based rendering solutions. This principle states the total amount of light re-emitted by a surface (reflected and scattered back) is less than the total amount received. In other words, the light reflected from the surface will never be more intense than it was before it hit the surface.</p>
-</blockquote>
 <h2 id="fresnel-和-f0">Fresnel 和 F0</h2>
 <p><img src="https://raw.githubusercontent.com/JaylanWood/cloudimage/master/uPic/6885ad69-0e64-4011-be2e-144024ebc182-20200417071008926.png" alt="img"></p>
 <p>反射值随着光线与物体法线的夹角变化而变化，夹角从0到90度，非金属物体反射值从 0.02-0.05 到 1，金属物体反射指从 0.5-0.9 到 1。</p>
@@ -477,7 +465,7 @@
 <p><strong>来看看 Frenel 到底是怎么回事</strong></p>
 <p>用 Emission 来展示 Frenel 是怎么表达从 F0 到 F90（好像没F90这说法，反正我就这么叫了）</p>
 <p><img src="https://raw.githubusercontent.com/JaylanWood/cloudimage/master/uPic/%E6%9D%A5%E7%9C%8B%E7%9C%8BFresnel%E6%98%AF%E6%80%8E%E4%B9%88%E5%9B%9E%E4%BA%8B.png" alt="来看看Fresnel是怎么回事"></p>
-<p>F0 到 F90，由黑到白，这里展示了 IOR 是1.45 的 Fresnel 反射强度变化（只不过这里是用自发光Emission来展示，以免收到其他灯光影响）</p>
+<p>F0 到 F90，由黑到白，这里展示了 IOR 是1.45 的 Fresnel 反射强度变化（只不过这里是用自发光Emission来展示，以免受到其他灯光影响）</p>
 <p><strong>来看看非金属没有 Fresnel 会怎么样</strong></p>
 <p><img src="https://raw.githubusercontent.com/JaylanWood/cloudimage/master/uPic/%E9%9D%9E%E9%87%91%E5%B1%9E-%E6%B2%A1%E6%9C%89Fresnel%E4%BC%9A%E6%80%8E%E6%A0%B7.png" alt="非金属-没有Fresnel会怎样"></p>
 <p>Oh, shit! 所有角度的 Glossy 都一样强。</p>
@@ -508,6 +496,23 @@
 <p>公式里的 n 是 IOR，知道 vray 的 IOR 咋回事了吧。</p>
 <p>代入水的IOR=1.33，得到F0是0.02：</p>
 <p><img src="https://raw.githubusercontent.com/JaylanWood/cloudimage/master/uPic/iortof0equationwater.gif" alt="IORtoF0equationWater"></p>
+<h2 id="能量守恒energy-conservation">能量守恒（Energy Conservation）</h2>
+<h4 id="1能量守恒啥意思">1.能量守恒啥意思？</h4>
+<p>散射（diffuse） + 镜面反射（ glossy/Reflect/Specular Reflection）&lt;= 入射（光源）</p>
+<p>注意：Blender 的 glossy 在 vray 里是 Reflect，一个意思，就是镜面反射（Specular Reflection）。</p>
+<h4 id="2举个能量不守恒的反例">2.举个能量不守恒的反例</h4>
+<p>BRDF 基本都能量守恒，即便是上面 “金属加了diffuse” 和 “没有Fresnel的错误材质”，也是能量守恒的。</p>
+<p>要说明能量不守恒是怎么回事，得找个反例才一目了然，得让 diffuse保持不变 + Specular增加 &gt; 入射（光源），这样的反例才最能说明能量不守恒的表现。</p>
+<p>一时半会想不到去哪整个反例，以后有机会再写这个。</p>
+<h4 id="3资料引申">3.资料引申</h4>
+<p>引用《THE PBR GUIDE - PART 1》</p>
+<blockquote>
+<p>能量守恒在PBR渲染中起到至关重要的作用。这个原则认为一个表面二次发射（反射或散射）的光必须少于这个表面接收到的光。换句话说，从表面反射的光将永远不会比入射到表面之前更强烈。</p>
+</blockquote>
+<p>英文原文：</p>
+<blockquote>
+<p>Energy conservation plays a vital role in physically-based rendering solutions. This principle states the total amount of light re-emitted by a surface (reflected and scattered back) is less than the total amount received. In other words, the light reflected from the surface will never be more intense than it was before it hit the surface.</p>
+</blockquote>
 <h2 id="金属度metalness">金属度（metalness）</h2>
 <h4 id="1金属度是个啥物理书上有写我读书少你别骗我">1.金属度是个啥？物理书上有写？我读书少，你别骗我！</h4>
 <p>好好好，不骗你，物理书确实没写金属度，来看看技术大佬们是怎么说的：</p>
