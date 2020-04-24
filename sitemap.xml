@@ -4,7 +4,42 @@
   
   <url>
     <loc>https://jaylanwood.github.io/categories/</loc>
-    <lastmod>2020-04-17T07:13:13+08:00</lastmod>
+    <lastmod>2020-04-24T11:21:48+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jaylanwood.github.io/tags/coursera/</loc>
+    <lastmod>2020-04-24T11:21:48+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jaylanwood.github.io/categories/learning/</loc>
+    <lastmod>2020-04-24T11:21:48+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jaylanwood.github.io/2020/04/learning-how-to-learn/</loc>
+    <lastmod>2020-04-24T11:21:48+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jaylanwood.github.io/posts/</loc>
+    <lastmod>2020-04-24T11:21:48+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jaylanwood.github.io/tags/</loc>
+    <lastmod>2020-04-24T11:21:48+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -32,20 +67,6 @@
   
   <url>
     <loc>https://jaylanwood.github.io/tags/pbr/</loc>
-    <lastmod>2020-04-17T07:13:13+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://jaylanwood.github.io/posts/</loc>
-    <lastmod>2020-04-17T07:13:13+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://jaylanwood.github.io/tags/</loc>
     <lastmod>2020-04-17T07:13:13+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
